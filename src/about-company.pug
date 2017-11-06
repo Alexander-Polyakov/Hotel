@@ -1,0 +1,43 @@
+include pug/project-settings.pug
+include pug/mixins/mixins.pug
+
+doctype html
+html
+    head(lang="en")
+        include pug/metatags.pug
+        +title('О Компании')
+        include pug/styles.pug
+    body
+        .site-wrapper
+            header.site-wrapper__header
+                include pug/components/header
+            main.site-wrapper__main
+                section.section.section_breadcrumbs.section_whitebg
+                    .container
+                        nav.breadcrumbs
+                            a(href='#').breadcrumbs__link Главная
+                            span(href='#').breadcrumbs__text О компании
+
+                section.section.section_usual-content.section_whitebg
+                    .container
+                        .usual-page
+                            .page-title О компании РосТехЭнерго-Воронеж
+                            .usual-page__section.standard-description
+                                p Сегодня Funke Rus - один из крупнейших российских поставщиков пластинчатых теплообменников с центральным офисом в Москве и широкой дистрибьютерской сетью. Компания является официальным представительством Funke GmbH (Германия).
+                                p Единый инженерно-расчетный центр, обладающий многолетним опытом подбора оборудования, оперативно предоставляет надежное решение Ваших задач. Изготавливая теплообменники с использованием пластин немецкой компании Funke, крупного европейского производителя, мы обеспечиваем высокое качество оборудования в сочетании с доступной стоимостью. Собственная дистрибьютерская сеть позволяет нам обеспечивать оборудованием FUNKE любых характеристик, максимально подходящим для Ваших нужд по всей территории Российской Федерации.
+                            .usual-page__section.usual-page-images
+                                img(src='./images/photos/certificate1.jpg').usual-page-images__item
+                                img(src='./images/photos/certificate2.jpg').usual-page-images__item
+
+
+
+
+
+            include pug/components/footer
+
+
+
+
+
+
+        include pug/scripts.pug

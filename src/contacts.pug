@@ -1,0 +1,92 @@
+include pug/project-settings.pug
+include pug/mixins/mixins.pug
+
+doctype html
+html
+    head(lang="en")
+        include pug/metatags.pug
+        +title('Контакты')
+        include pug/styles.pug
+    body
+        .site-wrapper
+            header.site-wrapper__header
+                include pug/components/header
+            main.site-wrapper__main
+                section.section.section_breadcrumbs.section_whitebg
+                    .container
+                        nav.breadcrumbs
+                            a(href='#').breadcrumbs__link Главная
+                            span(href='#').breadcrumbs__text Контакты
+
+                section.section.section_contacts.section_whitebg
+                    .container
+                        .contacts
+                            .page-title Контакы компании
+                            .contacts__grid
+                                .info-grid.info-grid_wrapper700px
+                                    .info-grid__item.small-info-item
+                                        img(src='./images/svg/icon-marker.svg').small-info-item__icon
+                                        .small-info-item__content
+                                            .small-info-item__title АДРЕС
+                                            .small-info-item__main г. Воронеж, <br/> проезд Монтажный, д. 3
+                                    .info-grid__item.small-info-item
+                                        img(src='./images/svg/icon-time.svg').small-info-item__icon
+                                        .small-info-item__content
+                                            .small-info-item__title РЕЖИМ РАБОТЫ
+                                            .small-info-item__main.mode-operation
+                                                .mode-operation__item
+                                                    p пн - пт
+                                                    p 9:00 - 18:00
+                                                .mode-operation__item
+                                                    p сб вс
+                                                    p выходной
+                                    .info-grid__item.small-info-item
+                                        img(src='./images/svg/icon-marker.svg').small-info-item__icon
+                                        .small-info-item__content
+                                            .small-info-item__title 8 (473) 212-12-05
+                                    .info-grid__item.small-info-item
+                                        img(src='./images/svg/icon-time.svg').small-info-item__icon
+                                        .small-info-item__content
+                                            .small-info-item__title 8 (473) 251-64-96
+                                    .info-grid__item.small-info-item
+                                        img(src='./images/svg/icon-time.svg').small-info-item__icon
+                                        .small-info-item__content
+                                            .small-info-item__title.small-info-item__title_mail info@funke.com
+
+                            .contacts__table.contacts-table
+                                .contacts-table__item.contacts-table-item
+                                    .contacts-table-item__header
+                                        .contacts-table-item__title Реквизиты компании:
+                                    .contacts-table-item__content ООО  "РосТехЭнерго-Воронеж» <br/> ИНН 366218821309 <br/> ОГРН 312366808900023
+                                .contacts-table__item
+                                    .contacts-table-item__header
+                                        .contacts-table-item__title ЮрИДИЧЕСКИЙ адрес:
+                                    .contacts-table-item__content г. Воронеж,
+                                        |  проезд Монтажный, д. 3
+                                        .contacts-table__download
+                                            img().contacts-table__download-icon
+                                            .contacts-table__download-text Скачать
+
+                section.section.section_map
+                    .map-section
+                        .map-section__title.section-title
+                            .section-title__text СХЕМА ПРОЕЗДА
+                            img(src='./images/svg/icon-double-arrows.svg').section-title__icon
+                        .map-section__map#map.map
+
+
+
+            footer.footer
+               section.section.section_last
+                   .container
+                       .last-section
+                           .last-section__copy © 2008 - 2017 ООО "РосТехЭнерго-Воронеж"
+                           .last-section__iin ИНН 3663072816
+                           a(href="#").last-section__dev создание сайта
+
+
+
+
+
+
+        include pug/scripts.pug

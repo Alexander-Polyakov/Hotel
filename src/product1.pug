@@ -1,0 +1,98 @@
+include pug/project-settings.pug
+include pug/mixins/mixins.pug
+
+doctype html
+html
+    head(lang="en")
+        include pug/metatags.pug
+        +title('Пластины и уплотнения')
+        include pug/styles.pug
+    body
+        .site-wrapper
+            header.site-wrapper__header
+                include pug/components/header
+            main.site-wrapper__main
+                section.section.section_product
+                    .container
+                        .section-product
+                            .section-product__preview
+                                img(src="./images/photos/product-img2.png").section-product__img
+                            .section-product__content
+                                h1.section-product__title Пластины и уплотнения для теплообменников FUNKE
+                                .section-product__list-bl.info-list-bl
+                                    ul.info-list-bl__info.info-list
+                                        li.info-list__item
+                                            img(src='./images/svg/icon-red-arrow.svg').info-list__item-icon
+                                            .info-list__item-content Наша компания предлагает к поставке только оригинальные запасные части для пластинчатых теплообменников
+
+                section.section_full-description
+                    .container
+                        .product-full-desctiption
+                            .product-full-desctiption__section
+                                .table
+                                    .table__header.table-header
+                                        .table-header__title Основные технические характеристики:
+                                        .table-header__plus
+                                    .table__content.table-vertically
+                                        .table-vertically__row
+                                            .table-vertically__td Толщина пластины:
+                                            .table-vertically__td 0.35 - 0.7 мм
+                                        .table-vertically__row
+                                            .table-vertically__td Крепление уплотнений
+                                            .table-vertically__td Механическое крепление уплотнений (стандарт) Клеевое крепление уплотнений
+
+                            .product-full-desctiption__section
+                                .table
+                                    .table__header.table-header
+                                        .table-header__title Материалы:
+                                        .table-header__plus
+                                    .table__content.table-horizontally
+                                        .table-horizontally__row
+                                            .table-horizontally__td.table-horizontally__td_title Пластины:
+                                            .table-horizontally__td.table-description
+                                                p
+                                                    strong 1.4301/AISI 304
+                                                    |  – для более экономичного решения при использовании некритичных сред
+                                                p
+                                                    strong 1.4539/AISI 904 L
+                                                    |  – сталь с высоким содержанием никеля. Экономичное решение для использования сред с низким содержанием кислот и хлоридов, обеспечивающее надежную защиту от коррозионного растрескивания
+                                                p
+                                                    strong 1.4529/254 SMO
+                                                    |  – по сравнению с 1.4401/AISI 316 материал более устойчив к кислотам и хлоридам
+                                                p хастеллой – отличается высокой устойчивостью к кислотам и хлоридам; применяется, например, при использовании концентрированной серной кислоты
+                                                p титан-палладий – самый высококачественный материал; используется для хлоридов при высокой температуре
+                                        .table-horizontally__row
+                                            .table-horizontally__td.table-horizontally__td_title Уплотнения
+                                            .table-horizontally__td.table-description
+                                                p
+                                                    strong NBR (нитрил-каучук)
+                                                    |  – универсальное уплотнение для водных и жирных сред (вода/масло), не применяется для пара. Диапазон рабочих температур от -20°С до +140°С.
+                                                p
+                                                    strong EPDM (этилен-пропилен-каучук)
+                                                    |  – широкая область применения, для химических соединений, не содержащих жир и минеральные масла. Диапазон рабочих температур от -30°С до +160°С.
+                                                p
+                                                    strong VITON (фтор-каучук)
+                                                    |  – высокая устойчивость к химикалиям, органическим растворяющим веществам, а также серной кислоте и растительным маслам при высоких температурах. Диапазон рабочих температур от -10°С до +180°С.
+                            .product-full-desctiption__section
+                                .product
+                                    .product__image(style="background-image: url(./images/photos/product-image1.jpg)")
+                                    .product__download
+                                        .product__download-item
+                                            a(href='#').download-button
+                                                img(src='./images/svg/icon-download.svg').download-button__icon
+                                                .download-button__text Скачать прайс лист <br/> на пластины Funke
+                                        .product__download-item
+                                            a(href='#').download-button
+                                                img(src='./images/svg/icon-download.svg').download-button__icon
+                                                .download-button__text Скачать прайс лист <br/> на пластины Funke
+
+
+
+            include pug/components/footer
+
+
+
+
+
+
+        include pug/scripts.pug

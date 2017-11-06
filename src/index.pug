@@ -1,0 +1,198 @@
+include pug/project-settings.pug
+include pug/mixins/mixins.pug
+
+doctype html
+html
+    head(lang="en")
+        include pug/metatags.pug
+        +title('Главная')
+        include pug/styles.pug
+    body
+        .site-wrapper
+            header.site-wrapper__header
+                include pug/components/header
+            main.site-wrapper__main
+                section.section.section_product
+                    .container
+                        .section-product
+                            .section-product__preview
+                                img(src="./images/photos/product-img1.png").section-product__img
+                            .section-product__content
+                                h1.section-product__title ПЛАСТИНЧАТЫЕ ТЕПЛООБМЕННИКИ FUNKE
+                                .section-product__list-bl.info-list-bl
+                                    .info-list-bl__header
+                                        .info-list-bl__title Области применения:
+                                    ul.info-list-bl__info.info-list
+                                        li.info-list__item
+                                            img(src='./images/svg/icon-red-arrow.svg').info-list__item-icon
+                                            .info-list__item-content
+                                                .info-list__item-special-text Различные промышленные  объекты
+                                                | Металлургия, химическая промышленность, нефтегазовая отрасль и т.д.
+
+                                        li.info-list__item
+                                            img(src='./images/svg/icon-red-arrow.svg').info-list__item-icon
+                                            .info-list__item-content
+                                                .info-list__item-special-text Металлургия, нефтегазовая и химическая промышленность и т.д.
+                                                | Охладители растительных масел, молочной продукции, сахара, пива и т.д.
+
+                                        li.info-list__item
+                                            img(src='./images/svg/icon-red-arrow.svg').info-list__item-icon
+                                            .info-list__item-content
+                                                .info-list__item-special-text Комунальное теплоснабжение
+                                                | Подогрев воды в системах ГВС, ситемах отопления, вентиляции и т.д.
+
+                section.section.section_blue-bg
+                    .container
+                        .infographic-horizontally
+                            .infographic-horizontally__item
+                                img(src='./images/svg/icon-car.svg').infographic-horizontally__item-icon
+                                .infographic-horizontally__item-text Теплообменники Funke с бесплатной доставкой <br/> по России и СНГ
+                            .infographic-horizontally__item
+                                img(src='./images/svg/icon-standard.svg').infographic-horizontally__item-icon
+                                .infographic-horizontally__item-text Все оборудование Funke отвечает <br/> международным и Российским <br/> требованиям и стандартам
+                section.section.section_our-adv
+                    .container
+                        .section__title.section-title
+                            .section-title__text Наши преимущества
+                            img(src='./images/svg/icon-double-arrows.svg').section-title__icon
+                        .section__content
+                            .infographic-vertically
+                                .infographic-vertically__item
+                                    .infographic-vertically__item-preview
+                                        img(src='./images/svg/icon-adv1.svg').infographic-vertically__item-img
+                                    .infographic-vertically__item-text Собственная <br/> производственная <br/> база
+                                .infographic-vertically__item
+                                    .infographic-vertically__item-preview
+                                        img(src='./images/svg/icon-adv2.svg').infographic-vertically__item-img
+                                    .infographic-vertically__item-text Гарантия цены <br/> от производителя
+                                .infographic-vertically__item
+                                    .infographic-vertically__item-preview
+                                        img(src='./images/svg/icon-adv3.svg').infographic-vertically__item-img
+                                    .infographic-vertically__item-text Помощь в выборе <br/> теплообменных <br/> аппаратов
+                                .infographic-vertically__item
+                                    .infographic-vertically__item-preview
+                                        img(src='./images/svg/icon-adv4.svg').infographic-vertically__item-img
+                                    .infographic-vertically__item-text Сервисное и <br/> гарантийное <br/> обслуживание
+
+                section.fullscreen-preview
+                    .fullscreen-preview__title
+                        .section-title
+                            .section-title__text Отрасли применения теплообменников  FUNKE
+                            img(src='./images/svg/icon-double-arrows.svg').section-title__icon.section-title__icon_rotate
+                    .fullscreen-preview__content.fullscreen-preview-list
+                        .fullscreen-preview-list__item.fullscreen-preview-item
+                            .fullscreen-preview-item__size
+                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview2.jpg)")
+                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ <br/> ДЛЯ ОТОПЛЕНИЯ
+                        .fullscreen-preview-list__item.fullscreen-preview-item
+                            .fullscreen-preview-item__size
+                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview2.jpg)")
+                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ ДЛЯ <br/> ГОРЯЧЕГО ВОДОСНАБЖЕНИЯ
+                        .fullscreen-preview-list__item.fullscreen-preview-item
+                            .fullscreen-preview-item__size
+                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview3.jpg)")
+                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ ДЛЯ <br/> ПИЩЕВОЙ ПРОМЫШЛЕННОСТИ
+                        .fullscreen-preview-list__item.fullscreen-preview-item
+                            .fullscreen-preview-item__size
+                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview2.jpg)")
+                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ ДЛЯ <br/> ХОЛОДОСНАБЖЕНИЯ
+                        .fullscreen-preview-list__item.fullscreen-preview-item
+                            .fullscreen-preview-item__size
+                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview5.jpg)")
+                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ <br/> ДЛЯ МЕТАЛЛУРГИИ
+                        .fullscreen-preview-list__item.fullscreen-preview-item
+                            .fullscreen-preview-item__size
+                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview6.jpg)")
+                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ ДЛЯ ВЕНТИЛЯЦИИ <br/> И СИСТЕМ КОНДИЦИОНИРОВАНИЯ
+                        .fullscreen-preview-list__item.fullscreen-preview-item
+                            .fullscreen-preview-item__size
+                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview7.jpg)")
+                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ ДЛЯ <br/> НЕФТЕГАЗОВОЙ ПРОМЫШЛЕННОСТИ
+                        .fullscreen-preview-list__item.fullscreen-preview-item
+                            .fullscreen-preview-item__size
+                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview8.jpg)")
+                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ ДЛЯ <br/> СУДОСТРОЕНИЯ
+
+
+                section.section.section_index-certificate
+                    .container
+                        .index-certificate-bl
+                            .index-certificate-bl__content
+                                img(src='./images/svg/icon-double-arrows.svg').icon-bouble-arrow
+                                .index-certificate-bl__text Компания Funke имеет широкий типоразмерный ряд по каждому типу оборудования. Кроме пластинчатых разборных и паяных теплообменников Funke производит воздушные калориферы и кожухотрубные теплообменники. Такой ассортимент продукции способен удовлетворить любые пожелания заказчика.
+                            .index-certificate-bl__images
+                                img(src='./images/photos/certificate1.jpg').index-certificate-bl__image
+                                img(src='./images/photos/certificate2.jpg').index-certificate-bl__image
+
+                section.full3image
+                    .full3image__title.gradient-title
+                        .gradient-title__text ООО "РосТехЭнерго-Воронеж" официальное сборочное производство FUNKE
+                    .full3image__images
+                        .full3image__image(style="background-image: url(./images/photos/preview-bg1.jpg)")
+                        .full3image__image(style="background-image: url(./images/photos/preview-bg2.jpg)")
+                        .full3image__image(style="background-image: url(./images/photos/preview-bg3.jpg)")
+
+
+                section.section.section_advantages-text
+                    .container
+                        .advantages-text-bl
+                            .advantages-text-bl__lighter.adv-lighter
+                                img.adv-lighter__icon(src="./images/svg/icon-pen.svg")
+                                .adv-lighter__header пластинчатые теплообменники Funke
+                                .adv-lighter__main в 10 раз легче
+                                .adv-lighter__footer При той же мощности
+                            .advantages-text-bl__less.adv-less
+                                img.adv-less__icon
+                                .adv-less__main в 6  раз
+                                .adv-less__footer
+                                    .adv-less__additional меньше
+                                    .adv-less__st-text аналогичного по мощности кожухотрубного теплообменника
+
+                section.section.section_calculation
+                    .container
+                        .section__title.section-title
+                            .section-title__text Расчет теплообменика
+                            img(src='./images/svg/icon-double-arrows.svg').section-title__icon
+                        .section__content.calculation-heatexchanger
+                            .calculation-heatexchanger__section.warning-list
+                                .warning-list__item.warning-item
+                                    img(src='./images/svg/icon-i.svg').warning-item__icon
+                                    .warning-item__content Пластинчатые теплообменники рассчитываются индивидуально!
+                                .warning-list__item.warning-item
+                                    img(src='./images/svg/icon-i.svg').warning-item__icon
+                                    .warning-item__content Важно чтобы расчет осуществлялся професионалами с опытом подбора теплообмеников.
+                            .calculation-heatexchanger__section
+                                .info-list-bl
+                                    .info-list-bl__header
+                                        a(href='#').download-button
+                                            img(src='./images/svg/icon-download.svg').download-button__icon
+                                            .download-button__text Опросный лист для расчета теплообменника Funke
+                                    ul.info-list-bl__info.info-list
+                                        li.info-list__item
+                                            img(src='./images/svg/icon-red-arrow.svg').info-list__item-icon
+                                            .info-list__item-content Скачайте опросный лист, заполните описав свою потребность и направьте его в на E-mail:
+                                            a(href="#").blue-link  info@funke.ru
+                                        li.info-list__item
+                                            img(src='./images/svg/icon-red-arrow.svg').info-list__item-icon
+                                            .info-list__item-content Позвоните нам, или закажите
+                                                | консультацию по телефону.
+
+                                        li.info-list__item
+                                            img(src='./images/svg/icon-red-arrow.svg').info-list__item-icon
+                                            .info-list__item-content В рабочее время с Вами свяжется инженер компании для уточнения деталей и произведет подбор оборудования.
+
+
+            include pug/components/footer
+
+
+
+
+
+
+
+
+
+
+
+
+        include pug/scripts.pug
