@@ -35,9 +35,37 @@ $rcb: 'RobotoCondensedBold'
 $main-blue: #004c99
 $main-red: #d70027
 
+
 body
     font-family: $rr
     font-size: 16px
+
+.site-wrapper
+    min-width: 320px
+    overflow-x: hidden
+    position: relative
+    &__mobile-menu
+        height: 100%
+        left: -300px
+        position: absolute
+        z-index: 500
+        top: 0
+        background-color: #fff
+        width: 300px
+        transition: all 0.3s ease 0s
+        &.opened
+            left: 0
+    &__overlay
+        position: absolute
+        width: 100%
+        height: 100%
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+        z-index: 300
+        background-color: rgba(0,0,0,.4)
+        display: none
 
 .container
     max-width: 970px
@@ -48,6 +76,7 @@ body
     display: flex
     align-items: center
     text-decoration: none
+    max-width: 330px
     &:hover
         text-decoration: underline
     &__icon
@@ -66,6 +95,71 @@ body
     &:hover
         text-decoration: none
 
+.mob-menu-button
+    width: 40px
+    height: 40px
+    border-radius: 50%
+    background-color: $main-red
+    position: relative
+    cursor: pointer
+    transition: all 0.5s ease 0s
+    &:hover
+        background-color: #b41330
+    &__icon
+        width: 22px
+        height: 22px
+        left: 50%
+        top: 50%
+        margin-left: -11px
+        margin-top: -11px
+        position: absolute
+
+
+.nav-drop-menu
+    position: relative
+    &__content
+        width: 220px
+        pointer-events: none
+        position: absolute
+        top: 100%
+        left: 0
+        opacity: 0
+        transition: all 0.5s ease 0s
+    &__button
+        height: 100%
+        width: 42px
+        position: relative
+        transition: all 0.5s ease 0s
+    &__icon
+        width: 24px
+        height: 24px
+        position: absolute
+        left: 50%
+        top: 50%
+        margin-top: -12px
+        margin-left: -12px
+    &:hover
+        .nav-drop-menu__button
+            background-color: $main-red
+        .nav-drop-menu__content
+            pointer-events: auto
+            opacity: 1
+
+.dropdown-menu
+    .dropdown-menu__link
+        background-color: $main-red
+        color: #fff
+        font-family: $rr
+        font-size: 16px
+        text-transform: uppercase
+        padding: 10px
+        margin-bottom: 1px
+        display: block
+        width: 100%
+        text-decoration: none
+        transition: all 0.5s ease 0s
+        &:hover
+            background-color: #b41330
 
 .proportion-bl
     position: relative
@@ -92,7 +186,7 @@ body
         padding: 45px 0
     &_blue-bg
         background-color: $main-blue
-        color: #ffff
+        color: #fff
     &_our-adv
         padding: 40px 0 70px
     &_index-certificate
@@ -150,14 +244,147 @@ body
     display: flex
     padding: 25px 0
     justify-content: space-between
+    align-items: center
     &__logo
         width: 50%
     &__address
         width: 24%
+    &__mob-menu-button
+        display: none
+
+.header-phone
+    display: flex
+    align-items: center
+    position: relative
+    &__text
+        font-size: 27px
+        color: $main-blue
+        font-family: $rm
+    &__icon
+        width: 25px
+        height: 25px
+        background-color: $main-red
+        border-radius: 50%
+        cursor: pointer
+    &__feedback
+        position: absolute
+        right: -5px
+        top: 0
+        z-index: 150
+        background-color: $main-blue
+        padding: 20px
+        color: #fff
+        width: 320px
+        display: none
+    &__overlay
+        position: fixed
+        width: 100%
+        height: 100%
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
+        z-index: 100
+        background-color: rgba(0,0,0,.4)
+        display: none
+
+
+.header-phone.opened
+    .header-phone__overlay
+        display: block
+    .header-phone__feedback
+        display: block
+
+.feedback-popup
+    &__close
+        cursor: pointer
+        width: 26px
+        height: 26px
+        border-radius: 50%
+        position: absolute
+        right: 5px
+        top: 5px
+        background-color: $main-red
+        transform: rotate(45deg)
+        transition: all 0.5s ease 0s
+        &:hover
+            background-color: #d70027
+        &:before
+            content: ''
+            width: 2px
+            position: absolute
+            top: 5px
+            bottom: 5px
+            background-color: #fff
+            left: 50%
+            margin-left: -1px
+        &:after
+            content: ''
+            height: 2px
+            position: absolute
+            right: 5px
+            left: 5px
+            background-color: #fff
+            top: 50%
+            margin-top: -1px
+            
+    &__title
+        font-family: $rcb
+        font-size: 28px
+        text-align: center
+        margin-bottom: 10px
+        text-transform: uppercase
+    &__subtitle
+        font-family: $rcr
+        font-size: 16px
+        text-align: center
+        margin-bottom: 10px
+
+.feedback-popup-form
+    &__line-title
+        font-size: 18px
+        text-transform: uppercase
+        font-family: $rcb
+        margin-bottom: 10px
+    &__line
+        margin-bottom: 15px
+    &__descr
+        font-size: 16px
+        font-family: $rcr
+        padding: 5px 0
+
+.st-input
+    width: 100%
+    height: 42px
+    background-color: #fff
+    outline: none
+    border: none
+    font-family: $rr
+    font-size: 16px
+    padding: 0 10px
+    +phc(#000)
+    color: #000
+
+.st-red-button
+    font-size: 24px
+    text-transform: uppercase
+    font-family: $rcb
+    color: #fff
+    background-color: $main-red
+    outline: none
+    border: none
+    transition: all 0.5s ease 0s
+    width: 100%
+    padding: 12px 10px
+    cursor: pointer
+    &:hover
+        background-color: #b41330
+
 
 .header-logo
     display: flex
     align-items: center
+    text-decoration: none
     &__icon
         max-width: 220px
         margin-right: 20px
@@ -197,7 +424,7 @@ body
         color: #080808
     &__icon
         max-width: 20px
-        max-height: 20px
+        min-width: 20px
         margin-right: 7px
 
 .header-info-ask
@@ -205,20 +432,60 @@ body
     color: $main-blue
     font-size: 14px
     font-family: $rr
+    display: flex
+    align-items: center
     &:hover
         text-decoration: none
+    &__icon
+        max-width: 20px
+        min-width: 20px
+        margin-right: 5px
 
+.main-nav
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 45px
+    &__list
+        flex-grow: 1
+        padding: 0 5px
+        height: 100%
+    &__calculation
+        height: 100%
+        display: flex
+        align-items: center
+        padding: 0 15px
+        font-size: 16px
+        text-transform: uppercase
+        transition: all 0.5s ease 0s
+        background-color: $main-red
+        color: #fff
+        text-decoration: none
+        letter-spacing: -1px
+        &:hover
+            background-color: #b41330
+    &__drop-menu
+        height: 100%
 
 .main-nav-list
     display: flex
     justify-content: space-between
     font-size: 17px
     font-family: $rcr
-    height: 45px
     align-items: center
     &__link
         color: #fff
+        height: 100%
         text-decoration: none
+        display: flex
+        flex-grow: 1
+        justify-content: center
+        padding: 0 5px
+        align-items: center
+        text-align: center
+        transition: all 0.5s ease 0s
+        &:hover
+            background-color: $main-red
 
 
 
@@ -285,6 +552,7 @@ body
     display: flex
     justify-content: space-between
     align-items: center
+    flex-wrap: wrap
     &__item
         width: 46%
         display: flex
@@ -311,10 +579,13 @@ body
 .infographic-vertically
     display: flex
     justify-content: space-evenly
+    flex-wrap: wrap
+    margin-top: -30px
     &__item
         width: 25%
         padding: 0 10px
         text-align: center
+        margin-top: 30px
     &__item-preview
         height: 120px
         display: flex
@@ -350,8 +621,8 @@ body
         transform: translateX(-50%)
         background-image: url('../images/skew-title-bg.png')
         background-repeat: no-repeat
-        -webkit-background-size: 100%
-        background-size: 100%
+        -webkit-background-size: 100% 100%
+        background-size: 100% 100%
         //&:before
         //    content: ''
         //    position: absolute
@@ -393,7 +664,7 @@ body
         left: 0
         width: 100%
         bottom: 0
-        padding: 13px
+        padding: 3%
         display: flex
         z-index: 100
         align-items: center
@@ -417,6 +688,7 @@ body
     display: flex
     justify-content: space-between
     align-items: center
+    flex-wrap: wrap
     &__text
         font-size: 18px
         color: #333
@@ -534,6 +806,20 @@ body
         font-family: $rb
         color: $main-blue
         line-height: 1em
+        display: inline-block
+        position: relative
+        padding-right: 60px
+        &:after
+            content: ''
+            width: 40px
+            height: 72px
+            background-image: url('../images/icon-red-arrow.png')
+            -webkit-background-size: contain
+            background-size: contain
+            background-repeat: no-repeat
+            position: absolute
+            top: 0
+            right: 0
     &__additional
         font-size: 45px
         font-family: $rb
@@ -549,6 +835,7 @@ body
 .calculation-heatexchanger
     display: flex
     justify-content: space-between
+    flex-wrap: wrap
     &__section
         width: 43%
 
@@ -662,7 +949,8 @@ body
         color: $main-blue
         +phc($main-blue)
         border: none
-        width: 65%
+        width: 100%
+        margin-right: 20px
     &__submit
         height: 45px
         background-color: $main-red
@@ -842,14 +1130,13 @@ body
         margin: 0 auto 30px
         font-size: 16px
     &__image
-        height: 380px
-        -webkit-background-size: cover
-        background-size: cover
+        width: 100%
     &__download
         display: flex
         justify-content: space-evenly
         align-items: center
         padding-top: 20px
+        flex-wrap: wrap
     &__download-item
         width: 300px
         padding: 20px
@@ -863,6 +1150,7 @@ body
     display: flex
     justify-content: space-between
     align-items: center
+    flex-wrap: wrap
     &__image
         width: 45%
     &__list
@@ -906,6 +1194,7 @@ body
     display: flex
     justify-content: space-between
     background-color: #f9f9f9
+    flex-wrap: wrap
     &__item
         width: 50%
 
@@ -930,6 +1219,29 @@ body
     &__content
         padding: 25px 20px
 
+
+.download-print
+    text-align: center
+    display: inline-block
+    &__icon
+        max-width: 115px
+        margin-bottom: 5px
+    &__text
+        font-size: 16px
+        text-decoration: underline
+        color: $main-blue
+
+.download-print:hover
+    .download-print__text
+        text-decoration: none
+
+.contact-download-bl
+    display: flex
+    justify-content: space-between
+    &__content
+        padding-right: 10px
+    &__download
+        margin-right: 30px
 
 .map-section
     position: relative
@@ -966,3 +1278,497 @@ body
 
 
 
+// MOBILE MENU //
+
+.mobile-menu
+    padding: 60px 10px 0
+    &__nav
+        margin: 0 -10px 15px
+    &__address
+        display: none
+        margin-bottom: 15px
+    &__info
+        display: none
+        margin-bottom: 15px
+    &__close
+        right: 5px
+        top: 5px
+        width: 40px
+        height: 40px
+        position: absolute
+        cursor: pointer
+        transform: rotate(45deg)
+        background-color: $main-red
+        border-radius: 50%
+        transition: all 0.5s ease 0s
+        &:hover
+            background-color: #b41330
+        &:before
+            content: ''
+            width: 4px
+            position: absolute
+            top: 10px
+            bottom: 10px
+            left: 50%
+            margin-left: -2px
+            background-color: #fff
+        &:after
+            content: ''
+            height: 4px
+            position: absolute
+            left: 10px
+            right: 10px
+            top: 50%
+            margin-top: -2px
+            background-color: #fff
+
+.mobile-menu-nav
+    &__link
+        background-color: $main-blue
+        color: #fff
+        font-family: RobotoRegular
+        font-size: 16px
+        text-transform: uppercase
+        padding: 10px
+        margin-bottom: 1px
+        display: block
+        width: 100%
+        text-decoration: none
+        transition: all .5s ease 0s
+        &:hover
+            background-color: #023e7b
+
+@media screen and (max-width: 1500px)
+    .fullscreen-preview
+        &__title
+            padding: 20px
+            position: static
+            background-image: none
+            left: 0
+            transform: none
+
+    .fullscreen-preview-item
+        &__footer
+            padding: 5px
+            font-size: 16px
+
+@media screen and (max-width: 991px)
+    .header-logo
+        &__text
+            font-size: 16px
+
+    .site-header
+        &__nav
+            display: none
+
+    .header
+        flex-wrap: wrap
+        &__mob-menu-button
+            display: flex
+        &__phone
+            width: 100%
+            display: flex
+            justify-content: center
+            margin-top: 15px
+            background-color: #efefef
+            padding: 10px 0
+            position: relative
+
+    .feedback
+        &__header
+            flex-wrap: wrap
+        &__header-section
+            width: 100%
+            margin-bottom: 15px
+            &:last-child
+                margin-bottom: 0
+    .section-product
+        &__title
+            font-size: 30px
+        &__preview
+            width: 42%
+        &__content
+            width: 45%
+
+    .info-list
+        &__item-content
+            font-size: 16px
+        &__item-special-text
+            font-size: 18px
+
+    .infographic-horizontally
+        &__item-text
+            font-size: 16px
+
+    .fullscreen-preview-list
+        &__item
+            width: 50%
+
+    .index-certificate-bl
+        &__text
+            font-size: 16px
+
+
+@media screen and (max-width: 767px)
+    .header-info-main__text
+        font-size: 14px
+
+    .header-logo__icon
+        max-width: 200px
+        min-width: 200px
+
+    .mobile-menu
+        &__address
+            display: block
+
+    .header
+        &__logo
+            width: 80%
+        &__address
+            display: none
+    .contact-download-bl
+        flex-wrap: wrap
+        &__content
+            width: 100%
+            padding-right: 0
+            margin-bottom: 15px
+
+    .contacts-table
+        &__item
+            width: 100%
+
+    .contacts-table-item
+        &__title
+            font-size: 18px
+
+    .map-section
+        &__map
+            height: 350px
+
+    .section-scheme
+        &__list
+            width: 52%
+    .product
+        &__download-item
+            padding: 10px
+            width: 250px
+
+    .download-button
+        &__icon
+            max-width: 35px
+        &__text
+            font-size: 16px
+
+    .table-header
+        padding-right: 45px
+        &__title
+            font-size: 18px
+
+
+    .table-vertically
+        &__row
+            display: block
+            padding: 20px
+        &__td
+            padding: 5px
+            width: 100%
+
+
+    .table-horizontally
+        &__row
+            display: block
+            padding: 20px
+        &__td
+            padding: 5px
+            width: 100%
+            &:last-child, &:first-child
+                width: 100%
+
+    .consultation-descr
+        font-size: 16px
+        &__phone-icon
+            max-width: 35px
+        &__phone-value
+            font-size: 24px
+
+    .feedback
+        &__header-icon
+            max-width: 35px
+
+    .consultation-section
+        &__content
+            flex-wrap: wrap
+        &__section
+            width: 100%
+            margin-bottom: 20px
+            &:last-child
+                margin-bottom: 0
+    .gradient-title
+        &__text
+            font-size: 35px
+
+    .full3image
+        min-height: auto
+        &__title
+            max-width: 80%
+
+    .index-certificate-bl
+        &__content
+            width: 100%
+            margin-bottom: 20px
+        &__images
+            width: 100%
+            justify-content: space-evenly
+        &__image
+            max-width: 300px
+            margin: 0 10px
+            width: auto
+    .fullscreen-preview-item
+        &__footer
+            font-size: 14px
+    .infographic-vertically
+        &__item
+            width: 50%
+    .section
+        &__title
+            margin-bottom: 25px
+        &_our-adv
+            padding: 30px 0
+        &_product
+            padding: 30px 0
+        &_index-certificate
+            padding: 30px 0
+        &_advantages-text
+            padding: 30px 0
+        &_product-certificate
+            padding: 30px 0
+            .index-certificate-bl__content
+                display: flex
+                justify-content: center
+        &_usual-content
+            padding: 10px 0 30px
+
+    .page-title
+        font-size: 24px
+        margin-bottom: 20px
+
+    .consultation-section
+        padding: 30px 0
+
+
+    .info-grid
+        &__item
+            width: 100%
+
+    .small-info-item
+        &__icon
+            max-width: 35px
+
+    .advantages-text-bl
+        flex-wrap: wrap
+        &__lighter
+            width: 100%
+            margin-bottom: 20px
+        &__less
+            width: 100%
+
+    .adv-lighter
+        padding-bottom: 0
+        &__footer
+            position: static
+        &__main
+            font-size: 70px
+
+    .adv-less
+        padding-top: 0
+        padding-left: 80px
+        &__footer
+            margin-left: 0
+
+    .infographic-horizontally
+        &__item-icon
+            margin-right: 10px
+        &__item-text
+            padding-left: 10px
+            br
+                display: none
+
+    .section-product
+        flex-wrap: wrap
+        &__preview
+            width: 100%
+            order: 1
+            text-align: center
+        &__content
+            width: 100%
+            order: 0
+            margin-bottom: 29px
+        &__img
+            max-width: 270px
+            margin: 0 auto
+
+    .info-list
+        padding-left: 35px
+
+    .calculation-heatexchanger
+        &__section
+            width: 100%
+            margin-bottom: 20px
+            &:last-child
+                margin-bottom: 0
+
+    .warning-list
+        &__item
+            margin-bottom: 10px
+
+    .warning-item
+        padding: 10px
+        border: 4px solid $main-red
+
+
+@media screen and (max-width: 500px)
+    .header__logo
+        width: auto
+
+    .header-info
+        flex-wrap: wrap
+        &__main
+            width: 100%
+            margin-bottom: 15px
+        &__ask
+            width: 100%
+
+    .header-phone__feedback
+        right: auto
+        left: 50%
+        margin-left: -160px
+
+    .site-header__info
+        display: none
+
+    .mobile-menu__info
+        display: block
+
+    .header-logo__text
+        display: none
+
+    .map-section
+        &__map
+            height: 300px
+        &__title
+            top: 0
+
+    .section-scheme
+        justify-content: center
+        &__image
+            width: auto
+            max-width: 300px
+            margin-bottom: 20px
+        &__list
+            width: 100%
+            text-align: center
+
+
+    .last-section
+        flex-wrap: wrap
+        text-align: center
+        justify-content: center
+        &__copy
+            width: 100%
+            margin-right: 0
+            margin-bottom: 10px
+        &__iin
+            width: 100%
+            margin-right: 0
+            margin-bottom: 10px
+    .feedback-form
+        &__line
+            flex-wrap: wrap
+        &__input
+            margin-bottom: 20px
+            margin-right: 0
+    .download-button
+        &__icon
+            max-width: 35px
+        &__text
+            font-size: 16px
+
+    .warning-item
+        &__icon
+            max-width: 35px
+        &__content
+            font-size: 16px
+
+    .advantages-text-bl__lighter
+        margin-bottom: 10px
+    .adv-lighter
+        padding: 0
+        &__icon
+            top: 0
+            width: 50px
+        &__header
+            padding-left: 60px
+            min-height: 50px
+            margin-bottom: 10px
+            font-size: 20px
+        &__main
+            font-size: 50px
+        &__footer
+            font-size: 20px
+
+    .adv-less
+        padding-left: 0
+        &__main
+            font-size: 50px
+            &:after
+                width: 30px
+        &__additional
+            font-size: 24px
+
+    .full3image
+        &__title
+            padding: 10px
+
+    .gradient-title
+        &__text
+            font-size: 24px
+
+    .section-title
+        &__text
+            font-size: 24px
+
+    .fullscreen-preview-list
+        &__item
+            width: 100%
+
+    .infographic-vertically
+        &__item
+            width: 100%
+    .section-product
+        &__title
+            font-size: 24px
+    .info-list
+        padding-left: 30px
+
+    .infographic-horizontally
+        &__item
+            width: 100%
+            flex-wrap: wrap
+            justify-content: center
+            margin-bottom: 20px
+            &:last-child
+                margin-bottom: 0
+        &__item-icon
+            margin-right: 0
+            margin-bottom: 10px
+        &__item-text
+            padding: 15px 0 0
+            width: 100%
+            text-align: center
+            &:before
+                content: ''
+                width: 28px
+                height: 3px
+                top: 0
+                left: 50%
+                margin-left: -14px

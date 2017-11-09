@@ -16,30 +16,61 @@
               <div class="header-info">
                 <div class="header-info__main header-info-main"><img class="header-info-main__icon" src="./images/svg/icon-i.svg">
                   <div class="header-info-main__text">Производство и поставка теплообменного оборудования</div>
-                </div><a class="header-info__ask header-info-ask" href="#">
-                  <div class="header-info-ask__icon"></div>
+                </div><a class="header-info__ask header-info-ask" href="#"><img class="header-info-ask__icon" src="./images/svg/icon-ask.svg">
                   <div class="header-info-ask__text">Задать вопрос</div></a>
               </div>
             </div>
           </div>
           <div class="site-header__main">
             <div class="container">
-              <div class="header">
-                <div class="header__logo header-logo"><img class="header-logo__icon" src="./images/svg/icon-logo.svg">
-                  <div class="header-logo__text">Cборочное производство FUNKE в Воронеже</div>
-                </div>
+              <div class="header"><a class="header__logo header-logo" href="#"><img class="header-logo__icon" src="./images/svg/icon-logo.svg">
+                  <div class="header-logo__text">Cборочное производство FUNKE в Воронеже</div></a>
                 <div class="header__address header-address"><img class="header-address__icon" src="./images/svg/icon-metka.svg">
                   <div class="header-address__text">Воронеж <br/> проезд Монтажный, д. 3</div>
                 </div>
-                <div class="header__phone">8 (473) 212 ...</div>
+                <div class="header__mob-menu-button">
+                  <div class="mob-menu-button js-mobile-menu-open"><img class="mob-menu-button__icon" src="./images/svg/icon-hamburger.svg"></div>
+                </div>
+                <div class="header__phone">
+                  <div class="header-phone">
+                    <div class="header-phone__text">8 (473) 212 ...</div><img class="header-phone__icon" src="./images/svg/icon-phone.svg">
+                    <div class="header-phone__overlay"></div>
+                    <div class="header-phone__feedback feedback-popup">
+                      <div class="feedback-popup__close"></div>
+                      <div class="feedback-popup__title">Оставьте заявку</div>
+                      <div class="feedback-popup__subtitle">Получите расчет <br/> стоимости работ бесплатно</div>
+                      <form class="feedback-popup__form feedback-popup-form">
+                        <div class="feedback-popup-form__line">
+                          <div class="feedback-popup-form__line-title">Ваше имя</div>
+                          <div class="feedback-popup-form__line-content">
+                            <input class="st-input" type="text">
+                          </div>
+                        </div>
+                        <div class="feedback-popup-form__line">
+                          <div class="feedback-popup-form__line-title">Ваш телефон</div>
+                          <div class="feedback-popup-form__line-content">
+                            <input class="st-input js-inputmask-phone" type="text" placeholder="+7 (___) ___-__-__">
+                            <p class="feedback-popup-form__descr">* Мы свяжемся с Вами по этому телефону  для консультации или составления сметы</p>
+                          </div>
+                        </div>
+                        <div class="feedback-popup-form__button">
+                          <button class="st-red-button">Расчет стоимости</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
           <div class="site-header__nav">
             <div class="container">
               <div class="main-nav">
-                <div class="main-nav__hamburger"></div>
-                <div class="main-nav__list main-nav-list"><a class="main-nav-list__link" href="#">Продукция</a><a class="main-nav-list__link" href="#">Ремонт и обслуживание</a><a class="main-nav-list__link" href="#">Пластины и уплотнения</a><a class="main-nav-list__link" href="#">O компании</a><a class="main-nav-list__link" href="#">Контакты</a></div>
+                <div class="main-nav__drop-menu nav-drop-menu">
+                  <div class="nav-drop-menu__button"><img class="nav-drop-menu__icon" src="./images/svg/icon-hamburger.svg"></div>
+                  <nav class="nav-drop-menu__content dropdown-menu"><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a></nav>
+                </div>
+                <nav class="main-nav__list main-nav-list"><a class="main-nav-list__link" href="#">Продукция</a><a class="main-nav-list__link" href="#">Ремонт и обслуживание</a><a class="main-nav-list__link" href="#">Пластины и уплотнения</a><a class="main-nav-list__link" href="#">O компании</a><a class="main-nav-list__link" href="#">Контакты</a></nav><a class="main-nav__calculation" href="#">Расчет  теплообменника</a>
               </div>
             </div>
           </div>
@@ -194,7 +225,7 @@
                 <div class="adv-lighter__main">в 10 раз легче</div>
                 <div class="adv-lighter__footer">При той же мощности</div>
               </div>
-              <div class="advantages-text-bl__less adv-less"><img class="adv-less__icon">
+              <div class="advantages-text-bl__less adv-less">
                 <div class="adv-less__main">в 6  раз</div>
                 <div class="adv-less__footer">
                   <div class="adv-less__additional">меньше</div>
@@ -317,6 +348,24 @@
           </div>
         </section>
       </footer>
+      <div class="site-wrapper__mobile-menu mobile-menu">
+        <div class="mobile-menu__close"></div>
+        <nav class="mobile-menu__nav mobile-menu-nav"><a class="mobile-menu-nav__link" href="#">Продукция</a><a class="mobile-menu-nav__link" href="#">Ремонт и обслуживание</a><a class="mobile-menu-nav__link" href="#">Пластины и уплотнения</a><a class="mobile-menu-nav__link" href="#">O компании</a><a class="mobile-menu-nav__link" href="#">Контакты</a></nav>
+        <div class="mobile-menu__info">
+          <div class="header-info">
+            <div class="header-info__main header-info-main"><img class="header-info-main__icon" src="./images/svg/icon-i.svg">
+              <div class="header-info-main__text">Производство и поставка теплообменного оборудования</div>
+            </div><a class="header-info__ask header-info-ask" href="#"><img class="header-info-ask__icon" src="./images/svg/icon-ask.svg">
+              <div class="header-info-ask__text">Задать вопрос</div></a>
+          </div>
+        </div>
+        <div class="mobile-menu__address">
+          <div class="header-address"><img class="header-address__icon" src="./images/svg/icon-metka.svg">
+            <div class="header-address__text">Воронеж <br/> проезд Монтажный, д. 3</div>
+          </div>
+        </div>
+      </div>
+      <div class="site-wrapper__overlay"></div>
     </div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https:api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>

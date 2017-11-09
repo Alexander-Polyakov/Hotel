@@ -41,15 +41,15 @@ html
                                                     p сб вс
                                                     p выходной
                                     .info-grid__item.small-info-item
-                                        img(src='./images/svg/icon-marker.svg').small-info-item__icon
+                                        img(src='./images/svg/icon-call.svg').small-info-item__icon
                                         .small-info-item__content
                                             .small-info-item__title 8 (473) 212-12-05
                                     .info-grid__item.small-info-item
-                                        img(src='./images/svg/icon-time.svg').small-info-item__icon
+                                        img(src='./images/svg/icon-call.svg').small-info-item__icon
                                         .small-info-item__content
                                             .small-info-item__title 8 (473) 251-64-96
                                     .info-grid__item.small-info-item
-                                        img(src='./images/svg/icon-time.svg').small-info-item__icon
+                                        img(src='./images/svg/icon-letter.svg').small-info-item__icon
                                         .small-info-item__content
                                             .small-info-item__title.small-info-item__title_mail info@funke.com
 
@@ -61,11 +61,12 @@ html
                                 .contacts-table__item
                                     .contacts-table-item__header
                                         .contacts-table-item__title ЮрИДИЧЕСКИЙ адрес:
-                                    .contacts-table-item__content г. Воронеж,
-                                        |  проезд Монтажный, д. 3
-                                        .contacts-table__download
-                                            img().contacts-table__download-icon
-                                            .contacts-table__download-text Скачать
+                                    .contacts-table-item__content.contact-download-bl
+                                        .contact-download-bl__content г. Воронеж, <br/> проезд Монтажный, д. 3
+                                        .contact-download-bl__download
+                                            a(href="#").download-print
+                                                img(src='./images/svg/icon-print.svg').download-print__icon
+                                                .download-print__text Скачать
 
                 section.section.section_map
                     .map-section

@@ -23,5 +23,23 @@ ymaps.ready(function () {
 $(document).ready(function() {
     $('.js-inputmask-phone').mask("+7 (999) 999-99-99");
 
+    $(".header-phone__icon").click(function(){
+        $('.header-phone').addClass("opened");
+    });
+
+    $(".feedback-popup__close, .header-phone__overlay").click(function(){
+        $('.header-phone').removeClass("opened");
+    });
+
+    $(".js-mobile-menu-open").click(function(){
+       $(".site-wrapper__mobile-menu").addClass('opened');
+       $(".site-wrapper__overlay").fadeIn(400);
+    });
+
+
+    $(".site-wrapper__overlay, .mobile-menu__close").click(function(){
+        $(".site-wrapper__mobile-menu").removeClass('opened');
+        $(".site-wrapper__overlay").fadeOut(400);
+    });
 
 });
