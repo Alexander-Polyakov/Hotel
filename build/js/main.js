@@ -17,13 +17,12 @@ ymaps.ready(function () {
 
 
     myMap.geoObjects.add(myPlacemark);
-
 });
 
 $(document).ready(function() {
     $('.js-inputmask-phone').mask("+7 (999) 999-99-99");
 
-    $(".header-phone__icon").click(function(){
+    $(".header-phone__button").click(function(){
         $('.header-phone').addClass("opened");
     });
 

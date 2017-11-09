@@ -20,15 +20,16 @@
                     img(src='./images/svg/icon-metka.svg').header-address__icon
                     .header-address__text Воронеж <br/> проезд Монтажный, д. 3
                 .header__mob-menu-button
-                    .mob-menu-button.js-mobile-menu-open
+                    button.mob-menu-button.js-mobile-menu-open
                         img(src='./images/svg/icon-hamburger.svg').mob-menu-button__icon
                 .header__phone
                     .header-phone
                         .header-phone__text 8 (473) 212 ...
-                        img(src='./images/svg/icon-phone.svg').header-phone__icon
+                        button.header-phone__button
+                            img(src='./images/svg/icon-phone.svg').header-phone__icon
                         .header-phone__overlay
                         .header-phone__feedback.feedback-popup
-                            .feedback-popup__close
+                            button.feedback-popup__close
                             .feedback-popup__title Оставьте заявку
                             .feedback-popup__subtitle Получите расчет <br/> стоимости работ бесплатно
                             form.feedback-popup__form.feedback-popup-form

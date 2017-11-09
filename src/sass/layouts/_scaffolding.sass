@@ -103,6 +103,8 @@ body
     position: relative
     cursor: pointer
     transition: all 0.5s ease 0s
+    border: none
+    outline: none
     &:hover
         background-color: #b41330
     &__icon
@@ -256,6 +258,12 @@ body
     display: flex
     align-items: center
     position: relative
+    &__button
+        font-size: 0
+        outline: none
+        background-color: transparent
+        border: none
+        cursor: pointer
     &__text
         font-size: 27px
         color: $main-blue
@@ -265,7 +273,6 @@ body
         height: 25px
         background-color: $main-red
         border-radius: 50%
-        cursor: pointer
     &__feedback
         position: absolute
         right: -5px
@@ -307,6 +314,8 @@ body
         background-color: $main-red
         transform: rotate(45deg)
         transition: all 0.5s ease 0s
+        outline: none
+        border: none
         &:hover
             background-color: #d70027
         &:before
@@ -1301,6 +1310,8 @@ body
         background-color: $main-red
         border-radius: 50%
         transition: all 0.5s ease 0s
+        outline: none
+        border: none
         &:hover
             background-color: #b41330
         &:before
