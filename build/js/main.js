@@ -33,7 +33,7 @@ $(document).ready(function() {
         e.preventDefault();
         var thisBl = $(this).closest('.js-mobile-menu');
 
-        thisBl.addClass("opened");
+        thisBl.toggleClass("opened");
         thisBl.find(".js-mobile-menu-dropdown").stop().slideToggle(400);
     });
 
