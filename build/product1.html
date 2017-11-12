@@ -67,11 +67,16 @@
           <div class="site-header__nav">
             <div class="container">
               <div class="main-nav">
-                <div class="main-nav__drop-menu nav-drop-menu">
-                  <div class="nav-drop-menu__button"><img class="nav-drop-menu__icon" src="./images/svg/icon-hamburger.svg"></div>
-                  <nav class="nav-drop-menu__content dropdown-menu"><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a></nav>
-                </div>
-                <nav class="main-nav__list main-nav-list"><a class="main-nav-list__link" href="#">Продукция</a><a class="main-nav-list__link" href="#">Ремонт и обслуживание</a><a class="main-nav-list__link" href="#">Пластины и уплотнения</a><a class="main-nav-list__link" href="#">O компании</a><a class="main-nav-list__link" href="#">Контакты</a></nav><a class="main-nav__calculation" href="#">Расчет  теплообменника</a>
+                <ul class="main-nav__list main-nav-list">
+                  <li class="main-nav-list__item nav-item">
+                    <div class="nav-item__link"><img class="nav-item__hamburger" src="./images/svg/icon-hamburger.svg">Продукция</div>
+                    <div class="nav-item__dropdown dropdown-menu"><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a></div>
+                  </li>
+                  <li class="main-nav-list__item nav-item"><a class="nav-item__link" href="#">Ремонт и обслуживани</a></li>
+                  <li class="main-nav-list__item nav-item"><a class="nav-item__link" href="#">Пластины и уплотнения</a></li>
+                  <li class="main-nav-list__item nav-item"><a class="nav-item__link" href="#">O компании</a></li>
+                  <li class="main-nav-list__item nav-item"><a class="nav-item__link" href="#">Контакты</a></li>
+                </ul><a class="main-nav__calculation" href="#">Расчет  теплообменника</a>
               </div>
             </div>
           </div>
@@ -201,7 +206,7 @@
         </section>
         <section class="section">
           <div class="container">
-            <div class="info-grid">
+            <div class="info-grid info-grid_wrapper700px">
               <div class="info-grid__item small-info-item"><img class="small-info-item__icon" src="./images/svg/icon-marker.svg">
                 <div class="small-info-item__content">
                   <div class="small-info-item__title">КОНТАКТЫ</div>
@@ -237,7 +242,16 @@
       </footer>
       <div class="site-wrapper__mobile-menu mobile-menu">
         <button class="mobile-menu__close"></button>
-        <nav class="mobile-menu__nav mobile-menu-nav"><a class="mobile-menu-nav__link" href="#">Продукция</a><a class="mobile-menu-nav__link" href="#">Ремонт и обслуживание</a><a class="mobile-menu-nav__link" href="#">Пластины и уплотнения</a><a class="mobile-menu-nav__link" href="#">O компании</a><a class="mobile-menu-nav__link" href="#">Контакты</a></nav>
+        <ul class="mobile-menu__nav main-nav-list">
+          <li class="main-nav-list__item nav-item js-mobile-menu">
+            <div class="nav-item__link js-mobile-menu-btn">Продукция</div>
+            <nav class="nav-item__dropdown dropdown-menu js-mobile-menu-dropdown"><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a></nav>
+          </li>
+          <li class="main-nav-list__item nav-item"><a class="nav-item__link" href="#">Ремонт и обслуживани</a></li>
+          <li class="main-nav-list__item nav-item"><a class="nav-item__link" href="#">Пластины и уплотнения</a></li>
+          <li class="main-nav-list__item nav-item"><a class="nav-item__link" href="#">O компании</a></li>
+          <li class="main-nav-list__item nav-item"><a class="nav-item__link" href="#">Контакты</a></li>
+        </ul>
         <div class="mobile-menu__info">
           <div class="header-info">
             <div class="header-info__main header-info-main"><img class="header-info-main__icon" src="./images/svg/icon-i.svg">
@@ -253,9 +267,11 @@
         </div>
       </div>
       <div class="site-wrapper__overlay"></div>
+      <div class="full-image js-full-image">
+        <div class="full-image__close js-full-image-close"></div><img class="full-image__image" src="">
+      </div>
     </div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <script src="js/vendors.js"></script>
     <script src="js/main.js"></script>
   </body>

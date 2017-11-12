@@ -33,7 +33,7 @@ footer.footer
 
     section.section
         .container
-            .info-grid
+            .info-grid.info-grid_wrapper700px
                 .info-grid__item.small-info-item
                     img(src='./images/svg/icon-marker.svg').small-info-item__icon
                     .small-info-item__content
@@ -61,12 +61,22 @@ footer.footer
 
 .site-wrapper__mobile-menu.mobile-menu
     button.mobile-menu__close
-    nav.mobile-menu__nav.mobile-menu-nav
-        a(href="#").mobile-menu-nav__link Продукция
-        a(href="#").mobile-menu-nav__link Ремонт и обслуживание
-        a(href="#").mobile-menu-nav__link Пластины и уплотнения
-        a(href="#").mobile-menu-nav__link O компании
-        a(href="#").mobile-menu-nav__link Контакты
+    ul.mobile-menu__nav.main-nav-list
+        li.main-nav-list__item.nav-item.js-mobile-menu
+            .nav-item__link.js-mobile-menu-btn Продукция
+            nav.nav-item__dropdown.dropdown-menu.js-mobile-menu-dropdown
+                a(href="#").dropdown-menu__link подраздел
+                a(href="#").dropdown-menu__link подраздел
+                a(href="#").dropdown-menu__link подраздел
+                a(href="#").dropdown-menu__link подраздел
+        li.main-nav-list__item.nav-item
+            a(href="#").nav-item__link Ремонт и обслуживани
+        li.main-nav-list__item.nav-item
+            a(href="#").nav-item__link Пластины и уплотнения
+        li.main-nav-list__item.nav-item
+            a(href="#").nav-item__link O компании
+        li.main-nav-list__item.nav-item
+            a(href="#").nav-item__link Контакты
     .mobile-menu__info
         .header-info
             .header-info__main.header-info-main
@@ -82,3 +92,7 @@ footer.footer
             .header-address__text Воронеж <br/> проезд Монтажный, д. 3
 
 .site-wrapper__overlay
+
+.full-image.js-full-image
+    .full-image__close.js-full-image-close
+    img(src='').full-image__image

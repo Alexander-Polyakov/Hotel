@@ -1,24 +1,3 @@
-ymaps.ready(function () {
-    var center = [51.65099076275837,39.28873186441802];
-    var myMap = new ymaps.Map('map', {
-        center: center,
-        zoom: 15,
-        controls: ['zoomControl']
-    });
-    myMap.behaviors.disable('scrollZoom');
-
-    myPlacemark = new ymaps.Placemark(myMap.getCenter(), {
-
-    }, {
-        iconLayout: 'default#image',
-        iconImageHref: '../images/svg/icon-metka.svg',
-        iconImageSize: [35, 50]
-    });
-
-
-    myMap.geoObjects.add(myPlacemark);
-});
-
 $(document).ready(function() {
     $('.js-inputmask-phone').mask("+7 (999) 999-99-99");
 
@@ -39,6 +18,27 @@ $(document).ready(function() {
     $(".site-wrapper__overlay, .mobile-menu__close").click(function(){
         $(".site-wrapper__mobile-menu").removeClass('opened');
         $(".site-wrapper__overlay").fadeOut(400);
+    });
+
+
+    $(".js-full-image-open").click(function(){
+        var fullImgSrc = $(this).data('full-image-src'),
+            fullImgBl = $('.js-full-image');
+
+        fullImgBl.addClass("opened");
+        fullImgBl.find('.full-image__image').attr('src', fullImgSrc );
+    });
+
+    $(".js-mobile-menu-btn").click(function(e){
+        e.preventDefault();
+        var thisBl = $(this).closest('.js-mobile-menu');
+
+        thisBl.addClass("opened");
+        thisBl.find(".js-mobile-menu-dropdown").stop().slideToggle(400);
+    });
+
+    $(".js-full-image-close").click(function(){
+        $(".js-full-image").removeClass('opened');
     });
 
 });

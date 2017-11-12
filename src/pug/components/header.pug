@@ -49,23 +49,24 @@
     .site-header__nav
         .container
             .main-nav
-                .main-nav__drop-menu.nav-drop-menu
-                    .nav-drop-menu__button
-                        img(src='./images/svg/icon-hamburger.svg').nav-drop-menu__icon
-                    nav.nav-drop-menu__content.dropdown-menu
-                        a(href="#").dropdown-menu__link подраздел
-                        a(href="#").dropdown-menu__link подраздел
-                        a(href="#").dropdown-menu__link подраздел
-                        a(href="#").dropdown-menu__link подраздел
-                nav.main-nav__list.main-nav-list
-                    a(href="#").main-nav-list__link Продукция
-                    a(href="#").main-nav-list__link Ремонт и обслуживание
-                    a(href="#").main-nav-list__link Пластины и уплотнения
-                    a(href="#").main-nav-list__link O компании
-                    a(href="#").main-nav-list__link Контакты
+                ul.main-nav__list.main-nav-list
+                    li.main-nav-list__item.nav-item
+                        .nav-item__link
+                            img(src='./images/svg/icon-hamburger.svg').nav-item__hamburger
+                            | Продукция
+                        .nav-item__dropdown.dropdown-menu
+                            a(href="#").dropdown-menu__link подраздел
+                            a(href="#").dropdown-menu__link подраздел
+                            a(href="#").dropdown-menu__link подраздел
+                            a(href="#").dropdown-menu__link подраздел
+                    li.main-nav-list__item.nav-item
+                        a(href="#").nav-item__link Ремонт и обслуживани
+                    li.main-nav-list__item.nav-item
+                        a(href="#").nav-item__link Пластины и уплотнения
+                    li.main-nav-list__item.nav-item
+                        a(href="#").nav-item__link O компании
+                    li.main-nav-list__item.nav-item
+                        a(href="#").nav-item__link Контакты
                 a(href='#').main-nav__calculation Расчет  теплообменника
-
-
-
 
 

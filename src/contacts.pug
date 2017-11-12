@@ -53,20 +53,17 @@ html
                                         .small-info-item__content
                                             .small-info-item__title.small-info-item__title_mail info@funke.com
 
-                            .contacts__table.contacts-table
-                                .contacts-table__item.contacts-table-item
-                                    .contacts-table-item__header
-                                        .contacts-table-item__title Реквизиты компании:
-                                    .contacts-table-item__content ООО  "РосТехЭнерго-Воронеж» <br/> ИНН 366218821309 <br/> ОГРН 312366808900023
-                                .contacts-table__item
-                                    .contacts-table-item__header
-                                        .contacts-table-item__title ЮрИДИЧЕСКИЙ адрес:
-                                    .contacts-table-item__content.contact-download-bl
-                                        .contact-download-bl__content г. Воронеж, <br/> проезд Монтажный, д. 3
-                                        .contact-download-bl__download
+                            .contacts__table.table
+                                .table__header.table-header
+                                    .table-header__title Реквизиты компании:
+                                .table__content.pb0
+                                    .contacts-table
+                                        .contacts-table__td ООО  "РосТехЭнерго-Воронеж» <br/> ИНН 366218821309 <br/> ОГРН 312366808900023
+                                        .contacts-table__td
                                             a(href="#").download-print
                                                 img(src='./images/svg/icon-print.svg').download-print__icon
-                                                .download-print__text Скачать
+                                                p.download-print__text Скачать
+
 
                 section.section.section_map
                     .map-section
@@ -89,5 +86,6 @@ html
 
 
 
-
+        script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
+        script(src="js/ymap.js")
         include pug/scripts.pug

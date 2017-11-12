@@ -40,6 +40,10 @@ body
     font-family: $rr
     font-size: 16px
 
+
+.js-full-image-open
+    cursor: pointer
+
 .site-wrapper
     min-width: 320px
     overflow-x: hidden
@@ -53,6 +57,7 @@ body
         background-color: #fff
         width: 300px
         transition: all 0.3s ease 0s
+        overflow-x: hidden
         &.opened
             left: 0
     &__overlay
@@ -77,8 +82,10 @@ body
     align-items: center
     text-decoration: none
     max-width: 330px
+    color: $main-blue
+    transition: all 0.5s ease 0s
     &:hover
-        text-decoration: underline
+        color: $main-red
     &__icon
         max-width: 45px
         margin-right: 10px
@@ -86,7 +93,6 @@ body
         font-size: 18px
         font-family: $rb
         text-transform: uppercase
-        color: $main-blue
         letter-spacing: -0.2px
 
 .blue-link
@@ -116,52 +122,6 @@ body
         margin-top: -11px
         position: absolute
 
-
-.nav-drop-menu
-    position: relative
-    &__content
-        width: 220px
-        pointer-events: none
-        position: absolute
-        top: 100%
-        left: 0
-        opacity: 0
-        transition: all 0.5s ease 0s
-    &__button
-        height: 100%
-        width: 42px
-        position: relative
-        transition: all 0.5s ease 0s
-    &__icon
-        width: 24px
-        height: 24px
-        position: absolute
-        left: 50%
-        top: 50%
-        margin-top: -12px
-        margin-left: -12px
-    &:hover
-        .nav-drop-menu__button
-            background-color: $main-red
-        .nav-drop-menu__content
-            pointer-events: auto
-            opacity: 1
-
-.dropdown-menu
-    .dropdown-menu__link
-        background-color: $main-red
-        color: #fff
-        font-family: $rr
-        font-size: 16px
-        text-transform: uppercase
-        padding: 10px
-        margin-bottom: 1px
-        display: block
-        width: 100%
-        text-decoration: none
-        transition: all 0.5s ease 0s
-        &:hover
-            background-color: #b41330
 
 .proportion-bl
     position: relative
@@ -457,7 +417,6 @@ body
     height: 45px
     &__list
         flex-grow: 1
-        padding: 0 5px
         height: 100%
     &__calculation
         height: 100%
@@ -473,17 +432,21 @@ body
         letter-spacing: -1px
         &:hover
             background-color: #b41330
-    &__drop-menu
-        height: 100%
 
-.main-nav-list
-    display: flex
-    justify-content: space-between
-    font-size: 17px
-    font-family: $rcr
-    align-items: center
+.nav-item
+    position: relative
+    cursor: default
+    &__dropdown
+        min-width: 220px
+        max-width: 350px
+        pointer-events: none
+        position: absolute
+        top: 100%
+        left: 0
+        opacity: 0
+        transition: all 0.5s ease 0s
+        z-index: 100
     &__link
-        color: #fff
         height: 100%
         text-decoration: none
         display: flex
@@ -493,9 +456,51 @@ body
         align-items: center
         text-align: center
         transition: all 0.5s ease 0s
-        &:hover
+        color: #fff
+        position: relative
+        background-color: $main-blue
+    &__hamburger
+        width: 24px
+        height: 24px
+        margin-right: 10px
+    &:hover
+        .nav-item__link
             background-color: $main-red
+        .nav-item__dropdown
+            opacity: 1
+            pointer-events: auto
 
+
+.dropdown-menu
+    &__link
+        background-color: $main-red
+        color: #fff
+        font-family: $rr
+        font-size: 16px
+        text-transform: uppercase
+        padding: 10px
+        margin-bottom: 1px
+        display: block
+        width: 100%
+        text-decoration: none
+        transition: all 0.5s ease 0s
+        &:hover
+            background-color: #b41330
+
+
+.main-nav-list
+    display: flex
+    justify-content: space-between
+    font-size: 17px
+    font-family: $rcr
+    align-items: center
+    list-style: none
+    padding-right: 10px
+    &__item
+        display: flex
+        text-align: center
+        justify-content: center
+        height: 100%
 
 
 .section-product
@@ -556,6 +561,7 @@ body
         color: $main-blue
         line-height: 1em
         letter-spacing: 0
+        margin-bottom: 10px
 
 .infographic-horizontally
     display: flex
@@ -657,6 +663,21 @@ body
 
 .fullscreen-preview-item
     position: relative
+    &:hover
+        &:before
+            opacity: 0.3
+    &:before
+        content: ''
+        width: 100%
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        z-index: 100
+        background: #000
+        opacity: 0
+        transition: all 0.5s ease 0s
     &__size
         margin-top: 75%
     &__image
@@ -675,7 +696,7 @@ body
         bottom: 0
         padding: 3%
         display: flex
-        z-index: 100
+        z-index: 150
         align-items: center
         text-align: center
         justify-content: center
@@ -1015,15 +1036,16 @@ body
     color: #7a7a7a
     display: flex
     font-family: $rr
-    &__copy
-        margin-right: 100px
+    justify-content: space-between
     &__iin
-        margin-right: 100px
+        padding: 0 10px
     &__dev
         color: #7a7a7a
         text-decoration: underline
         &:hover
             text-decoration: none
+
+
 
 
 //  INDEX FINISH  //
@@ -1044,6 +1066,8 @@ body
     &__content
         padding-bottom: 40px
         background-color: #f9f9f9
+        &.pb0
+            padding-bottom: 0
 
 .table-header
     background-color: $main-blue
@@ -1202,43 +1226,24 @@ body
 .contacts-table
     display: flex
     justify-content: space-between
-    background-color: #f9f9f9
     flex-wrap: wrap
-    &__item
-        width: 50%
-
-.contacts-table-item
-    &__header
+    align-items: center
+    &__td
         padding: 20px
-        position: relative
-        background-color: $main-blue
-        &:before
-            content: ''
-            width: 28px
-            height: 3px
-            position: absolute
-            left: 20px
-            top: 0
-            background-color: $main-red
-    &__title
-        font-family: $rcr
-        font-size: 21px
-        color: #fff
-        text-transform: uppercase
-    &__content
-        padding: 25px 20px
 
 
 .download-print
     text-align: center
     display: inline-block
+    text-decoration: underline
     &__icon
         max-width: 115px
         margin-bottom: 5px
     &__text
         font-size: 16px
-        text-decoration: underline
         color: $main-blue
+    &:hover
+        text-decoration: none
 
 .download-print:hover
     .download-print__text
@@ -1300,8 +1305,8 @@ body
         display: none
         margin-bottom: 15px
     &__close
-        right: 5px
-        top: 5px
+        right: 10px
+        top: 10px
         width: 40px
         height: 40px
         position: absolute
@@ -1333,21 +1338,63 @@ body
             margin-top: -2px
             background-color: #fff
 
-.mobile-menu-nav
-    &__link
-        background-color: $main-blue
-        color: #fff
-        font-family: RobotoRegular
-        font-size: 16px
-        text-transform: uppercase
-        padding: 10px
-        margin-bottom: 1px
-        display: block
-        width: 100%
-        text-decoration: none
-        transition: all .5s ease 0s
+
+
+
+
+
+
+.full-image
+    position: fixed
+    height: 100vh
+    width: 100vw
+    z-index: 1500
+    left: 0
+    top: 0
+    background: rgba(0,0,0,0.8)
+    opacity: 0
+    transition: opacity 0.5s ease 0s
+    pointer-events: none
+    display: flex
+    justify-content: center
+    align-items: center
+    &__close
+        position: absolute
+        width: 30px
+        height: 30px
+        right: 40px
+        top: 20px
+        transform: rotate(45deg)
+        cursor: pointer
         &:hover
-            background-color: #023e7b
+            &:before, &:after
+                background-color: $main-red
+        &:before
+            content: ''
+            width: 4px
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 50%
+            margin-left: -2px
+            background-color: #fff
+            transition: all 0.5s ease 0s
+        &:after
+            content: ''
+            height: 4px
+            position: absolute
+            left: 0
+            right: 0
+            top: 50%
+            margin-top: -2px
+            background-color: #fff
+            transition: all 0.5s ease 0s
+    &__image
+        max-height: 90%
+        max-width: 90%
+    &.opened
+        pointer-events: auto
+        opacity: 1
 
 @media screen and (max-width: 1500px)
     .fullscreen-preview
@@ -1364,6 +1411,57 @@ body
             font-size: 16px
 
 @media screen and (max-width: 991px)
+    .main-nav-list
+        padding: 0
+        display: block
+
+    .nav-item__dropdown
+        width: 100%
+        display: none
+        transition: none
+        position: static
+        opacity: 1
+        pointer-events: auto
+
+    .nav-item__link
+        padding: 15px 20px
+        text-align: left
+        display: block
+        text-transform: uppercase
+
+    .js-mobile-menu-btn
+        position: relative
+        &:before
+            content: ''
+            position: absolute
+            width: 10px
+            height: 10px
+            border-left: 2px solid #fff
+            border-bottom: 2px solid #fff
+            transform: rotate(-45deg)
+            top: 50%
+            margin-top: -7px
+            right: 10px
+            transition: all 0.5s ease 0s
+
+    .js-mobile-menu.opened
+        .nav-item__link
+            background-color: $main-red
+        .js-mobile-menu-btn:before
+            transform: rotate(135deg)
+            margin-top: -3px
+
+    .main-nav-list__item
+        margin-bottom: 10px
+        display: block
+        text-align: left
+
+
+    .dropdown-menu__link
+        text-transform: none
+        padding: 9px 20px
+        margin-bottom: 0
+
     .header-logo
         &__text
             font-size: 16px
@@ -1421,6 +1519,15 @@ body
 
 
 @media screen and (max-width: 767px)
+    .full-image
+        &__close
+            right: 10px
+            top: 10px
+
+    .last-section
+        &__copy
+            width: 170px
+
     .header-info-main__text
         font-size: 14px
 
@@ -1443,14 +1550,6 @@ body
             width: 100%
             padding-right: 0
             margin-bottom: 15px
-
-    .contacts-table
-        &__item
-            width: 100%
-
-    .contacts-table-item
-        &__title
-            font-size: 18px
 
     .map-section
         &__map
@@ -1534,6 +1633,10 @@ body
             max-width: 300px
             margin: 0 10px
             width: auto
+        &__arrow
+            margin: 0 auto 10px
+            display: block
+
     .fullscreen-preview-item
         &__footer
             font-size: 14px
@@ -1667,7 +1770,7 @@ body
         &__map
             height: 300px
         &__title
-            top: 0
+            top: 10px
 
     .section-scheme
         justify-content: center

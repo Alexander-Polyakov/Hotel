@@ -67,11 +67,16 @@
           <div class="site-header__nav">
             <div class="container">
               <div class="main-nav">
-                <div class="main-nav__drop-menu nav-drop-menu">
-                  <div class="nav-drop-menu__button"><img class="nav-drop-menu__icon" src="./images/svg/icon-hamburger.svg"></div>
-                  <nav class="nav-drop-menu__content dropdown-menu"><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a></nav>
-                </div>
-                <nav class="main-nav__list main-nav-list"><a class="main-nav-list__link" href="#">Продукция</a><a class="main-nav-list__link" href="#">Ремонт и обслуживание</a><a class="main-nav-list__link" href="#">Пластины и уплотнения</a><a class="main-nav-list__link" href="#">O компании</a><a class="main-nav-list__link" href="#">Контакты</a></nav><a class="main-nav__calculation" href="#">Расчет  теплообменника</a>
+                <ul class="main-nav__list main-nav-list">
+                  <li class="main-nav-list__item nav-item">
+                    <div class="nav-item__link"><img class="nav-item__hamburger" src="./images/svg/icon-hamburger.svg">Продукция</div>
+                    <div class="nav-item__dropdown dropdown-menu"><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a><a class="dropdown-menu__link" href="#">подраздел</a></div>
+                  </li>
+                  <li class="main-nav-list__item nav-item"><a class="nav-item__link" href="#">Ремонт и обслуживани</a></li>
+                  <li class="main-nav-list__item nav-item"><a class="nav-item__link" href="#">Пластины и уплотнения</a></li>
+                  <li class="main-nav-list__item nav-item"><a class="nav-item__link" href="#">O компании</a></li>
+                  <li class="main-nav-list__item nav-item"><a class="nav-item__link" href="#">Контакты</a></li>
+                </ul><a class="main-nav__calculation" href="#">Расчет  теплообменника</a>
               </div>
             </div>
           </div>
@@ -127,21 +132,15 @@
                   </div>
                 </div>
               </div>
-              <div class="contacts__table contacts-table">
-                <div class="contacts-table__item contacts-table-item">
-                  <div class="contacts-table-item__header">
-                    <div class="contacts-table-item__title">Реквизиты компании:</div>
-                  </div>
-                  <div class="contacts-table-item__content">ООО  "РосТехЭнерго-Воронеж» <br/> ИНН 366218821309 <br/> ОГРН 312366808900023</div>
+              <div class="contacts__table table">
+                <div class="table__header table-header">
+                  <div class="table-header__title">Реквизиты компании:</div>
                 </div>
-                <div class="contacts-table__item">
-                  <div class="contacts-table-item__header">
-                    <div class="contacts-table-item__title">ЮрИДИЧЕСКИЙ адрес:</div>
-                  </div>
-                  <div class="contacts-table-item__content contact-download-bl">
-                    <div class="contact-download-bl__content">г. Воронеж, <br/> проезд Монтажный, д. 3</div>
-                    <div class="contact-download-bl__download"><a class="download-print" href="#"><img class="download-print__icon" src="./images/svg/icon-print.svg">
-                        <div class="download-print__text">Скачать</div></a></div>
+                <div class="table__content pb0">
+                  <div class="contacts-table">
+                    <div class="contacts-table__td">ООО  "РосТехЭнерго-Воронеж» <br/> ИНН 366218821309 <br/> ОГРН 312366808900023</div>
+                    <div class="contacts-table__td"><a class="download-print" href="#"><img class="download-print__icon" src="./images/svg/icon-print.svg">
+                        <p class="download-print__text">Скачать</p></a></div>
                   </div>
                 </div>
               </div>
@@ -168,8 +167,9 @@
         </section>
       </footer>
     </div>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+    <script src="js/ymap.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="js/vendors.js"></script>
     <script src="js/main.js"></script>
   </body>
