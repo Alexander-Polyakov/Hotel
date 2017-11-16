@@ -1,6 +1,6 @@
 
 footer.footer
-    section.consultation-section
+    section#consultation-section.consultation-section
         .container
             .consultation-section__header
                 .consultation-section__title Нужна консультация по оборудованию?
@@ -82,7 +82,7 @@ footer.footer
             .header-info__main.header-info-main
                 img(src='./images/svg/icon-i.svg').header-info-main__icon
                 .header-info-main__text Производство и поставка теплообменного оборудования
-            a(href="#").header-info__ask.header-info-ask
+            a(href="#" data-scroll-target='consultation-section').header-info__ask.header-info-ask.js-scroll-button
                 img(src='./images/svg/icon-ask.svg').header-info-ask__icon
                 .header-info-ask__text Задать вопрос
 

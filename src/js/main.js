@@ -41,4 +41,20 @@ $(document).ready(function() {
         $(".js-full-image").removeClass('opened');
     });
 
+
+    $(".js-scroll-button").click(function(){
+       var scrollTarget = $(this).data('scroll-target'),
+           targetOffsetTop =  $("#"+scrollTarget+"").offset().top;
+
+       setTimeout(function(){
+           $(".mobile-menu__close").trigger('click');
+       },100 );
+
+
+       $('html, body').animate({
+           scrollTop: targetOffsetTop
+       }, 700);
+
+
+    });
 });

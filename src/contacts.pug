@@ -40,18 +40,21 @@ html
                                                 .mode-operation__item
                                                     p сб вс
                                                     p выходной
-                                    .info-grid__item.small-info-item
-                                        img(src='./images/svg/icon-call.svg').small-info-item__icon
-                                        .small-info-item__content
-                                            .small-info-item__title 8 (473) 212-12-05
-                                    .info-grid__item.small-info-item
-                                        img(src='./images/svg/icon-call.svg').small-info-item__icon
-                                        .small-info-item__content
-                                            .small-info-item__title 8 (473) 251-64-96
-                                    .info-grid__item.small-info-item
-                                        img(src='./images/svg/icon-letter.svg').small-info-item__icon
-                                        .small-info-item__content
-                                            .small-info-item__title.small-info-item__title_mail info@funke.com
+                                    .info-grid__item
+                                        a(href="tel:84732121205").small-info-item.phone-pointer-events
+                                            img(src='./images/svg/icon-call.svg').small-info-item__icon
+                                            .small-info-item__content
+                                                .small-info-item__title 8 (473) 212-12-05
+                                    .info-grid__item
+                                        a(href="tel:84732516496").small-info-item.phone-pointer-events
+                                            img(src='./images/svg/icon-call.svg').small-info-item__icon
+                                            .small-info-item__content
+                                                .small-info-item__title 8 (473) 251-64-96
+                                    .info-grid__item
+                                        a(href="mailto:info@funke.com").small-info-item.small-info-item_mail
+                                            img(src='./images/svg/icon-letter.svg').small-info-item__icon
+                                            .small-info-item__content
+                                                .small-info-item__title info@funke.com
 
                             .contacts__table.table
                                 .table__header.table-header

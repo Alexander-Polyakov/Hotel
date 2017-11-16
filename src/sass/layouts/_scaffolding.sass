@@ -35,14 +35,17 @@ $rcb: 'RobotoCondensedBold'
 $main-blue: #004c99
 $main-red: #d70027
 
-
 body
     font-family: $rr
     font-size: 16px
 
+.phone-pointer-events
+    pointer-events: none
+    text-decoration: none
+
 
 .js-full-image-open
-    cursor: pointer
+    cursor: zoom-in
 
 .site-wrapper
     min-width: 320px
@@ -88,6 +91,8 @@ body
         color: $main-red
     &__icon
         max-width: 45px
+        min-width: 45px
+        width: 100%
         margin-right: 10px
     &__text
         font-size: 18px
@@ -137,7 +142,8 @@ body
         background-size: cover
 
 .icon-bouble-arrow
-    width: 130px
+    max-width: 130px
+    min-width: 130px
 
 .section
     padding: 30px 0
@@ -189,7 +195,9 @@ body
         font-family: $rb
         text-transform: uppercase
     &__icon
-        width: 140px
+        max-width: 140px
+        min-width: 140px
+        width: 100%
     &__icon_rotate
         transform: rotateY(180deg)
 
@@ -239,7 +247,7 @@ body
         top: 0
         z-index: 150
         background-color: $main-blue
-        padding: 20px
+        padding: 40px 20px 20px
         color: #fff
         width: 320px
         display: none
@@ -296,18 +304,9 @@ body
             background-color: #fff
             top: 50%
             margin-top: -1px
-            
-    &__title
-        font-family: $rcb
-        font-size: 28px
-        text-align: center
+    &__phone
         margin-bottom: 10px
-        text-transform: uppercase
-    &__subtitle
-        font-family: $rcr
-        font-size: 16px
-        text-align: center
-        margin-bottom: 10px
+
 
 .feedback-popup-form
     &__line-title
@@ -335,7 +334,7 @@ body
     color: #000
 
 .st-red-button
-    font-size: 24px
+    font-size: 20px
     text-transform: uppercase
     font-family: $rcb
     color: #fff
@@ -356,6 +355,8 @@ body
     text-decoration: none
     &__icon
         max-width: 220px
+        min-width: 220px
+        width: 100%
         margin-right: 20px
     &__text
         font-size: 18px
@@ -369,7 +370,8 @@ body
     &__icon
         margin-right: 15px
         max-width: 20px
-        max-height: 30px
+        min-width: 20px
+        width: 100%
     &__text
         color: #000
         font-size: 16px
@@ -394,6 +396,7 @@ body
     &__icon
         max-width: 20px
         min-width: 20px
+        width: 100%
         margin-right: 7px
 
 .header-info-ask
@@ -408,6 +411,7 @@ body
     &__icon
         max-width: 20px
         min-width: 20px
+        width: 100%
         margin-right: 5px
 
 .main-nav
@@ -610,6 +614,7 @@ body
     &__item-img
         max-width: 125px
         max-height: 120px
+        width: 100%
     &__item-text
         padding-top: 15px
         font-size: 16px
@@ -882,6 +887,8 @@ body
     align-items: center
     &__icon
         max-width: 45px
+        min-width: 45px
+        width: 100%
         margin-right: 20px
     &__content
         font-size: 18px
@@ -962,6 +969,18 @@ body
         top: 0
         left: 0
 
+.feedback-phone-link
+    color: #fff
+    display: flex
+    align-items: center
+    font-size: 24px
+    text-decoration: none
+    &__icon
+        max-width: 25px
+        min-width: 25px
+        width: 100%
+        margin-right: 15px
+
 .feedback-form
     &__header
         font-size: 18px
@@ -1013,16 +1032,21 @@ body
     &__icon
         margin-right: 15px
         max-width: 45px
+        min-width: 45px
+        width: 100%
     &__title
         font-family: $rm
-        color: $main-blue
         font-size: 23px
-        &_mail
-            font-size: 16px
-            text-decoration: underline
+        color: $main-blue
     &__main
         font-size: 18px
         font-family: $rr
+    &_mail
+        text-decoration: underline
+        &:hover
+            text-decoration: none
+        .small-info-item__title
+            font-size: 16px
 
 
 .mode-operation
@@ -1238,6 +1262,8 @@ body
     text-decoration: underline
     &__icon
         max-width: 115px
+        min-width: 115px
+        width: 100%
         margin-bottom: 5px
     &__text
         font-size: 16px
@@ -1411,9 +1437,18 @@ body
             font-size: 16px
 
 @media screen and (max-width: 991px)
+    .info-list-bl__header
+        justify-content: center
+        padding: 10px 0
+
+
+    .phone-pointer-events
+        pointer-events: auto
+
     .main-nav-list
         padding: 0
         display: block
+
 
     .nav-item__dropdown
         width: 100%
@@ -1534,6 +1569,7 @@ body
     .header-logo__icon
         max-width: 200px
         min-width: 200px
+        width: 100%
 
     .mobile-menu
         &__address
@@ -1566,6 +1602,8 @@ body
     .download-button
         &__icon
             max-width: 35px
+            min-width: 35px
+            width: 100%
         &__text
             font-size: 16px
 
@@ -1677,6 +1715,8 @@ body
     .small-info-item
         &__icon
             max-width: 35px
+            min-width: 35px
+            width: 100%
 
     .advantages-text-bl
         flex-wrap: wrap
@@ -1741,6 +1781,11 @@ body
 
 
 @media screen and (max-width: 500px)
+    .header-info-main__icon,
+    .header-info-ask__icon,
+    .header-address__icon
+        margin-right: 10px
+
     .header__logo
         width: auto
 
@@ -1804,12 +1849,16 @@ body
     .download-button
         &__icon
             max-width: 35px
+            min-width: 35px
+            width: 100%
         &__text
             font-size: 16px
 
     .warning-item
         &__icon
             max-width: 35px
+            min-width: 35px
+            width: 100%
         &__content
             font-size: 16px
 
