@@ -1,98 +1,85 @@
 
 footer.footer
-    section#consultation-section.consultation-section
+    section.contacts
+        .contacts__header
+            .container
+                .contacts-header
+                    .contacts-header__title
+                        .st-title
+                            +svg('mountains').st-title__icon
+                            h2.st-title__text Контакты Hotel Fiescherhof
+                    .contacts-header__info
+                        .contacts-header__info-left
+                            .d-flex
+                                .d-flex__item
+                                    .icon-text
+                                        +svg('map').icon-text__icon
+                                        .icon-text__text Адрес:
+                                .d-flex__item Furkastrasse 75 3984 Fiesch Switzerland Широта: 51.6754966 Долгота: 39.20888230000003
+                        .contacts-header__info-right
+                            .d-flex
+                                .d-flex__item
+                                    .icon-text
+                                        +svg('car').icon-text__icon
+                                        .icon-text__text Как добраться
+                                .d-flex__item
+                                    a(href="#").st-btn-link Подробнее
+        .contacts__main
+            #map.contacts__map
+            .container
+                .contacts__form
+                    form.st-form
+                        .st-form__line
+                            input(type='text' placeholder='Ваше имя').st-input
+                        .st-form__line
+                            input(type='text' placeholder='Ваш E-mail').st-input
+                        .st-form__line
+                            textarea(placeholder='Сообщение').st-textarea
+                        div(layout='text-center').st-form__line
+                            button.st-btn-link Отправить
+
+        .contacts__footer
+            .container
+                .contacts-footer
+                    .contacts-footer__bg
+                    .contacts-footer__header
+                        .contacts-items
+                            .contacts-items__elem
+                                .contacts-item.contacts-item_mail
+                                    +svg('contacts-mail').contacts-item__icon
+                                    .contacts-item__text info@fiescherhof.ch
+                            .contacts-items__elem
+                                .contacts-item.contacts-item_phone
+                                    +svg('contacts-phone').contacts-item__icon
+                                    .contacts-item__text + 41 279-71-21-71
+                    .contacts-footer__soc
+                        nav.soc
+                            a(href="#").soc__link
+                                +svg('soc1').soc__icon
+                            a(href="#").soc__link
+                                +svg('soc2').soc__icon
+                            a(href="#").soc__link
+                                +svg('soc3').soc__icon
+
+    section.footer__more-info
         .container
-            .consultation-section__header
-                .consultation-section__title Нужна консультация по оборудованию?
-            .consultation-section__content
-                .consultation-section__section
-                    .consultation-section__descr.consultation-descr
-                        p Чтобы купить теплообменик Funke, получить подробную консультацию или узнать точные цены на оборудование, звоните по телефону:
-                        p.consultation-descr__phone
-                            img(src='./images/svg/icon-handset1.svg').consultation-descr__phone-icon
-                            span.consultation-descr__phone-value 8 (473) 212-12-05
-                        p Наши специалисты готовы предоставить полную информацию о технических характеристиках оборудования, а также оказать консультационную поддержку при выборе теплообменника, учитывая требования заказчика, а также условия эксплуатации.
-                .consultation-section__section
-                    .feedback
-                        .feedback__header
-                            .feedback__header-section
-                                img(src='./images/svg/icon-handset2.svg').feedback__header-icon
-                                .feedback__header-text Перезвоним через 5 мин
-                            .feedback__header-section
-                                img(src='./images/svg/icon-free.svg').feedback__header-icon
-                                .feedback__header-text Бесплатно
-                        .feedback__content
-                            form.feedback__form.feedback-form
-                                .feedback-form__header Ваш телефон
-                                .feedback-form__line
-                                    input.feedback-form__input(type='text' placeholder='+7 (___) ___-__-__').js-inputmask-phone
-                                    button.feedback-form__submit Перезвонить
-                            .feedback__descr
-                                img(src='./images/svg/icon-check.svg').feedback__descr-icon
-                                .feedback__descr-text Нажимая на кнопку «перезвонить» я даю свое согласие на обработку моих персональных данных в соответствии с требованиями ФЗ от 27.07.2006г. № 152-ФЗ «О персональных данных».
-
-    section.section
-        .container
-            .info-grid.info-grid_wrapper700px
-                .info-grid__item.small-info-item
-                    img(src='./images/svg/icon-marker.svg').small-info-item__icon
-                    .small-info-item__content
-                        .small-info-item__title КОНТАКТЫ
-                        .small-info-item__main г. Воронеж, <br/> проезд Монтажный, д. 3
-                .info-grid__item.small-info-item
-                    img(src='./images/svg/icon-time.svg').small-info-item__icon
-                    .small-info-item__content
-                        .small-info-item__title РЕЖИМ РАБОТЫ
-                        .small-info-item__main.mode-operation
-                            .mode-operation__item
-                                p пн - пт
-                                p 9:00 - 18:00
-                            .mode-operation__item
-                                p сб вс
-                                p выходной
-
-    section.section.section_last
-        .container
-            .last-section
-                .last-section__copy © 2008 - 2017 ООО "РосТехЭнерго-Воронеж"
-                .last-section__iin ИНН 3663072816
-                a(href="#").last-section__dev создание сайта
+            .footer-more-info
+                .footer-more-info__copy &copy; 2013   Hotel Fiescherhof
+                a(href="#").footer-more-info__dev создание сайта
 
 
-.site-wrapper__mobile-menu.mobile-menu
-    button.mobile-menu__close
-    ul.mobile-menu__nav.main-nav-list
-        li.main-nav-list__item.nav-item.js-mobile-menu
-            .nav-item__link.js-mobile-menu-btn Продукция
-            nav.nav-item__dropdown.dropdown-menu.js-mobile-menu-dropdown
-                a(href="#").dropdown-menu__link подраздел
-                a(href="#").dropdown-menu__link подраздел
-                a(href="#").dropdown-menu__link подраздел
-                a(href="#").dropdown-menu__link подраздел
-        li.main-nav-list__item.nav-item
-            a(href="#").nav-item__link Ремонт и обслуживани
-        li.main-nav-list__item.nav-item
-            a(href="#").nav-item__link Пластины и уплотнения
-        li.main-nav-list__item.nav-item
-            a(href="#").nav-item__link O компании
-        li.main-nav-list__item.nav-item
-            a(href="#").nav-item__link Контакты
-    .mobile-menu__info
-        .header-info
-            .header-info__main.header-info-main
-                img(src='./images/svg/icon-i.svg').header-info-main__icon
-                .header-info-main__text Производство и поставка теплообменного оборудования
-            a(href="#" data-scroll-target='consultation-section').header-info__ask.header-info-ask.js-scroll-button
-                img(src='./images/svg/icon-ask.svg').header-info-ask__icon
-                .header-info-ask__text Задать вопрос
+.page__mobile-menu.mobile-menu
+    .mobile-menu__close.js-mob-menu-close
+    .mobile-menu__nav
+        nav.header-nav
+            a(href="#").header-nav__link Главная
+            a(href="#").header-nav__link Номера и цены
+            a(href="#").header-nav__link Ресторан
+            a(href="#").header-nav__link Фотогалерея
+            a(href="#").header-nav__link Контакты
+    .mobile-menu__mail
+        a(href='mailto:info@fiescherhof.ch').header-mail
+            +svg('mail').header-mail__icon
+            p.header-mail__text info@fiescherhof.ch
 
-    .mobile-menu__address
-        .header-address
-            img(src='./images/svg/icon-metka.svg').header-address__icon
-            .header-address__text Воронеж <br/> проезд Монтажный, д. 3
-
-.site-wrapper__overlay
-
-.full-image.js-full-image
-    .full-image__close.js-full-image-close
-    img(src='').full-image__image
+.page__overlay.js-mob-menu-close

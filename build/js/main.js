@@ -1,60 +1,70 @@
 $(document).ready(function() {
-    $('.js-inputmask-phone').mask("+7 (999) 999-99-99");
-
-    $(".header-phone__button").click(function(){
-        $('.header-phone').addClass("opened");
+    $(".js-mob-menu-open").click(function(){
+        $(".page__mobile-menu").addClass('opened');
+        $(".page__overlay").fadeIn(400);
     });
 
-    $(".feedback-popup__close, .header-phone__overlay").click(function(){
-        $('.header-phone').removeClass("opened");
+    $(".js-mob-menu-close").click(function(){
+        $(".page__mobile-menu").removeClass('opened');
+        $(".page__overlay").fadeOut(400);
     });
 
-    $(".js-mobile-menu-open").click(function(){
-       $(".site-wrapper__mobile-menu").addClass('opened');
-       $(".site-wrapper__overlay").fadeIn(400);
+    $( function() {
+        var dateFormat = "DD, d MM, yy",
+            from = $("#from")
+                .datepicker({
+                    defaultDate: "+1w",
+                    numberOfMonths: 1,
+                    closeText: "Закрыть",
+                    nextText: "След&#x3E;",
+                    currentText: "Сегодня",
+                    monthNames: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+                        "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+                    monthNamesShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн",
+                        "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
+                    dayNames: ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"],
+                    dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
+                    dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+                    weekHeader: "Нед",
+                    dateFormat: "DD, d MM, yy",
+                    firstDay: 1
+                })
+                .on("change", function () {
+                    to.datepicker("option", "minDate", getDate(this));
+                }),
+            to = $("#to").datepicker({
+                defaultDate: "+1w",
+                numberOfMonths: 1,
+                closeText: "Закрыть",
+                nextText: "След&#x3E;",
+                currentText: "Сегодня",
+                monthNames: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь",
+                    "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"],
+                monthNamesShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн",
+                    "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"],
+                dayNames: ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"],
+                dayNamesShort: ["вск", "пнд", "втр", "срд", "чтв", "птн", "сбт"],
+                dayNamesMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"],
+                weekHeader: "Нед",
+                dateFormat: "DD, d MM, yy",
+                firstDay: 1
+            })
+                .on("change", function () {
+                    from.datepicker("option", "maxDate", getDate(this));
+                });
+
+        function getDate(element) {
+            var date;
+            try {
+                date = $.datepicker.parseDate(dateFormat, element.value);
+            } catch (error) {
+                date = null;
+            }
+
+            return date;
+        }
+
     });
 
 
-    $(".site-wrapper__overlay, .mobile-menu__close").click(function(){
-        $(".site-wrapper__mobile-menu").removeClass('opened');
-        $(".site-wrapper__overlay").fadeOut(400);
-    });
-
-
-    $(".js-full-image-open").click(function(){
-        var fullImgSrc = $(this).data('full-image-src'),
-            fullImgBl = $('.js-full-image');
-
-        fullImgBl.addClass("opened");
-        fullImgBl.find('.full-image__image').attr('src', fullImgSrc );
-    });
-
-    $(".js-mobile-menu-btn").click(function(e){
-        e.preventDefault();
-        var thisBl = $(this).closest('.js-mobile-menu');
-
-        thisBl.toggleClass("opened");
-        thisBl.find(".js-mobile-menu-dropdown").stop().slideToggle(400);
-    });
-
-    $(".js-full-image-close").click(function(){
-        $(".js-full-image").removeClass('opened');
-    });
-
-
-    $(".js-scroll-button").click(function(){
-       var scrollTarget = $(this).data('scroll-target'),
-           targetOffsetTop =  $("#"+scrollTarget+"").offset().top;
-
-       setTimeout(function(){
-           $(".mobile-menu__close").trigger('click');
-       },100 );
-
-
-       $('html, body').animate({
-           scrollTop: targetOffsetTop
-       }, 700);
-
-
-    });
 });

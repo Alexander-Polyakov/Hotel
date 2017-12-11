@@ -8,87 +8,124 @@ html
         +title('Контакты')
         include pug/styles.pug
     body
-        .site-wrapper
-            header.site-wrapper__header
-                include pug/components/header
-            main.site-wrapper__main
-                section.section.section_breadcrumbs.section_whitebg
+        include pug/svg.pug
+        .page
+
+            header.page__header
+                include pug/components/header.pug
+
+            main.main.page__main
+                section.main__contacts.section
                     .container
-                        nav.breadcrumbs
-                            a(href='#').breadcrumbs__link Главная
-                            span(href='#').breadcrumbs__text Контакты
-
-                section.section.section_contacts.section_whitebg
-                    .container
-                        .contacts
-                            .page-title Контакы компании
-                            .contacts__grid
-                                .info-grid.info-grid_wrapper700px
-                                    .info-grid__item.small-info-item
-                                        img(src='./images/svg/icon-marker.svg').small-info-item__icon
-                                        .small-info-item__content
-                                            .small-info-item__title АДРЕС
-                                            .small-info-item__main г. Воронеж, <br/> проезд Монтажный, д. 3
-                                    .info-grid__item.small-info-item
-                                        img(src='./images/svg/icon-time.svg').small-info-item__icon
-                                        .small-info-item__content
-                                            .small-info-item__title РЕЖИМ РАБОТЫ
-                                            .small-info-item__main.mode-operation
-                                                .mode-operation__item
-                                                    p пн - пт
-                                                    p 9:00 - 18:00
-                                                .mode-operation__item
-                                                    p сб вс
-                                                    p выходной
-                                    .info-grid__item
-                                        a(href="tel:84732121205").small-info-item.phone-pointer-events
-                                            img(src='./images/svg/icon-call.svg').small-info-item__icon
-                                            .small-info-item__content
-                                                .small-info-item__title 8 (473) 212-12-05
-                                    .info-grid__item
-                                        a(href="tel:84732516496").small-info-item.phone-pointer-events
-                                            img(src='./images/svg/icon-call.svg').small-info-item__icon
-                                            .small-info-item__content
-                                                .small-info-item__title 8 (473) 251-64-96
-                                    .info-grid__item
-                                        a(href="mailto:info@funke.com").small-info-item.small-info-item_mail
-                                            img(src='./images/svg/icon-letter.svg').small-info-item__icon
-                                            .small-info-item__content
-                                                .small-info-item__title info@funke.com
-
-                            .contacts__table.table
-                                .table__header.table-header
-                                    .table-header__title Реквизиты компании:
-                                .table__content.pb0
-                                    .contacts-table
-                                        .contacts-table__td ООО  "РосТехЭнерго-Воронеж» <br/> ИНН 366218821309 <br/> ОГРН 312366808900023
-                                        .contacts-table__td
-                                            a(href="#").download-print
-                                                img(src='./images/svg/icon-print.svg').download-print__icon
-                                                p.download-print__text Скачать
-
-
-                section.section.section_map
-                    .map-section
-                        .map-section__title.section-title
-                            .section-title__text СХЕМА ПРОЕЗДА
-                            img(src='./images/svg/icon-double-arrows.svg').section-title__icon
-                        .map-section__map#map.map
-
-
+                        .section__breadcrumbs
+                            include  pug/components/breadcrumbs.pug
+                        .section__title.mb80
+                            .st-title
+                                +svg('mountains').st-title__icon
+                                h2.st-title__text Hotel Fiescherhof
+                        .section__content
+                            .contacts-items
+                                .contacts-items__elem
+                                    .contacts-item.contacts-item_phone
+                                        +svg('contacts-phone').contacts-item__icon
+                                        .contacts-item__text + 41 279-71-21-71
+                                .contacts-items__elem
+                                    .contacts-item.contacts-item_phone
+                                        +svg('contacts-phone2').contacts-item__icon
+                                        .contacts-item__text + 41 279-71-19-85
+                                .contacts-items__elem
+                                    .contacts-item.contacts-item_mail
+                                        +svg('contacts-mail').contacts-item__icon
+                                        .contacts-item__text info@fiescherhof.ch
 
             footer.footer
-               section.section.section_last
-                   .container
-                       .last-section
-                           .last-section__copy © 2008 - 2017 ООО "РосТехЭнерго-Воронеж"
-                           .last-section__iin ИНН 3663072816
-                           a(href="#").last-section__dev создание сайта
+                section.contacts
+                    .contacts__header
+                        .container
+                            .contacts-header
+                                .contacts-header__title
+                                    .st-title
+                                        +svg('mountains').st-title__icon
+                                        h2.st-title__text Контакты Hotel Fiescherhof
+                                .contacts-header__info
+                                    .contacts-header__info-left
+                                        .d-flex
+                                            .d-flex__item
+                                                .icon-text
+                                                    +svg('map').icon-text__icon
+                                                    .icon-text__text Адрес:
+                                            .d-flex__item Furkastrasse 75 3984 Fiesch Switzerland Широта: 51.6754966 Долгота: 39.20888230000003
+                                    .contacts-header__info-right
+                                        .d-flex.d-flex_jc-right
+                                            .d-flex__item
+                                                .icon-text
+                                                    +svg('car').icon-text__icon
+                                                    .icon-text__text Как добраться
+                                            .d-flex__item
+                                                a(href="#").st-btn-link Подробнее
+                    .contacts__main
+                        #map.contacts__map
+                        .container
+                            .contacts__form
+                                form.st-form
+                                    .st-form__line
+                                        input(type='text' placeholder='Ваше имя').st-input
+                                    .st-form__line
+                                        input(type='text' placeholder='Ваш E-mail').st-input
+                                    .st-form__line
+                                        textarea(placeholder='Сообщение').st-textarea
+                                    div(layout='text-center').st-form__line
+                                        button.st-btn-link Отправить
+
+                    include pug/components/reservation.pug
+
+                    .contacts__footer
+                        .container
+                            .contacts-footer
+                                .contacts-footer__bg
+                                .contacts-footer__header
+                                    .contacts-items
+                                        .contacts-items__elem
+                                            .contacts-item.contacts-item_mail
+                                                +svg('contacts-mail').contacts-item__icon
+                                                .contacts-item__text info@fiescherhof.ch
+                                        .contacts-items__elem
+                                            .contacts-item.contacts-item_phone
+                                                +svg('contacts-phone').contacts-item__icon
+                                                .contacts-item__text + 41 279-71-21-71
+                                .contacts-footer__soc
+                                    nav.soc
+                                        a(href="#").soc__link
+                                            +svg('soc1').soc__icon
+                                        a(href="#").soc__link
+                                            +svg('soc2').soc__icon
+                                        a(href="#").soc__link
+                                            +svg('soc3').soc__icon
+
+                section.footer__more-info
+                    .container
+                        .footer-more-info
+                            .footer-more-info__copy &copy; 2013   Hotel Fiescherhof
+                            a(href="#").footer-more-info__dev создание сайта
 
 
+            .page__mobile-menu.mobile-menu
+                .mobile-menu__close.js-mob-menu-close
+                .mobile-menu__nav
+                    nav.header-nav
+                        a(href="#").header-nav__link Главная
+                        a(href="#").header-nav__link Номера и цены
+                        a(href="#").header-nav__link Ресторан
+                        a(href="#").header-nav__link Фотогалерея
+                        a(href="#").header-nav__link Контакты
+                .mobile-menu__mail
+                    a(href='mailto:info@fiescherhof.ch').header-mail
+                        +svg('mail').header-mail__icon
+                        p.header-mail__text info@fiescherhof.ch
+
+            .page__overlay.js-mob-menu-close
 
 
-
-        script(src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript")
-        script(src="js/ymap.js")
+        script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALtBZ1rYSgg4RhYBED2irnrMw8ksviHI4&callback=initMap")
+        script(src="js/map.js")
         include pug/scripts.pug

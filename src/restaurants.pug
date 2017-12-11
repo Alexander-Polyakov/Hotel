@@ -1,0 +1,105 @@
+include pug/project-settings.pug
+include pug/mixins/mixins.pug
+
+doctype html
+html
+    head(lang="en")
+        include pug/metatags.pug
+        +title('Фотогалерея')
+        include pug/styles.pug
+    body
+        include pug/svg.pug
+        .page
+
+            header.page__header
+                include pug/components/header.pug
+
+            main.page__main.main
+                section.section.main__restaurant-descr
+                    .container
+                        .section__breadcrumbs
+                            include  pug/components/breadcrumbs.pug
+                        .section__title
+                            .st-title
+                                +svg('mountains').st-title__icon
+                                h2.st-title__text Фотогалерея
+                        .section__content
+                            .brown-box
+                                .brown-box__preview
+                                    img(src='../images/previews/restaurants.jpg').brown-box__image
+                                .brown-box__content
+                                    .bl-frame
+                                        .bl-frame__header
+                                            +svg('mountains-brown').bl-frame__mountains
+                                        .bl-frame__content
+                                            .bl-frame__title.mb30 Ресторан Фишерхоф
+                                            .bl-frame__descr Ресторан Фишерхоф очарователен своим местным колоритом. Ресторан предлагает изысканное разнообразие меню, в которое входят блюда швейцарской и итальянской кухни. Для приготовления блюд используются только самые свежие первоклассные продукты. Вы по достоинству оцените тонкий вкус вин из Швейцарии и Италии!
+                section.main__restaurant-images
+                    .container
+                        .st-grid.st-grid_restaurant
+                            .st-grid__item
+                                .preview-item
+                                    img(src='../images/small-restaurant/restaurant-img1.jpg').preview-item__image
+                            .st-grid__item
+                                .preview-item
+                                    img(src='../images/small-restaurant/restaurant-img2.jpg').preview-item__image
+                            .st-grid__item
+                                .preview-item
+                                    img(src='../images/small-restaurant/restaurant-img3.jpg').preview-item__image
+                            .st-grid__item
+                                .preview-item
+                                    img(src='../images/small-restaurant/restaurant-img1.jpg').preview-item__image
+                            .st-grid__item
+                                .preview-item
+                                    img(src='../images/small-restaurant/restaurant-img2.jpg').preview-item__image
+                            .st-grid__item
+                                .preview-item
+                                    img(src='../images/small-restaurant/restaurant-img3.jpg').preview-item__image
+                section.main__restaurant-menu.restaurant-menu
+                    .container
+                        .restaurant-menu__title
+                            .section-header
+                                .st-title
+                                    +svg('mountains').st-title__icon
+                                    h2.st-title__text Наше меню
+                        .restaurant-menu__menu-grid
+                            .services-list.services-list_menu
+                                .services-list__item
+                                    .services-item
+                                        .services-item__preview
+                                            +svg('wi-fi').services-item__icon
+                                        .services-item__text Меню ресторана
+                                .services-list__item
+                                    .services-item
+                                        .services-item__preview
+                                            +svg('wi-fi').services-item__icon
+                                        .services-item__text Винная карта
+                        .restaurant-menu__subtitle Часы работы ресторана
+                        .restaurant-menu__hours
+                            .st-grid
+                                .st-grid__item
+                                    .hours-item
+                                        .hours-item__header Понедельник
+                                        .hours-item__content
+                                            p ВЫХОДНОЙ
+                                .st-grid__item
+                                    .hours-item
+                                        .hours-item__header Вторник - суббота
+                                        .hours-item__content
+                                            p 11.30 — 14.00
+                                            p 17.30 — 22.00
+                                .st-grid__item
+                                    .hours-item
+                                        .hours-item__header Воскресенье
+                                        .hours-item__content
+                                            p 11.30 — 15.00
+
+
+                include pug/components/reservation.pug
+
+            include pug/components/footer.pug
+
+
+        script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALtBZ1rYSgg4RhYBED2irnrMw8ksviHI4&callback=initMap")
+        script(src="js/map.js")
+        include pug/scripts.pug

@@ -1,0 +1,22 @@
+section.reservation-section
+    .container
+        .reservation-section__title
+            .figured-title
+                +svg('mountains-dark-brown').figured-title__icon
+                .figured-title__text Бронирование номеров
+        .reservation-section__content
+            .reservation-form
+                .reservation-form__item
+                    .reservation-form__item-title приезжаю
+                    .reservation-form__input
+                        .date-input-box
+                            +svg('calendar').date-input-box__icon
+                            input(type='text')#from.date-input-box__input
+                .reservation-form__item
+                    .reservation-form__item-title уезжаю
+                    .reservation-form__input
+                        .date-input-box
+                            +svg('calendar').date-input-box__icon
+                            input(type='text')#to.date-input-box__input
+                .reservation-form__item
+                    button.st-btn-link.w100 Бронировать

@@ -8,190 +8,128 @@ html
         +title('Главная')
         include pug/styles.pug
     body
-        .site-wrapper
-            header.site-wrapper__header
-                include pug/components/header
-            main.site-wrapper__main
-                section.section.section_product
+        include pug/svg.pug
+        .page
+
+            header.page__header
+                include pug/components/header.pug
+
+            main.main.page__main
+                section.page-preview
+                    .page-preview__image(style="background-image:url(./images/index-preview.jpg)")
+                    .page-preview__content
+                        .bl-frame
+                            .bl-frame__header
+                                +svg('mountains-brown').bl-frame__mountains
+                            .bl-frame__content
+                                .bl-frame__descr Отель Фишерхоф***, построенный в 1979 году в традиционном стиле альпийского швейцарского шале, очаровывает гармоничным сочетанием комфорта и бережно сохраненных традиций.
+
+                include pug/components/reservation.pug
+
+                section.main__services
                     .container
-                        .section-product
-                            .section-product__preview
-                                img(src="./images/photos/product-img1.png").section-product__img
-                            .section-product__content
-                                h1.section-product__title ПЛАСТИНЧАТЫЕ ТЕПЛООБМЕННИКИ FUNKE
-                                .section-product__list-bl.info-list-bl
-                                    .info-list-bl__header
-                                        .info-list-bl__title Области применения:
-                                    ul.info-list-bl__info.info-list
-                                        li.info-list__item
-                                            img(src='./images/svg/icon-red-arrow.svg').info-list__item-icon
-                                            .info-list__item-content
-                                                .info-list__item-special-text Различные промышленные  объекты
-                                                | Металлургия, химическая промышленность, нефтегазовая отрасль и т.д.
+                        .services-list
 
-                                        li.info-list__item
-                                            img(src='./images/svg/icon-red-arrow.svg').info-list__item-icon
-                                            .info-list__item-content
-                                                .info-list__item-special-text Металлургия, нефтегазовая и химическая промышленность и т.д.
-                                                | Охладители растительных масел, молочной продукции, сахара, пива и т.д.
+                            -
+                                var servicesList = [
+                                {icon: 'wi-fi' ,name: "Бесплатный Wi-Fi"},
+                                {icon: 'parking' ,name: "Бесплатная парковка"},
+                                {icon: 'transfer' ,name: "Трансфер"},
+                                {icon: 'sauna' ,name: "Сауна"},
+                                {icon: 'fitness' ,name: "Фитнес-room"},
+                                {icon: 'pets' ,name: "Размещение с домашними питомцами"},
+                                {icon: 'concert-hall' ,name: "КОНФЕРЕНЦ ЗАЛ"},
+                                {icon: 'restaurant' ,name: "Ресторан"}
+                                ]
 
-                                        li.info-list__item
-                                            img(src='./images/svg/icon-red-arrow.svg').info-list__item-icon
-                                            .info-list__item-content
-                                                .info-list__item-special-text Комунальное теплоснабжение
-                                                | Подогрев воды в системах ГВС, ситемах отопления, вентиляции и т.д.
+                            each item in servicesList
+                                .services-list__item
+                                    .services-item
+                                        .services-item__preview
+                                            +svg(item.icon).services-item__icon
+                                        .services-item__text= item.name
 
-                section.section.section_blue-bg
+                section.main__index-rooms
                     .container
-                        .infographic-horizontally
-                            .infographic-horizontally__item
-                                img(src='./images/svg/icon-car.svg').infographic-horizontally__item-icon
-                                .infographic-horizontally__item-text Теплообменники Funke с бесплатной доставкой <br/> по России и СНГ
-                            .infographic-horizontally__item
-                                img(src='./images/svg/icon-standard.svg').infographic-horizontally__item-icon
-                                .infographic-horizontally__item-text Все оборудование Funke отвечает <br/> международным и Российским <br/> требованиям и стандартам
-                section.section.section_our-adv
+                        .number-rooms
+                            .number-rooms__title
+                                .section-header
+                                    .st-title
+                                        +svg('mountains').st-title__icon
+                                        h2.st-title__text Номерной фонд
+                            .number-rooms__nav
+                                .grid-nav
+                                    .grid-nav__item
+                                        a(href="#").box-nav-item SGL
+                                    .grid-nav__item
+                                        a(href="#").box-nav-item DBL (Стандарт)
+                                    .grid-nav__item
+                                        a(href="#").box-nav-item DBL (Бюджет)
+                                    .grid-nav__item
+                                        a(href="#").box-nav-item DBL (Конфорт)
+                                    .grid-nav__item
+                                        a(href="#").box-nav-item TPL
+                                    .grid-nav__item
+                                        a(href="#").box-nav-item QPL
+                            .number-rooms__descr
+                                .st-text На Ваш выбор просторные стандартные номера для одно, двух, трёх или четырёх человек, а так же номера повышенной комфортности. Во всех номерах есть душ или ванна, туалет, телевизор, радио, фен для волос, беспроводной интернет, в большинстве – балконы с зачаровывающими горными пейзажами. Оформление комнат и отделка деревянными панелями создают атмосферу тепла и уюта.
+                            .number-rooms__images
+                                .previews-grid
+                                    .previews-grid__item
+                                        img(src='../images/small-rooms/room1.jpg').previews-grid__image
+                                    .previews-grid__item
+                                        img(src='../images/small-rooms/room2.jpg').previews-grid__image
+                                    .previews-grid__item
+                                        img(src='../images/small-rooms/room3.jpg').previews-grid__image
+                                    .previews-grid__item
+                                        img(src='../images/small-rooms/room4.jpg').previews-grid__image
+                                    .previews-grid__item
+                                        img(src='../images/small-rooms/room5.jpg').previews-grid__image
+                                    .previews-grid__item
+                                        img(src='../images/small-rooms/room6.jpg').previews-grid__image
+
+                            .number-rooms__buttons
+                                a(href="#").st-btn-link Смотреть все номера
+
+
+                section.index-restaurant
+                    .index-restaurant__bg-grid
+                        .index-restaurant__bg-item(style="background-image:url(./images/bg-previews/restaurant-preview1.jpg)")
+                        .index-restaurant__bg-item(style="background-image:url(./images/bg-previews/restaurant-preview2.jpg)")
+                        .index-restaurant__bg-item(style="background-image:url(./images/bg-previews/restaurant-preview3.jpg)")
+                    .index-restaurant__content
+                        .bl-frame
+                            .bl-frame__header
+                                +svg('mountains-brown').bl-frame__mountains
+                            .bl-frame__content
+                                .bl-frame__title Ресторан Фишерхоф
+                                .bl-frame__descr Ресторан Фишерхоф очарователен своим местным колоритом. <br/> Ресторан предлагает изысканное разнообразие меню, в которое входят блюда швейцарской и итальянской кухни. Для приготовления блюд используются только самые свежие первоклассные продукты. Вы по достоинству оцените тонкий вкус вин из Швейцарии и Италии!
+                                .bl-frame__buttons
+                                    a(href="#").st-btn-link Подробнее
+
+                section.main__index-gallery
                     .container
-                        .section__title.section-title
-                            .section-title__text Наши преимущества
-                            img(src='./images/svg/icon-double-arrows.svg').section-title__icon
-                        .section__content
-                            .infographic-vertically
-                                .infographic-vertically__item
-                                    .infographic-vertically__item-preview
-                                        img(src='./images/svg/icon-adv1.svg').infographic-vertically__item-img
-                                    .infographic-vertically__item-text Собственная <br/> производственная <br/> база
-                                .infographic-vertically__item
-                                    .infographic-vertically__item-preview
-                                        img(src='./images/svg/icon-adv2.svg').infographic-vertically__item-img
-                                    .infographic-vertically__item-text Гарантия цены <br/> от производителя
-                                .infographic-vertically__item
-                                    .infographic-vertically__item-preview
-                                        img(src='./images/svg/icon-adv3.svg').infographic-vertically__item-img
-                                    .infographic-vertically__item-text Помощь в выборе <br/> теплообменных <br/> аппаратов
-                                .infographic-vertically__item
-                                    .infographic-vertically__item-preview
-                                        img(src='./images/svg/icon-adv4.svg').infographic-vertically__item-img
-                                    .infographic-vertically__item-text Сервисное и <br/> гарантийное <br/> обслуживание
+                        .index-gallery
+                            .index-gallery__header
+                                .index-gallery__title
+                                    .st-title
+                                        +svg('mountains').st-title__icon
+                                        h2.st-title__text Добро пожаловать в отель Hotel Fiescherhof
+                                .index-gallery__descr Жизнь украшают яркие и запоминающиеся события и впечатления! Ваш полноценный отдых – это одно из лучших событий в жизни! Мы с радостью позаботимся о том, чтобы Вы насладились всей прелестью здорового, активного и комфортабельного отдыха в Швейцарии в удивительном местечке Фиш на горнолыжном курорте Алеч!
+                            .index-gallery__images
+                                .previews-grid.previews-grid_white-shadow
+                                    .previews-grid__item
+                                        img(src='../images/small-rooms/room1.jpg').previews-grid__image
+                                    .previews-grid__item
+                                        img(src='../images/small-rooms/room2.jpg').previews-grid__image
+                                    .previews-grid__item
+                                        img(src='../images/small-rooms/room3.jpg').previews-grid__image
+                            .index-gallery__buttons
+                                a(href="#").st-btn-link Фотогалерея
 
-                section.fullscreen-preview
-                    .fullscreen-preview__title
-                        .section-title
-                            .section-title__text Отрасли применения теплообменников  FUNKE
-                            img(src='./images/svg/icon-double-arrows.svg').section-title__icon.section-title__icon_rotate
-                    .fullscreen-preview__content.fullscreen-preview-list
-                        a(href="#").fullscreen-preview-list__item.fullscreen-preview-item
-                            .fullscreen-preview-item__size
-                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview2.jpg)")
-                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ <br/> ДЛЯ ОТОПЛЕНИЯ
-                        a(href="#").fullscreen-preview-list__item.fullscreen-preview-item
-                            .fullscreen-preview-item__size
-                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview2.jpg)")
-                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ ДЛЯ <br/> ГОРЯЧЕГО ВОДОСНАБЖЕНИЯ
-                        a(href="#").fullscreen-preview-list__item.fullscreen-preview-item
-                            .fullscreen-preview-item__size
-                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview3.jpg)")
-                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ ДЛЯ <br/> ПИЩЕВОЙ ПРОМЫШЛЕННОСТИ
-                        a(href="#").fullscreen-preview-list__item.fullscreen-preview-item
-                            .fullscreen-preview-item__size
-                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview2.jpg)")
-                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ ДЛЯ <br/> ХОЛОДОСНАБЖЕНИЯ
-                        a(href="#").fullscreen-preview-list__item.fullscreen-preview-item
-                            .fullscreen-preview-item__size
-                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview5.jpg)")
-                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ <br/> ДЛЯ МЕТАЛЛУРГИИ
-                        a(href="#").fullscreen-preview-list__item.fullscreen-preview-item
-                            .fullscreen-preview-item__size
-                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview6.jpg)")
-                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ ДЛЯ ВЕНТИЛЯЦИИ <br/> И СИСТЕМ КОНДИЦИОНИРОВАНИЯ
-                        a(href="#").fullscreen-preview-list__item.fullscreen-preview-item
-                            .fullscreen-preview-item__size
-                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview7.jpg)")
-                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ ДЛЯ <br/> НЕФТЕГАЗОВОЙ ПРОМЫШЛЕННОСТИ
-                        a(href="#").fullscreen-preview-list__item.fullscreen-preview-item
-                            .fullscreen-preview-item__size
-                            .fullscreen-preview-item__image(style="background-image: url(./images/photos/preview8.jpg)")
-                            .fullscreen-preview-item__footer ТЕПЛООБМЕННИКИ ДЛЯ <br/> СУДОСТРОЕНИЯ
+            include pug/components/footer.pug
 
 
-                section.section.section_index-certificate
-                    .container
-                        .index-certificate-bl
-                            .index-certificate-bl__content
-                                img(src='./images/svg/icon-double-arrows.svg').index-certificate-bl__arrow.icon-bouble-arrow
-                                .index-certificate-bl__text Компания Funke имеет широкий типоразмерный ряд по каждому типу оборудования. Кроме пластинчатых разборных и паяных теплообменников Funke производит воздушные калориферы и кожухотрубные теплообменники. Такой ассортимент продукции способен удовлетворить любые пожелания заказчика.
-                            .index-certificate-bl__images
-                                img(src='./images/photos/certificate1.jpg' data-full-image-src='./images/main.jpg').index-certificate-bl__image.js-full-image-open
-                                img(src='./images/photos/certificate2.jpg' data-full-image-src='./images/main.jpg').index-certificate-bl__image.js-full-image-open
-
-                section.full3image
-                    .full3image__title.gradient-title
-                        .gradient-title__text ООО "РосТехЭнерго-Воронеж" официальное сборочное производство FUNKE
-                    .full3image__images
-                        .full3image__image(style="background-image: url(./images/photos/preview-bg1.jpg)")
-                        .full3image__image(style="background-image: url(./images/photos/preview-bg2.jpg)")
-                        .full3image__image(style="background-image: url(./images/photos/preview-bg3.jpg)")
-
-
-                section.section.section_advantages-text
-                    .container
-                        .advantages-text-bl
-                            .advantages-text-bl__lighter.adv-lighter
-                                img.adv-lighter__icon(src="./images/svg/icon-pen.svg")
-                                .adv-lighter__header пластинчатые теплообменники Funke
-                                .adv-lighter__main в 10 раз легче
-                                .adv-lighter__footer При той же мощности
-                            .advantages-text-bl__less.adv-less
-                                .adv-less__main в 6  раз
-                                .adv-less__footer
-                                    .adv-less__additional меньше
-                                    .adv-less__st-text аналогичного по мощности кожухотрубного теплообменника
-
-                section.section.section_calculation
-                    .container
-                        .section__title.section-title
-                            .section-title__text Расчет теплообменика
-                            img(src='./images/svg/icon-double-arrows.svg').section-title__icon
-                        .section__content.calculation-heatexchanger
-                            .calculation-heatexchanger__section.warning-list
-                                .warning-list__item.warning-item
-                                    img(src='./images/svg/icon-i.svg').warning-item__icon
-                                    .warning-item__content Пластинчатые теплообменники рассчитываются индивидуально!
-                                .warning-list__item.warning-item
-                                    img(src='./images/svg/icon-i.svg').warning-item__icon
-                                    .warning-item__content Важно чтобы расчет осуществлялся професионалами с опытом подбора теплообмеников.
-                            .calculation-heatexchanger__section
-                                .info-list-bl
-                                    .info-list-bl__header
-                                        a(href='#').download-button
-                                            img(src='./images/svg/icon-download.svg').download-button__icon
-                                            .download-button__text Опросный лист для расчета теплообменника Funke
-                                    ul.info-list-bl__info.info-list
-                                        li.info-list__item
-                                            img(src='./images/svg/icon-red-arrow.svg').info-list__item-icon
-                                            .info-list__item-content Скачайте опросный лист, заполните описав свою потребность и направьте его в на E-mail:
-                                            a(href="#").blue-link  info@funke.ru
-                                        li.info-list__item
-                                            img(src='./images/svg/icon-red-arrow.svg').info-list__item-icon
-                                            .info-list__item-content Позвоните нам, или закажите
-                                                | консультацию по телефону.
-
-                                        li.info-list__item
-                                            img(src='./images/svg/icon-red-arrow.svg').info-list__item-icon
-                                            .info-list__item-content В рабочее время с Вами свяжется инженер компании для уточнения деталей и произведет подбор оборудования.
-
-
-            include pug/components/footer
-
-
-
-
-
-
-
-
-
-
-
-
+        script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALtBZ1rYSgg4RhYBED2irnrMw8ksviHI4&callback=initMap")
+        script(src="js/map.js")
         include pug/scripts.pug
