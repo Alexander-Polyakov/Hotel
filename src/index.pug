@@ -76,17 +76,17 @@ html
                             .number-rooms__images
                                 .previews-grid
                                     .previews-grid__item
-                                        img(src='../images/small-rooms/room1.jpg').previews-grid__image
+                                        img(src='./images/small-rooms/room1.jpg').previews-grid__image
                                     .previews-grid__item
-                                        img(src='../images/small-rooms/room2.jpg').previews-grid__image
+                                        img(src='./images/small-rooms/room2.jpg').previews-grid__image
                                     .previews-grid__item
-                                        img(src='../images/small-rooms/room3.jpg').previews-grid__image
+                                        img(src='./images/small-rooms/room3.jpg').previews-grid__image
                                     .previews-grid__item
-                                        img(src='../images/small-rooms/room4.jpg').previews-grid__image
+                                        img(src='./images/small-rooms/room4.jpg').previews-grid__image
                                     .previews-grid__item
-                                        img(src='../images/small-rooms/room5.jpg').previews-grid__image
+                                        img(src='./images/small-rooms/room5.jpg').previews-grid__image
                                     .previews-grid__item
-                                        img(src='../images/small-rooms/room6.jpg').previews-grid__image
+                                        img(src='./images/small-rooms/room6.jpg').previews-grid__image
 
                             .number-rooms__buttons
                                 a(href="#").st-btn-link Смотреть все номера
@@ -119,17 +119,17 @@ html
                             .index-gallery__images
                                 .previews-grid.previews-grid_white-shadow
                                     .previews-grid__item
-                                        img(src='../images/small-rooms/room1.jpg').previews-grid__image
+                                        img(src='./images/small-rooms/room1.jpg').previews-grid__image
                                     .previews-grid__item
-                                        img(src='../images/small-rooms/room2.jpg').previews-grid__image
+                                        img(src='./images/small-rooms/room2.jpg').previews-grid__image
                                     .previews-grid__item
-                                        img(src='../images/small-rooms/room3.jpg').previews-grid__image
+                                        img(src='./images/small-rooms/room3.jpg').previews-grid__image
                             .index-gallery__buttons
                                 a(href="#").st-btn-link Фотогалерея
 
             include pug/components/footer.pug
 
 
-        script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALtBZ1rYSgg4RhYBED2irnrMw8ksviHI4&callback=initMap")
         script(src="js/map.js")
+        script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALtBZ1rYSgg4RhYBED2irnrMw8ksviHI4&callback=initMap")
         include pug/scripts.pug
