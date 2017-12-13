@@ -14,8 +14,8 @@ html
             header.page__header
                 include pug/components/header.pug
 
-            main.page__main
-                section(layout='pt-15 pb-60').section.section_bg-gray
+            main.main.page__main
+                section.main__rooms.section
                     .container
                         .section__breadcrumbs
                             include  pug/components/breadcrumbs.pug
@@ -45,12 +45,12 @@ html
                                     .st-grid
                                         - for (var x = 0; x < 6; x++)
                                             .st-grid__item
-                                                .room-item
+                                                .room-item.js-room-item
                                                     .room-item__header Улучшенный <br/> Двухместный Номер
                                                     .room-item__preview
                                                         img(src='../images/small-rooms/room5.jpg').room-item__image
                                                     .room-item__main
-                                                        .room-item__descr
+                                                        .room-item__descr.st-description
                                                             p.strong  На Ваш выбор просторные
                                                             p.strong  На Ваш выбор просторные
                                                             p   c 1 двухспальной кроватью или 2 отдельными кроватями 2 халата. Мини Бар, Набор для приготовления чая
@@ -83,22 +83,20 @@ html
                                                     p За ребенка - 1.25  CHF
                                                     p За ребёнка до 6 лет - бесплатно
 
-
-            .sections
-                section.sections__services
+                section.main__services
                     .container
                         .services-list
 
                             -
                                 var servicesList = [
-                                {icon: 'wi-fi' ,name: "Бесплатный Wi-Fi"},
-                                {icon: 'parking' ,name: "Бесплатная парковка"},
-                                {icon: 'transfer' ,name: "Трансфер"},
-                                {icon: 'sauna' ,name: "Сауна"},
-                                {icon: 'fitness' ,name: "Фитнес-room"},
-                                {icon: 'pets' ,name: "Размещение с домашними питомцами"},
-                                {icon: 'concert-hall' ,name: "КОНФЕРЕНЦ ЗАЛ"},
-                                {icon: 'restaurant' ,name: "Ресторан"}
+                                {icon: 'cleaning' ,name: "Ежедневная уборка номера"},
+                                {icon: 'radio' ,name: "Радио, Будильник"},
+                                {icon: 'wi-fi' ,name: "Бесплатный WiFi"},
+                                {icon: 'mountain-view' ,name: "Вид на горы"},
+                                {icon: 'tv' ,name: "Телевизор"},
+                                {icon: 'pets' ,name: "Домашние животные бесплатно"},
+                                {icon: 'sauna' ,name: "Отопление в зимний сезон"},
+                                {icon: 'shower' ,name: "Душ или ванна"}
                                 ]
 
                             each item in servicesList
@@ -108,65 +106,7 @@ html
                                             +svg(item.icon).services-item__icon
                                         .services-item__text= item.name
 
-
-                section.sections__index-rooms
-                    .container
-                        .number-rooms
-                            .number-rooms__title
-                                .section-header
-                                    .st-title
-                                        +svg('mountains').st-title__icon
-                                        h2.st-title__text Номерной фонд
-                            .number-rooms__nav
-                                .grid-nav
-                                    .grid-nav__item
-                                        a(href="#").box-nav-item SGL
-                                    .grid-nav__item
-                                        a(href="#").box-nav-item DBL (Стандарт)
-                                    .grid-nav__item
-                                        a(href="#").box-nav-item DBL (Бюджет)
-                                    .grid-nav__item
-                                        a(href="#").box-nav-item DBL (Конфорт)
-                                    .grid-nav__item
-                                        a(href="#").box-nav-item TPL
-                                    .grid-nav__item
-                                        a(href="#").box-nav-item QPL
-                            .number-rooms__descr
-                                .st-text На Ваш выбор просторные стандартные номера для одно, двух, трёх или четырёх человек, а так же номера повышенной комфортности. Во всех номерах есть душ или ванна, туалет, телевизор, радио, фен для волос, беспроводной интернет, в большинстве – балконы с зачаровывающими горными пейзажами. Оформление комнат и отделка деревянными панелями создают атмосферу тепла и уюта.
-                            .number-rooms__images
-                                .previews-grid
-                                    .previews-grid__item
-                                        img(src='../images/small-rooms/room1.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='../images/small-rooms/room2.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='../images/small-rooms/room3.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='../images/small-rooms/room4.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='../images/small-rooms/room5.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='../images/small-rooms/room6.jpg').previews-grid__image
-
-                            .number-rooms__buttons
-                                a(href="#").st-btn-link Смотреть все номера
-
-                section.index-restaurant
-                    .index-restaurant__bg-grid
-                        .index-restaurant__bg-item(style="background-image:url(./images/bg-previews/restaurant-preview1.jpg)")
-                        .index-restaurant__bg-item(style="background-image:url(./images/bg-previews/restaurant-preview2.jpg)")
-                        .index-restaurant__bg-item(style="background-image:url(./images/bg-previews/restaurant-preview3.jpg)")
-                    .index-restaurant__content
-                        .bl-frame
-                            .bl-frame__header
-                                +svg('mountains').bl-frame__mountains
-                            .bl-frame__content
-                                .bl-frame__title Ресторан Фишерхоф
-                                .bl-frame__descr Ресторан Фишерхоф очарователен своим местным колоритом. <br/> Ресторан предлагает изысканное разнообразие меню, в которое входят блюда швейцарской и итальянской кухни. Для приготовления блюд используются только самые свежие первоклассные продукты. Вы по достоинству оцените тонкий вкус вин из Швейцарии и Италии!
-                                .bl-frame__buttons
-                                    a(href="#").st-btn-link Подробнее
-
-                section.sections__index-gallery
+                section.main__index-gallery
                     .container
                         .index-gallery
                             .index-gallery__header
@@ -178,15 +118,48 @@ html
                             .index-gallery__images
                                 .previews-grid.previews-grid_white-shadow
                                     .previews-grid__item
-                                        img(src='../images/small-rooms/room1.jpg').previews-grid__image
+                                        img(src='./images/small-gallery/gallery-img1.jpg').previews-grid__image
                                     .previews-grid__item
-                                        img(src='../images/small-rooms/room2.jpg').previews-grid__image
+                                        img(src='./images/small-gallery/gallery-img2.jpg').previews-grid__image
                                     .previews-grid__item
-                                        img(src='../images/small-rooms/room3.jpg').previews-grid__image
+                                        img(src='./images/small-gallery/gallery-img3.jpg').previews-grid__image
                             .index-gallery__buttons
                                 a(href="#").st-btn-link Фотогалерея
 
+                include pug/components/reservation.pug
+
             include pug/components/footer.pug
+            .page__room-popup.js-room-popup
+                .page__room-popup-wrapper
+                    .room-popup
+                        .room-popup__close.js-room-popup-close
+                            .close-btn
+                        .room-popup__title Улучшенный Двухместный Номер
+                        .room-popup__content
+                            .room-popup__images.slider.js-slider
+                                .slider__main
+                                    img(src='./images/small-gallery/gallery-img1.jpg').slider__main-image.js-slider-main
+                                .slider__nav
+                                    .slider__nav-item
+                                        img(src='./images/small-gallery/gallery-img1.jpg' data-full-img='./images/small-gallery/gallery-img1.jpg').slider__nav-image.js-slider-nav
+                                    .slider__nav-item
+                                        img(src='./images/small-gallery/gallery-img1.jpg' data-full-img='./images/small-gallery/gallery-img2.jpg').slider__nav-image.js-slider-nav
+                                    .slider__nav-item
+                                        img(src='./images/small-gallery/gallery-img1.jpg' data-full-img='./images/small-gallery/gallery-img3.jpg').slider__nav-image.js-slider-nav
+                                    .slider__nav-item
+                                        img(src='./images/small-gallery/gallery-img1.jpg' data-full-img='./images/small-gallery/gallery-img2.jpg').slider__nav-image.js-slider-nav
+                            .room-popup__descr.room-popup-descr
+                                .room-popup-descr__section
+                                    .st-description
+                                        p.strong  На Ваш выбор просторные
+                                        p.strong  На Ваш выбор просторные
+                                        p   c 1 двухспальной кроватью или 2 отдельными кроватями 2 халата. Мини Бар, Набор для приготовления чая
+                                .room-popup-descr__section
+                                    .room-popup-descr__price Цена: 59-90 CHF*
+                                    .st-description
+                                        p.strong  На Ваш выбор просторные
+                                        p.strong  На Ваш выбор просторные
+                                        p   c 1 двухспальной кроватью или 2 отдельными кроватями 2 халата. Мини Бар, Набор для приготовления чая
 
 
         script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALtBZ1rYSgg4RhYBED2irnrMw8ksviHI4&callback=initMap")

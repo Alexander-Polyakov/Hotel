@@ -55,6 +55,9 @@ body
     font-size: 16px
     color: #333
 
+.ovh
+    overflow: hidden
+
 .page
     min-width: 320px
     overflow-x: hidden
@@ -89,38 +92,143 @@ body
         z-index: 300
         background-color: rgba(0,0,0,.4)
         display: none
+    &__room-popup
+        position: fixed
+        z-index: 1000
+        top: 0
+        height: 100%
+        left: 0
+        width: 100%
+        display: none
+    &__room-popup-wrapper
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        overflow: auto
+        padding: 0 10px
+
+.room-popup
+    padding: 20px
+    border: 3px solid $st-yellow
+    background-color: $st-gray
+    max-width: 920px
+    margin: 50px auto
+    position: relative
+    &__close
+        right: 10px
+        top: 10px
+        position: absolute
+    &__title
+        font-size: 20px
+        text-transform: uppercase
+        font-family: $ff-fsc
+        text-align: center
+        margin-bottom: 20px
+        color: $st-brown
+        padding: 0 40px
+    &__content
+        display: flex
+        justify-content: space-between
+    &__images
+        width: 70%
+        flex-shrink: 0
+    &__descr
+        width: 28%
+
+.room-popup-descr
+    &__section
+        margin-bottom: 60px
+        &:last-child
+            margin-bottom: 0
+    &__price
+        font-size: 20px
+        text-transform: uppercase
+        font-weight: 700
+        font-family: $ff-fsc
+        margin-bottom: 20px
+        color: $st-brown
+
+.slider
+    &__main
+        padding-top: 66%
+        position: relative
+        overflow: hidden
+        margin-bottom: 15px
+    &__main-image
+        position: absolute
+        left: 0
+        top: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+    &__nav
+        display: flex
+        margin: 0 -6px
+    &__nav-item
+        width: 25%
+        padding: 0 6px
+        height: 100px
+        overflow: hidden
+        cursor: pointer
+        position: relative
+        &:before
+            content: ''
+            position: absolute
+            left: 6px
+            top: 0
+            right: 6px
+            bottom: 0
+            background-color: $st-brown
+            z-index: 10
+    &__nav-image
+        object-fit: cover
+        width: 100%
+        height: 100%
+        transition: all 0.5s ease 0s
+        position: relative
+        z-index: 20
+        &:hover
+            opacity: 0.3
+
+.close-btn
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    background-color: $dark-brown
+    display: inline-block
+    cursor: pointer
+    transform: rotate(45deg)
+    &:before
+        content: ''
+        width: 60%
+        height: 2px
+        background-color: #fff
+        left: 20%
+        top: 50%
+        margin-top: -1px
+        position: absolute
+    &:after
+        content: ''
+        height: 60%
+        width: 2px
+        top: 20%
+        background-color: #fff
+        left: 50%
+        margin-left: -1px
+        position: absolute
 
 .mobile-menu
     &__close
-        width: 30px
-        height: 30px
-        border-radius: 50%
-        background-color: $dark-brown
         position: absolute
         top: 10px
-        cursor: pointer
         right: 10px
-        transform: rotate(45deg)
-        &:before
-            content: ''
-            width: 60%
-            height: 2px
-            background-color: #fff
-            left: 20%
-            top: 50%
-            margin-top: -1px
-            position: absolute
-        &:after
-            content: ''
-            height: 60%
-            width: 2px
-            top: 20%
-            background-color: #fff
-            left: 50%
-            margin-left: -1px
-            position: absolute
 
 .main
+    &__rooms
+        padding: 15px 0 60px
+        background-color: $st-gray
     &__restaurant-descr
         padding: 15px 0 60px
         background-color: $st-gray
@@ -148,12 +256,29 @@ body
         background-color: #e6d6b8
         padding: 15px 0
 
+.download-link
+    display: inline-block
+    color: $st-brown
+    text-transform: uppercase
+    position: relative
+    padding-left: 30px
+    &__icon
+        width: 20px
+        height: 10px
+        position: absolute
+        top: 50%
+        left: 0
+        margin-top: -5px
+    &:hover
+        text-decoration: none
+    
+    
 .footer-more-info
     display: flex
     justify-content: space-between
     color: #6b513b
     font-size: 16px
-    &__dev
+    &__link
         color: #6b513b
         &:hover
             text-decoration: none
@@ -196,7 +321,7 @@ body
     display: flex
     flex-wrap: wrap
     margin: -20px -10px 0
-    .st-grid__item
+    &__item
         width: 33.33%
         padding: 20px 10px 0
     &_restaurant
@@ -204,10 +329,17 @@ body
             width: 50%
 
 .preview-item
-    height: 300px
     overflow: hidden
+    position: relative
     &__image
         width: 100%
+        height: 100%
+        object-fit: cover
+        position: absolute
+        left: 0
+        top: 0
+    &__size
+        margin-top: 65%
 
 .section-header
     margin: 0 auto
@@ -294,11 +426,12 @@ body
 .logo
     display: flex
     align-items: center
+    &__link
+        margin-right: 50px
     &__image
         min-width: 205px
         max-width: 205px
         width: 100%
-        margin-right: 50px
     &__text
         color: $st-brown
         font-size: 20px
@@ -307,6 +440,8 @@ body
 .header-phone
     display: flex
     align-items: center
+    text-decoration: none
+    pointer-events: none
     &__icon
         width: 28px
         height: 28px
@@ -432,6 +567,10 @@ body
     &__icon
         width: 70px
         height: 70px
+    &__download
+        padding-top: 20px
+        display: flex
+        justify-content: center
 
 
 .bl-frame
@@ -568,7 +707,11 @@ body
 .grid-nav
     display: flex
     justify-content: space-between
-
+    &_gallery
+        flex-wrap: wrap
+        margin: 0 -5px
+        .grid-nav__item
+            padding: 5px
 
 .box-nav-item
     display: inline-block
@@ -622,7 +765,7 @@ body
 
 
 .index-restaurant
-    padding: 125px 0 40px
+    padding: 125px 10px 40px
     position: relative
     min-height: 450px
     &__bg-grid
@@ -829,10 +972,22 @@ body
         text-align: center
         margin-bottom: 20px
 
+.st-description
+    font-size: 15px
+    color: $st-brown
+    font-family: $ff-fsc
+    & p
+        margin-bottom: 12px
+        &:last-child
+            margin-bottom: 0
+    & .strong
+        font-weight: 700
+
 .room-item
     border: 2px solid $st-yellow
     font-family: $ff-fsc
     background-color: #fff
+    color: $st-brown
     &__header
         height: 70px
         padding: 10px 15px
@@ -847,17 +1002,12 @@ body
         overflow: hidden
     &__image
         object-fit: cover
+        width: 100%
+        height: 100%
     &__main
         padding: 15px
     &__descr
         margin-bottom: 20px
-        font-size: 15px
-        & p
-            margin-bottom: 12px
-            &:last-child
-                margin-bottom: 0
-        & .strong
-            font-weight: 700
     &__price
         font-size: 20px
         font-weight: 700
@@ -890,6 +1040,8 @@ body
     overflow: hidden
     &__image
         object-fit: cover
+        width: 100%
+        height: 100%
 
 .st-pagination
     display: flex
@@ -938,6 +1090,7 @@ body
     min-height: 350px
     display: flex
     justify-content: space-between
+    flex-wrap: wrap
     &__preview, &__content
         width: 48%
     &__preview
@@ -946,6 +1099,8 @@ body
         line-height: 0
     &__image
         object-fit: cover
+        width: 100%
+        height: 100%
 
 
 .reservation-form
@@ -1007,7 +1162,6 @@ body
     padding: 15px
     color: $dark-brown
     border-radius: 10px
-    margin-top: 10px
     z-index: 500 !important
     border: 3px solid $dark-brown
     margin-left: -3px
@@ -1147,8 +1301,71 @@ body
 
 
 
+.js-room-item
+    cursor: pointer
+
+
+
 
 @media screen and (max-width: 960px)
+    .grid-nav_index
+        flex-wrap: wrap
+        margin-top: -15px
+        .grid-nav__item
+            width: 33.33%
+            margin-top: 15px
+            display: flex
+            justify-content: center
+
+    .figured-title
+        width: 300px
+        height: 58px
+        &__text
+            line-height: 58px
+            font-size: 24px
+
+    .header-info
+        &__address
+            width: 80%
+            min-width: 0
+    .page-preview
+        padding: 200px 10px 50px
+        &__image
+            position: absolute
+            left: 0
+            top: 0
+            width: 100%
+            height: 100%
+            padding: 0
+            background-position: center center
+        &__content
+            width: auto
+            max-width: 450px
+            position: relative
+            top: 0
+            left: 0
+            margin: 0 auto
+
+
+    .header-phone
+        pointer-events: auto
+
+    .header-main
+        flex-wrap: wrap
+        &__logo
+            width: 100%
+            margin-bottom: 15px
+
+    .logo
+        text-align: center
+        justify-content: center
+        flex-wrap: wrap
+        &__link
+            margin-bottom: 15px
+            margin-right: 0
+        &__text
+            width: 100%
+
     .contacts-header
         &__info-left
             width: 55%
@@ -1187,6 +1404,47 @@ body
 
 
 @media screen and (max-width: 767px)
+    .ui-datepicker
+        padding: 13px
+
+    .ui-datepicker-calendar td
+        padding: 2px
+
+    .ui-state-default
+        height: 32px
+        width: 32px
+        line-height: 32px
+
+    .room-popup
+        &__content
+            flex-wrap: wrap
+        &__images
+            width: 100%
+            margin-bottom: 20px
+        &__descr
+            width: 100%
+
+    .st-grid
+        &__item
+            width: 50%
+
+    .main
+        &__restaurant-images
+            padding: 30px 0
+
+    .contacts__main
+        padding: 0
+        .container
+            padding: 0
+
+    .contacts__map
+        position: relative
+        height: 300px
+        width: 100%
+
+    .contacts__form
+        width: 100%
+
     .reservation-form
         flex-wrap: wrap
         justify-content: space-around
@@ -1228,7 +1486,37 @@ body
         &__info-right
             display: block
 
+    .previews-grid__item
+        width: 50%
+
 @media screen and (max-width: 640px)
+    .restaurant-menu
+        &__hours
+            width: 300px
+            margin: 0 auto
+
+    .brown-box
+        &__content
+            width: 100%
+        &__preview
+            width: 100%
+            margin-bottom: 20px
+
+    .number-rooms
+        &__list-rooms
+            width: 300px
+            margin: 0 auto 20px
+        &__list-price
+            width: 300px
+            margin: 0 auto
+
+    .st-grid__item
+        width: 100%
+
+    .grid-nav_index
+        .grid-nav__item
+            width: 50%
+
     .previews-grid
         &__item
             width: 50%
@@ -1256,3 +1544,10 @@ body
                 width: 100%
                 margin-bottom: 0
                 margin-top: 0
+
+@media screen and (max-width: 440px)
+    .st-grid_restaurant .st-grid__item
+        width: 100%
+
+    .previews-grid__item
+        width: 100%

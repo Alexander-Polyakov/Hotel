@@ -22,11 +22,13 @@
         .container
             .header-main
                 .header-main__logo.logo
-                    img(src='./images/logo.svg').logo__image
+                    a(href="#").logo__link
+                        img(src='./images/logo.svg').logo__image
                     .logo__text Швейцария не обязательно должна быть дорогой!
-                .header-main__phone.header-phone
-                    +svg('phone').header-phone__icon
-                    .header-phone__text + 41 279 -71-21-71
+                .header-main__phone
+                    a(href="tel:+41279712171").header-phone
+                        +svg('handset').header-phone__icon
+                        .header-phone__text + 41 279 -71-21-71
                 .header-main__hamburger
                     button.hamburger-button.js-mob-menu-open
                         i.hamburger-button__line

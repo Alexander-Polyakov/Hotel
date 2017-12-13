@@ -26,6 +26,7 @@
     "gulp-watch": "*",
     "gulp.spritesmith": "^6.2.0",
     "imagemin-pngquant": "*",
+    "lightbox2": "^2.10.0",
     "rimraf": "*"
   },
   "devDependencies": {

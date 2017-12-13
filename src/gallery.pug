@@ -26,7 +26,7 @@ html
                         .section__content
                             .gallery
                                 .gallery__nav
-                                    .grid-nav
+                                    .grid-nav.grid-nav_gallery
                                         .grid-nav__item.active
                                             a(href="#").box-nav-item ВСЕ ФОТО
                                         .grid-nav__item
@@ -58,109 +58,11 @@ html
                                         a(href='#').st-pagination__link 4
                                         a(href='#').st-pagination__link 5
                                         a(href='#').st-pagination__right
-            .sections
-                section.sections__services
-                    .container
-                        .services-list
 
-                            -
-                                var servicesList = [
-                                {icon: 'wi-fi' ,name: "Бесплатный Wi-Fi"},
-                                {icon: 'parking' ,name: "Бесплатная парковка"},
-                                {icon: 'transfer' ,name: "Трансфер"},
-                                {icon: 'sauna' ,name: "Сауна"},
-                                {icon: 'fitness' ,name: "Фитнес-room"},
-                                {icon: 'pets' ,name: "Размещение с домашними питомцами"},
-                                {icon: 'concert-hall' ,name: "КОНФЕРЕНЦ ЗАЛ"},
-                                {icon: 'restaurant' ,name: "Ресторан"}
-                                ]
-
-                            each item in servicesList
-                                .services-list__item
-                                    .services-item
-                                        .services-item__preview
-                                            +svg(item.icon).services-item__icon
-                                        .services-item__text= item.name
-
-
-                section.sections__index-rooms
-                    .container
-                        .number-rooms
-                            .number-rooms__title
-                                .section-header
-                                    .st-title
-                                        +svg('mountains').st-title__icon
-                                        h2.st-title__text Номерной фонд
-                            .number-rooms__nav
-                                .grid-nav
-                                    .grid-nav__item
-                                        a(href="#").box-nav-item SGL
-                                    .grid-nav__item
-                                        a(href="#").box-nav-item DBL (Стандарт)
-                                    .grid-nav__item
-                                        a(href="#").box-nav-item DBL (Бюджет)
-                                    .grid-nav__item
-                                        a(href="#").box-nav-item DBL (Конфорт)
-                                    .grid-nav__item
-                                        a(href="#").box-nav-item TPL
-                                    .grid-nav__item
-                                        a(href="#").box-nav-item QPL
-                            .number-rooms__descr
-                                .st-text На Ваш выбор просторные стандартные номера для одно, двух, трёх или четырёх человек, а так же номера повышенной комфортности. Во всех номерах есть душ или ванна, туалет, телевизор, радио, фен для волос, беспроводной интернет, в большинстве – балконы с зачаровывающими горными пейзажами. Оформление комнат и отделка деревянными панелями создают атмосферу тепла и уюта.
-                            .number-rooms__images
-                                .previews-grid
-                                    .previews-grid__item
-                                        img(src='../images/small-rooms/room1.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='../images/small-rooms/room2.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='../images/small-rooms/room3.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='../images/small-rooms/room4.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='../images/small-rooms/room5.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='../images/small-rooms/room6.jpg').previews-grid__image
-
-                            .number-rooms__buttons
-                                a(href="#").st-btn-link Смотреть все номера
-
-                section.index-restaurant
-                    .index-restaurant__bg-grid
-                        .index-restaurant__bg-item(style="background-image:url(./images/bg-previews/restaurant-preview1.jpg)")
-                        .index-restaurant__bg-item(style="background-image:url(./images/bg-previews/restaurant-preview2.jpg)")
-                        .index-restaurant__bg-item(style="background-image:url(./images/bg-previews/restaurant-preview3.jpg)")
-                    .index-restaurant__content
-                        .bl-frame
-                            .bl-frame__header
-                                +svg('mountains-brown').bl-frame__mountains
-                            .bl-frame__content
-                                .bl-frame__title Ресторан Фишерхоф
-                                .bl-frame__descr Ресторан Фишерхоф очарователен своим местным колоритом. <br/> Ресторан предлагает изысканное разнообразие меню, в которое входят блюда швейцарской и итальянской кухни. Для приготовления блюд используются только самые свежие первоклассные продукты. Вы по достоинству оцените тонкий вкус вин из Швейцарии и Италии!
-                                .bl-frame__buttons
-                                    a(href="#").st-btn-link Подробнее
-
-                section.sections__index-gallery
-                    .container
-                        .index-gallery
-                            .index-gallery__header
-                                .index-gallery__title
-                                    .st-title
-                                        +svg('mountains').st-title__icon
-                                        h2.st-title__text Добро пожаловать в отель Hotel Fiescherhof
-                                .index-gallery__descr Жизнь украшают яркие и запоминающиеся события и впечатления! Ваш полноценный отдых – это одно из лучших событий в жизни! Мы с радостью позаботимся о том, чтобы Вы насладились всей прелестью здорового, активного и комфортабельного отдыха в Швейцарии в удивительном местечке Фиш на горнолыжном курорте Алеч!
-                            .index-gallery__images
-                                .previews-grid.previews-grid_white-shadow
-                                    .previews-grid__item
-                                        img(src='../images/small-rooms/room1.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='../images/small-rooms/room2.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='../images/small-rooms/room3.jpg').previews-grid__image
-                            .index-gallery__buttons
-                                a(href="#").st-btn-link Фотогалерея
-
+                include pug/components/reservation.pug
             include pug/components/footer.pug
+
+
 
 
         script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALtBZ1rYSgg4RhYBED2irnrMw8ksviHI4&callback=initMap")

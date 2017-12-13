@@ -39,21 +39,27 @@ html
                         .st-grid.st-grid_restaurant
                             .st-grid__item
                                 .preview-item
+                                    .preview-item__size
                                     img(src='../images/small-restaurant/restaurant-img1.jpg').preview-item__image
                             .st-grid__item
                                 .preview-item
+                                    .preview-item__size
                                     img(src='../images/small-restaurant/restaurant-img2.jpg').preview-item__image
                             .st-grid__item
                                 .preview-item
+                                    .preview-item__size
                                     img(src='../images/small-restaurant/restaurant-img3.jpg').preview-item__image
                             .st-grid__item
                                 .preview-item
+                                    .preview-item__size
                                     img(src='../images/small-restaurant/restaurant-img1.jpg').preview-item__image
                             .st-grid__item
                                 .preview-item
+                                    .preview-item__size
                                     img(src='../images/small-restaurant/restaurant-img2.jpg').preview-item__image
                             .st-grid__item
                                 .preview-item
+                                    .preview-item__size
                                     img(src='../images/small-restaurant/restaurant-img3.jpg').preview-item__image
                 section.main__restaurant-menu.restaurant-menu
                     .container
@@ -67,13 +73,21 @@ html
                                 .services-list__item
                                     .services-item
                                         .services-item__preview
-                                            +svg('wi-fi').services-item__icon
+                                            +svg('menu').services-item__icon
                                         .services-item__text Меню ресторана
+                                        .services-item__download
+                                            a(href="#").download-link
+                                                +svg('red-arrow').download-link__icon
+                                                .download-link__text  Скачать
                                 .services-list__item
                                     .services-item
                                         .services-item__preview
-                                            +svg('wi-fi').services-item__icon
+                                            +svg('wine-map').services-item__icon
                                         .services-item__text Винная карта
+                                        .services-item__download
+                                            a(href="#").download-link
+                                                +svg('red-arrow').download-link__icon
+                                                .download-link__text  Скачать
                         .restaurant-menu__subtitle Часы работы ресторана
                         .restaurant-menu__hours
                             .st-grid

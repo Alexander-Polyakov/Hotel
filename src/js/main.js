@@ -1,4 +1,28 @@
+
+
 $(document).ready(function() {
+    $(".js-room-popup-close").click(function(){
+        var thisPopup = $(this).closest('.js-room-popup');
+
+        thisPopup.fadeOut(400);
+        $(".page__overlay").fadeOut(400);
+        $('body').removeClass('ovh');
+    });
+
+    $(".js-slider-nav").click(function(){
+       var  fullImgSrc = $(this).data('full-img'),
+            thisSlider = $(this).closest('.js-slider'),
+            fullImageContainer = thisSlider.find(".js-slider-main");
+        console.log(fullImgSrc);
+        fullImageContainer.attr('src', fullImgSrc);
+    });
+
+    $(".js-room-item").click(function(){
+        $(".js-room-popup").fadeIn(400);
+        $(".page__overlay").fadeIn(400);
+        $('body').addClass('ovh');
+    });
+
     $(".js-mob-menu-open").click(function(){
         $(".page__mobile-menu").addClass('opened');
         $(".page__overlay").fadeIn(400);
