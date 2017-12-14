@@ -15,7 +15,7 @@ footer.footer
                                     .icon-text
                                         +svg('map').icon-text__icon
                                         .icon-text__text Адрес:
-                                .d-flex__item Furkastrasse 75 3984 Fiesch Switzerland Широта: 51.6754966 Долгота: 39.20888230000003
+                                .d-flex__item Furkastrasse 75, CH-3984 Fiesch <br/> Широта: 51.6754966 Долгота: 39.20888230000003
                         .contacts-header__info-right
                             .d-flex
                                 .d-flex__item
@@ -35,7 +35,7 @@ footer.footer
                             input(type='text' placeholder='Ваш E-mail').st-input
                         .st-form__line
                             textarea(placeholder='Сообщение').st-textarea
-                        div(layout='text-center').st-form__line
+                        .st-form__line.tac
                             button.st-btn-link Отправить
 
         .contacts__footer
@@ -45,13 +45,13 @@ footer.footer
                     .contacts-footer__header
                         .contacts-items
                             .contacts-items__elem
-                                .contacts-item.contacts-item_mail
+                                a(href='mailto:info@fiescherhof.ch').contacts-item.contacts-item_mail
                                     +svg('contacts-mail').contacts-item__icon
                                     .contacts-item__text info@fiescherhof.ch
                             .contacts-items__elem
-                                .contacts-item.contacts-item_phone
+                                a(href='tel:+41279712171').contacts-item.contacts-item_phone
                                     +svg('contacts-phone').contacts-item__icon
-                                    .contacts-item__text + 41 279-71-21-71
+                                    .contacts-item__text +41 27 971 21 71
                     .contacts-footer__soc
                         nav.soc
                             a(href="#").soc__link

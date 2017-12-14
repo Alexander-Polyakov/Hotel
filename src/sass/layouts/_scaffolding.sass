@@ -7,6 +7,9 @@
     display: inline-block
     vertical-align: middle
 
+.tac
+    text-align: center
+
 [type='text'],
 [type='search'],
 [type='tel'],
@@ -524,7 +527,7 @@ body
         height: 16px
         margin-right: 10px
     &:hover
-        color: #f94825
+        color: $st-brown
 
 .hamburger-button
     width: 40px
@@ -655,6 +658,8 @@ body
         text-align: center
         margin-bottom: 15px
         letter-spacing: -0.2px
+        &.fz18
+            font-size: 18px
     &__buttons
         text-align: center
     &__header
@@ -781,7 +786,7 @@ body
     text-decoration: none
     transition: all 0.5s ease 0s
     &:hover
-        background-color: #fff
+        border-color: $st-brown
     &.active
         background-color: $st-yellow
 
@@ -970,18 +975,19 @@ body
 .contacts-item
     display: flex
     align-items: center
+    text-decoration: none
+    color: $st-brown
+    font-size: 18px
+    font-family: $ff-fsc
     &__icon
         width: 55px
         height: 55px
         margin-right: 15px
-    &__text
-        color: $st-brown
-        font-size: 18px
-        font-family: $ff-fsc
     &_phone
-        .contacts-item__text
-            font-size: 26px
-
+        font-size: 26px
+        pointer-events: none
+    &:hover
+        text-decoration: underline
 .soc
     display: flex
     align-items: center
@@ -1376,6 +1382,14 @@ body
 
 
 @media screen and (max-width: 960px)
+    .contacts-item
+        &_phone
+            pointer-events: auto
+
+    .header-main__logo
+        border-bottom: 2px solid $st-yellow
+        padding-bottom: 10px
+
     .grid-nav_index
         flex-wrap: wrap
         margin-top: -15px
@@ -1472,6 +1486,12 @@ body
 
 
 @media screen and (max-width: 767px)
+    .st-grid__item.mobile-dn
+        display: none
+
+    .bl-frame__descr.fz18
+        font-size: 15px
+
     .ui-datepicker
         padding: 13px
 
@@ -1558,6 +1578,17 @@ body
         width: 50%
 
 @media screen and (max-width: 640px)
+    .number-rooms__images
+        max-width: 320px
+        margin: 0 auto 20px
+
+    .index-gallery__header
+        margin: 0 auto 50px
+
+    .index-gallery__images
+        max-width: 320px
+        margin: 0 auto 20px
+
     .footer-more-info
         flex-wrap: wrap
         &__copy
@@ -1621,6 +1652,9 @@ body
                 margin-top: 0
 
 @media screen and (max-width: 440px)
+    .contacts-header__info
+        font-size: 13px
+
     .st-grid_restaurant .st-grid__item
         width: 100%
 

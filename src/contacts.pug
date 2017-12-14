@@ -26,15 +26,15 @@ html
                         .section__content
                             .contacts-items
                                 .contacts-items__elem
-                                    .contacts-item.contacts-item_phone
+                                    a(href='tel:+41279712171').contacts-item.contacts-item_phone
                                         +svg('contacts-phone').contacts-item__icon
-                                        .contacts-item__text + 41 279-71-21-71
+                                        .contacts-item__text +41 27 971 21 71
                                 .contacts-items__elem
-                                    .contacts-item.contacts-item_phone
-                                        +svg('contacts-phone2').contacts-item__icon
-                                        .contacts-item__text + 41 279-71-19-85
+                                    a(href='tel:+41279711985').contacts-item.contacts-item_phone
+                                        +svg('contacts-phone').contacts-item__icon
+                                        .contacts-item__text +41 279 71 19 85
                                 .contacts-items__elem
-                                    .contacts-item.contacts-item_mail
+                                    a(href='mailto:info@fiescherhof.ch').contacts-item.contacts-item_mail
                                         +svg('contacts-mail').contacts-item__icon
                                         .contacts-item__text info@fiescherhof.ch
 
@@ -54,9 +54,9 @@ html
                                                 .icon-text
                                                     +svg('map').icon-text__icon
                                                     .icon-text__text Адрес:
-                                            .d-flex__item Furkastrasse 75 3984 Fiesch Switzerland Широта: 51.6754966 Долгота: 39.20888230000003
+                                            .d-flex__item Furkastrasse 75, CH-3984 Fiesch <br/> Широта: 51.6754966 Долгота: 39.20888230000003
                                     .contacts-header__info-right
-                                        .d-flex.d-flex_jc-right
+                                        .d-flex
                                             .d-flex__item
                                                 .icon-text
                                                     +svg('car').icon-text__icon
@@ -74,7 +74,7 @@ html
                                         input(type='text' placeholder='Ваш E-mail').st-input
                                     .st-form__line
                                         textarea(placeholder='Сообщение').st-textarea
-                                    div(layout='text-center').st-form__line
+                                    .st-form__line.tac
                                         button.st-btn-link Отправить
 
                     include pug/components/reservation.pug
@@ -86,13 +86,13 @@ html
                                 .contacts-footer__header
                                     .contacts-items
                                         .contacts-items__elem
-                                            .contacts-item.contacts-item_mail
+                                            a(href='mailto:info@fiescherhof.ch').contacts-item.contacts-item_mail
                                                 +svg('contacts-mail').contacts-item__icon
                                                 .contacts-item__text info@fiescherhof.ch
                                         .contacts-items__elem
-                                            .contacts-item.contacts-item_phone
+                                            a(href='tel:+41279712171').contacts-item.contacts-item_phone
                                                 +svg('contacts-phone').contacts-item__icon
-                                                .contacts-item__text + 41 279-71-21-71
+                                                .contacts-item__text +41 27 971 21 71
                                 .contacts-footer__soc
                                     nav.soc
                                         a(href="#").soc__link
@@ -106,7 +106,9 @@ html
                     .container
                         .footer-more-info
                             .footer-more-info__copy &copy; 2013   Hotel Fiescherhof
-                            a(href="#").footer-more-info__dev создание сайта
+                            a(href='http://www.hostcms.ru' target="_blank").footer-more-info__link hostcms
+                            a(href='https://www.velest.ru' target="_blank").footer-more-info__link создание сайта
+
 
 
             .page__mobile-menu.mobile-menu
