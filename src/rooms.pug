@@ -26,7 +26,7 @@ html
                         .section__content
                             .number-rooms
                                 .number-rooms__nav
-                                    .grid-nav
+                                    .grid-nav.grid-nav_index
                                         .grid-nav__item
                                             a(href="#").box-nav-item SGL
                                         .grid-nav__item
@@ -45,10 +45,14 @@ html
                                     .st-grid
                                         - for (var x = 0; x < 6; x++)
                                             .st-grid__item
-                                                .room-item.js-room-item
+                                                .room-item
                                                     .room-item__header Улучшенный <br/> Двухместный Номер
-                                                    .room-item__preview
+                                                    .room-item__preview.js-room-item
+                                                        +svg('loupe').room-item__loupe
                                                         img(src='./images/small-rooms/room5.jpg').room-item__image
+                                                        .room-item__seats.room-seats
+                                                            +svg('human').room-seats__item
+                                                            +svg('human').room-seats__item
                                                     .room-item__main
                                                         .room-item__descr.st-description
                                                             p.strong  На Ваш выбор просторные
@@ -123,7 +127,7 @@ html
                                     .st-grid__item(data-src='./images/small-gallery/gallery-img2.jpg')
                                         a(href='').gallery-item.gallery-item_shadow-border
                                             img(src='./images/small-gallery/gallery-img2.jpg').gallery-item__image
-                                    .st-grid__item(data-src='./images/small-gallery/gallery-img3.jpg')
+                                    .st-grid__item(data-src='./images/small-gallery/gallery-img3.jpg').mobile-dn
                                         a(href='').gallery-item.gallery-item_shadow-border
                                             img(src='./images/small-gallery/gallery-img3.jpg').gallery-item__image
                             .index-gallery__buttons

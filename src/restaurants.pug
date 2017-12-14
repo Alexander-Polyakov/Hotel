@@ -22,7 +22,7 @@ html
                         .section__title
                             .st-title
                                 +svg('mountains').st-title__icon
-                                h2.st-title__text Фотогалерея
+                                h2.st-title__text ресторан
                         .section__content
                             .brown-box
                                 .brown-box__preview
@@ -36,31 +36,25 @@ html
                                             .bl-frame__descr Ресторан Фишерхоф очарователен своим местным колоритом. Ресторан предлагает изысканное разнообразие меню, в которое входят блюда швейцарской и итальянской кухни. Для приготовления блюд используются только самые свежие первоклассные продукты. Вы по достоинству оцените тонкий вкус вин из Швейцарии и Италии!
                 section.main__restaurant-images
                     .container
-                        .st-grid.st-grid_restaurant
-                            .st-grid__item
-                                .preview-item
-                                    .preview-item__size
-                                    img(src='./images/small-restaurant/restaurant-img1.jpg').preview-item__image
-                            .st-grid__item
-                                .preview-item
-                                    .preview-item__size
-                                    img(src='./images/small-restaurant/restaurant-img2.jpg').preview-item__image
-                            .st-grid__item
-                                .preview-item
-                                    .preview-item__size
-                                    img(src='./images/small-restaurant/restaurant-img3.jpg').preview-item__image
-                            .st-grid__item
-                                .preview-item
-                                    .preview-item__size
-                                    img(src='./images/small-restaurant/restaurant-img1.jpg').preview-item__image
-                            .st-grid__item
-                                .preview-item
-                                    .preview-item__size
-                                    img(src='./images/small-restaurant/restaurant-img2.jpg').preview-item__image
-                            .st-grid__item
-                                .preview-item
-                                    .preview-item__size
-                                    img(src='./images/small-restaurant/restaurant-img3.jpg').preview-item__image
+                        .st-grid.st-grid_restaurant.js-gallery
+                            .st-grid__item(data-src='./images/small-restaurant/restaurant-img1.jpg')
+                                a(href='').gallery-item.gallery-item_restaurant
+                                    img(src='./images/small-restaurant/restaurant-img1.jpg').gallery-item__image
+                            .st-grid__item(data-src='./images/small-restaurant/restaurant-img2.jpg')
+                                a(href='').gallery-item.gallery-item_restaurant
+                                    img(src='./images/small-restaurant/restaurant-img2.jpg').gallery-item__image
+                            .st-grid__item(data-src='./images/small-restaurant/restaurant-img3.jpg')
+                                a(href='').gallery-item.gallery-item_restaurant
+                                    img(src='./images/small-restaurant/restaurant-img3.jpg').gallery-item__image
+                            .st-grid__item(data-src='./images/small-restaurant/restaurant-img1.jpg')
+                                a(href='').gallery-item.gallery-item_restaurant
+                                    img(src='./images/small-restaurant/restaurant-img1.jpg').gallery-item__image
+                            .st-grid__item(data-src='./images/small-restaurant/restaurant-img2.jpg')
+                                a(href='').gallery-item.gallery-item_restaurant
+                                    img(src='./images/small-restaurant/restaurant-img2.jpg').gallery-item__image
+                            .st-grid__item(data-src='./images/small-restaurant/restaurant-img3.jpg')
+                                a(href='').gallery-item.gallery-item_restaurant
+                                    img(src='./images/small-restaurant/restaurant-img3.jpg').gallery-item__image
                 section.main__restaurant-menu.restaurant-menu
                     .container
                         .restaurant-menu__title
