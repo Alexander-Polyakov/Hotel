@@ -145,32 +145,14 @@ body
         object-fit: cover
     &__nav
         display: flex
+        flex-wrap: wrap
         margin: 0 -6px
     &__nav-item
         width: 25%
         padding: 0 6px
-        height: 100px
-        overflow: hidden
-        cursor: pointer
-        position: relative
-        &:before
-            content: ''
-            position: absolute
-            left: 6px
-            top: 0
-            right: 6px
-            bottom: 0
-            background-color: $st-brown
-            z-index: 10
-    &__nav-image
-        object-fit: cover
-        width: 100%
-        height: 100%
-        transition: all 0.5s ease 0s
-        position: relative
-        z-index: 20
-        &:hover
-            opacity: 0.3
+
+.js-slider-nav
+    cursor: pointer
 
 .close-btn
     width: 30px
@@ -1041,7 +1023,7 @@ body
         text-align: center
         border-bottom: 4px solid #e4cb87
     &__preview
-        height: 200px
+        padding-top: 66%
         overflow: hidden
         position: relative
         cursor: pointer
@@ -1054,6 +1036,10 @@ body
         width: 100%
         height: 100%
         transition: all 0.5s ease 0s
+        position: absolute
+        left: 0
+        top: 0
+        z-index: 20
     &__loupe
         width: 66px
         height: 66px
@@ -1071,6 +1057,7 @@ body
         padding: 5px
         bottom: 0
         left: 0
+        z-index: 50
     &__main
         padding: 15px
     &__descr
@@ -1500,6 +1487,15 @@ body
 
 
 @media screen and (max-width: 767px)
+    .price-item
+        padding: 10px
+
+    .room-item__main
+        padding: 10px
+
+    .room-item__header
+        font-size: 16px
+
     .st-grid__item.mobile-dn
         display: none
 
@@ -1614,14 +1610,6 @@ body
             width: 100%
             margin-bottom: 20px
 
-    .number-rooms
-        &__list-rooms
-            width: 300px
-            margin: 0 auto 20px
-        &__list-price
-            width: 300px
-            margin: 0 auto
-
     .grid-nav_index
         .grid-nav__item
             width: 50%
@@ -1655,6 +1643,17 @@ body
                 margin-top: 0
 
 @media screen and (max-width: 440px)
+    .slider__nav
+        padding: 0
+
+    .slider__nav-item
+        width: 100%
+        padding: 0
+        margin-bottom: 10px
+
+    .slider__main
+        display: none
+
     .st-grid__item
         width: 100%
 
