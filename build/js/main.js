@@ -1,6 +1,12 @@
 
 
 $(document).ready(function() {
+    $(".js-gallery").lightGallery({
+        download: false,
+        share: false
+    });
+
+
     $(".js-room-popup-close").click(function(){
         var thisPopup = $(this).closest('.js-room-popup');
 

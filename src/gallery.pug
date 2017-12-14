@@ -14,8 +14,8 @@ html
             header.page__header
                 include pug/components/header.pug
 
-            main.page__main
-                section(layout='pt-15 pb-60').section.section_bg-gray
+            main.page__main.main
+                section.section.main__gallery
                     .container
                         .section__breadcrumbs
                             include  pug/components/breadcrumbs.pug
@@ -27,8 +27,8 @@ html
                             .gallery
                                 .gallery__nav
                                     .grid-nav.grid-nav_gallery
-                                        .grid-nav__item.active
-                                            a(href="#").box-nav-item ВСЕ ФОТО
+                                        .grid-nav__item
+                                            a(href="#").box-nav-item.active ВСЕ ФОТО
                                         .grid-nav__item
                                             a(href="#").box-nav-item Курорт Алеч
                                         .grid-nav__item
@@ -38,16 +38,16 @@ html
                                         .grid-nav__item
                                             a(href="#").box-nav-item Заповедник Кре-дю-Ван
                                 .gallery__main
-                                    .st-grid
+                                    .st-grid.js-gallery
                                         -for (var i = 0; i < 3; i++)
-                                            .st-grid__item
-                                                .gallery-item
-                                                    img(src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
-                                            .st-grid__item
-                                                .gallery-item
+                                            .st-grid__item(data-src='./images/small-gallery/gallery-img1.jpg')
+                                                a(href='').gallery-item
                                                     img(src='./images/small-gallery/gallery-img2.jpg').gallery-item__image
-                                            .st-grid__item
-                                                .gallery-item
+                                            .st-grid__item(data-src='./images/small-gallery/gallery-img2.jpg')
+                                                a(href='').gallery-item
+                                                    img(src='./images/small-gallery/gallery-img2.jpg').gallery-item__image
+                                            .st-grid__item(data-src='./images/small-gallery/gallery-img3.jpg')
+                                                a(href='').gallery-item
                                                     img(src='./images/small-gallery/gallery-img3.jpg').gallery-item__image
                                 .gallery__pagination
                                     nav.st-pagination
@@ -61,6 +61,9 @@ html
 
                 include pug/components/reservation.pug
             include pug/components/footer.pug
+
+
+
 
 
 

@@ -74,20 +74,25 @@ html
                             .number-rooms__descr
                                 .st-text На Ваш выбор просторные стандартные номера для одно, двух, трёх или четырёх человек, а так же номера повышенной комфортности. Во всех номерах есть душ или ванна, туалет, телевизор, радио, фен для волос, беспроводной интернет, в большинстве – балконы с зачаровывающими горными пейзажами. Оформление комнат и отделка деревянными панелями создают атмосферу тепла и уюта.
                             .number-rooms__images
-                                .previews-grid
-                                    .previews-grid__item
-                                        img(src='./images/small-rooms/room1.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='./images/small-rooms/room2.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='./images/small-rooms/room3.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='./images/small-rooms/room4.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='./images/small-rooms/room5.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='./images/small-rooms/room6.jpg').previews-grid__image
-
+                                .st-grid.js-gallery
+                                    .st-grid__item(data-src='./images/small-rooms/room1.jpg')
+                                        a(href='').gallery-item.gallery-item_black-border
+                                            img(src='./images/small-rooms/room1.jpg').gallery-item__image
+                                    .st-grid__item(data-src='./images/small-rooms/room2.jpg')
+                                        a(href='').gallery-item.gallery-item_black-border
+                                            img(src='./images/small-rooms/room2.jpg').gallery-item__image
+                                    .st-grid__item(data-src='./images/small-rooms/room3.jpg')
+                                        a(href='').gallery-item.gallery-item_black-border
+                                            img(src='./images/small-rooms/room3.jpg').gallery-item__image
+                                    .st-grid__item(data-src='./images/small-rooms/room4.jpg')
+                                        a(href='').gallery-item.gallery-item_black-border
+                                            img(src='./images/small-rooms/room4.jpg').gallery-item__image
+                                    .st-grid__item(data-src='./images/small-rooms/room5.jpg')
+                                        a(href='').gallery-item.gallery-item_black-border
+                                            img(src='./images/small-rooms/room5.jpg').gallery-item__image
+                                    .st-grid__item(data-src='./images/small-rooms/room6.jpg')
+                                        a(href='').gallery-item.gallery-item_black-border
+                                            img(src='./images/small-rooms/room6.jpg').gallery-item__image
                             .number-rooms__buttons
                                 a(href="#").st-btn-link Смотреть все номера
 
@@ -117,13 +122,16 @@ html
                                         h2.st-title__text Добро пожаловать в отель Hotel Fiescherhof
                                 .index-gallery__descr Жизнь украшают яркие и запоминающиеся события и впечатления! Ваш полноценный отдых – это одно из лучших событий в жизни! Мы с радостью позаботимся о том, чтобы Вы насладились всей прелестью здорового, активного и комфортабельного отдыха в Швейцарии в удивительном местечке Фиш на горнолыжном курорте Алеч!
                             .index-gallery__images
-                                .previews-grid.previews-grid_white-shadow
-                                    .previews-grid__item
-                                        img(src='./images/small-gallery/gallery-img1.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='./images/small-gallery/gallery-img2.jpg').previews-grid__image
-                                    .previews-grid__item
-                                        img(src='./images/small-gallery/gallery-img3.jpg').previews-grid__image
+                                .st-grid.js-gallery
+                                    .st-grid__item(data-src='./images/small-gallery/gallery-img1.jpg')
+                                        a(href='').gallery-item.gallery-item_shadow-border
+                                            img(src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
+                                    .st-grid__item(data-src='./images/small-gallery/gallery-img2.jpg')
+                                        a(href='').gallery-item.gallery-item_shadow-border
+                                            img(src='./images/small-gallery/gallery-img2.jpg').gallery-item__image
+                                    .st-grid__item(data-src='./images/small-gallery/gallery-img3.jpg')
+                                        a(href='').gallery-item.gallery-item_shadow-border
+                                            img(src='./images/small-gallery/gallery-img3.jpg').gallery-item__image
                             .index-gallery__buttons
                                 a(href="#").st-btn-link Фотогалерея
 

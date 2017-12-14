@@ -74,8 +74,8 @@
           </div>
         </div>
       </header>
-      <main class="page__main">
-        <section class="section section_bg-gray" layout="pt-15 pb-60">
+      <main class="page__main main">
+        <section class="section main__gallery">
           <div class="container">
             <div class="section__breadcrumbs">
               <nav class="breadcrumbs"><a class="breadcrumbs__link" href="#">Главная</a><span class="breadcrumbs__text">Главная</span></nav>
@@ -92,7 +92,7 @@
               <div class="gallery">
                 <div class="gallery__nav">
                   <div class="grid-nav grid-nav_gallery">
-                    <div class="grid-nav__item active"><a class="box-nav-item" href="#">ВСЕ ФОТО</a></div>
+                    <div class="grid-nav__item"><a class="box-nav-item active" href="#">ВСЕ ФОТО</a></div>
                     <div class="grid-nav__item"><a class="box-nav-item" href="#">Курорт Алеч</a></div>
                     <div class="grid-nav__item"><a class="box-nav-item" href="#">Курорт Алеч</a></div>
                     <div class="grid-nav__item"><a class="box-nav-item" href="#">Ледник</a></div>
@@ -100,34 +100,16 @@
                   </div>
                 </div>
                 <div class="gallery__main">
-                  <div class="st-grid">
-                    <div class="st-grid__item">
-                      <div class="gallery-item"><img class="gallery-item__image" src="./images/small-gallery/gallery-img1.jpg"></div>
-                    </div>
-                    <div class="st-grid__item">
-                      <div class="gallery-item"><img class="gallery-item__image" src="./images/small-gallery/gallery-img2.jpg"></div>
-                    </div>
-                    <div class="st-grid__item">
-                      <div class="gallery-item"><img class="gallery-item__image" src="./images/small-gallery/gallery-img3.jpg"></div>
-                    </div>
-                    <div class="st-grid__item">
-                      <div class="gallery-item"><img class="gallery-item__image" src="./images/small-gallery/gallery-img1.jpg"></div>
-                    </div>
-                    <div class="st-grid__item">
-                      <div class="gallery-item"><img class="gallery-item__image" src="./images/small-gallery/gallery-img2.jpg"></div>
-                    </div>
-                    <div class="st-grid__item">
-                      <div class="gallery-item"><img class="gallery-item__image" src="./images/small-gallery/gallery-img3.jpg"></div>
-                    </div>
-                    <div class="st-grid__item">
-                      <div class="gallery-item"><img class="gallery-item__image" src="./images/small-gallery/gallery-img1.jpg"></div>
-                    </div>
-                    <div class="st-grid__item">
-                      <div class="gallery-item"><img class="gallery-item__image" src="./images/small-gallery/gallery-img2.jpg"></div>
-                    </div>
-                    <div class="st-grid__item">
-                      <div class="gallery-item"><img class="gallery-item__image" src="./images/small-gallery/gallery-img3.jpg"></div>
-                    </div>
+                  <div class="st-grid js-gallery">
+                    <div class="st-grid__item" data-src="./images/small-gallery/gallery-img1.jpg"><a class="gallery-item" href=""><img class="gallery-item__image" src="./images/small-gallery/gallery-img2.jpg"></a></div>
+                    <div class="st-grid__item" data-src="./images/small-gallery/gallery-img2.jpg"><a class="gallery-item" href=""><img class="gallery-item__image" src="./images/small-gallery/gallery-img2.jpg"></a></div>
+                    <div class="st-grid__item" data-src="./images/small-gallery/gallery-img3.jpg"><a class="gallery-item" href=""><img class="gallery-item__image" src="./images/small-gallery/gallery-img3.jpg"></a></div>
+                    <div class="st-grid__item" data-src="./images/small-gallery/gallery-img1.jpg"><a class="gallery-item" href=""><img class="gallery-item__image" src="./images/small-gallery/gallery-img2.jpg"></a></div>
+                    <div class="st-grid__item" data-src="./images/small-gallery/gallery-img2.jpg"><a class="gallery-item" href=""><img class="gallery-item__image" src="./images/small-gallery/gallery-img2.jpg"></a></div>
+                    <div class="st-grid__item" data-src="./images/small-gallery/gallery-img3.jpg"><a class="gallery-item" href=""><img class="gallery-item__image" src="./images/small-gallery/gallery-img3.jpg"></a></div>
+                    <div class="st-grid__item" data-src="./images/small-gallery/gallery-img1.jpg"><a class="gallery-item" href=""><img class="gallery-item__image" src="./images/small-gallery/gallery-img2.jpg"></a></div>
+                    <div class="st-grid__item" data-src="./images/small-gallery/gallery-img2.jpg"><a class="gallery-item" href=""><img class="gallery-item__image" src="./images/small-gallery/gallery-img2.jpg"></a></div>
+                    <div class="st-grid__item" data-src="./images/small-gallery/gallery-img3.jpg"><a class="gallery-item" href=""><img class="gallery-item__image" src="./images/small-gallery/gallery-img3.jpg"></a></div>
                   </div>
                 </div>
                 <div class="gallery__pagination">
