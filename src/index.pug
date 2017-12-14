@@ -74,24 +74,24 @@ html
                             .number-rooms__descr
                                 .st-text На Ваш выбор просторные стандартные номера для одно, двух, трёх или четырёх человек, а так же номера повышенной комфортности. Во всех номерах есть душ или ванна, туалет, телевизор, радио, фен для волос, беспроводной интернет, в большинстве – балконы с зачаровывающими горными пейзажами. Оформление комнат и отделка деревянными панелями создают атмосферу тепла и уюта.
                             .number-rooms__images
-                                .st-grid.js-gallery
-                                    .st-grid__item(data-src='./images/small-rooms/room1.jpg')
-                                        a(href='').gallery-item.gallery-item_black-border
+                                .st-grid
+                                    .st-grid__item
+                                        .gallery-item.gallery-item_black-border.js-room-item
                                             img(src='./images/small-rooms/room1.jpg').gallery-item__image
-                                    .st-grid__item(data-src='./images/small-rooms/room2.jpg')
-                                        a(href='').gallery-item.gallery-item_black-border
+                                    .st-grid__item
+                                        .gallery-item.gallery-item_black-border.js-room-item
                                             img(src='./images/small-rooms/room2.jpg').gallery-item__image
-                                    .st-grid__item(data-src='./images/small-rooms/room3.jpg')
-                                        a(href='').gallery-item.gallery-item_black-border
+                                    .st-grid__item
+                                        .gallery-item.gallery-item_black-border.js-room-item
                                             img(src='./images/small-rooms/room3.jpg').gallery-item__image
-                                    .st-grid__item(data-src='./images/small-rooms/room4.jpg')
-                                        a(href='').gallery-item.gallery-item_black-border
+                                    .st-grid__item
+                                        .gallery-item.gallery-item_black-border.js-room-item
                                             img(src='./images/small-rooms/room4.jpg').gallery-item__image
-                                    .st-grid__item(data-src='./images/small-rooms/room5.jpg')
-                                        a(href='').gallery-item.gallery-item_black-border
+                                    .st-grid__item
+                                        .gallery-item.gallery-item_black-border.js-room-item
                                             img(src='./images/small-rooms/room5.jpg').gallery-item__image
-                                    .st-grid__item(data-src='./images/small-rooms/room6.jpg')
-                                        a(href='').gallery-item.gallery-item_black-border
+                                    .st-grid__item
+                                        .gallery-item.gallery-item_black-border.js-room-item
                                             img(src='./images/small-rooms/room6.jpg').gallery-item__image
                             .number-rooms__buttons
                                 a(href="#").st-btn-link Смотреть все номера
@@ -136,7 +136,42 @@ html
                                 a(href="#").st-btn-link Фотогалерея
 
             include pug/components/footer.pug
+            .page__room-popup.js-room-popup
+                .page__room-popup-wrapper
+                    .room-popup
+                        .room-popup__close.js-room-popup-close
+                            .close-btn
+                        .room-popup__title Улучшенный Двухместный Номер
+                        .room-popup__content
+                            .room-popup__images.slider.js-slider
+                                .slider__main
+                                    img(src='./images/small-gallery/gallery-img1.jpg').slider__main-image.js-slider-main
+                                .slider__nav
+                                    .slider__nav-item
+                                        .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img1.jpg')
+                                            img(src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
+                                    .slider__nav-item
+                                        .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img2.jpg')
+                                            img(src='./images/small-gallery/gallery-img2.jpg').gallery-item__image
+                                    .slider__nav-item
+                                        .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img3.jpg')
+                                            img(src='./images/small-gallery/gallery-img3.jpg').gallery-item__image
+                                    .slider__nav-item
+                                        .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img1.jpg')
+                                            img(src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
 
+                            .room-popup__descr.room-popup-descr
+                                .room-popup-descr__section
+                                    .st-description
+                                        p.strong  На Ваш выбор просторные
+                                        p.strong  На Ваш выбор просторные
+                                        p   c 1 двухспальной кроватью или 2 отдельными кроватями 2 халата. Мини Бар, Набор для приготовления чая
+                                .room-popup-descr__section
+                                    .room-popup-descr__price Цена: 59-90 CHF*
+                                    .st-description
+                                        p.strong  На Ваш выбор просторные
+                                        p.strong  На Ваш выбор просторные
+                                        p   c 1 двухспальной кроватью или 2 отдельными кроватями 2 халата. Мини Бар, Набор для приготовления чая
 
         script(src="js/map.js")
         script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALtBZ1rYSgg4RhYBED2irnrMw8ksviHI4&callback=initMap")

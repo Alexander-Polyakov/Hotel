@@ -19,7 +19,7 @@
             <div class="container">
               <div class="header-info">
                 <div class="header-info__address header-address">
-                  <svg class="icon header-address__icon">
+                  <svg class="icon header-address__icon js-scroll-contacts">
                     <use xlink:href="#svg-icon-marker"></use>
                   </svg>
                   <div class="header-address__text">Швейцария,  курорт Алеч  Furkastrasse 75</div>
@@ -244,13 +244,25 @@
                 <div class="st-text">На Ваш выбор просторные стандартные номера для одно, двух, трёх или четырёх человек, а так же номера повышенной комфортности. Во всех номерах есть душ или ванна, туалет, телевизор, радио, фен для волос, беспроводной интернет, в большинстве – балконы с зачаровывающими горными пейзажами. Оформление комнат и отделка деревянными панелями создают атмосферу тепла и уюта.</div>
               </div>
               <div class="number-rooms__images">
-                <div class="st-grid js-gallery">
-                  <div class="st-grid__item" data-src="./images/small-rooms/room1.jpg"><a class="gallery-item gallery-item_black-border" href=""><img class="gallery-item__image" src="./images/small-rooms/room1.jpg"></a></div>
-                  <div class="st-grid__item" data-src="./images/small-rooms/room2.jpg"><a class="gallery-item gallery-item_black-border" href=""><img class="gallery-item__image" src="./images/small-rooms/room2.jpg"></a></div>
-                  <div class="st-grid__item" data-src="./images/small-rooms/room3.jpg"><a class="gallery-item gallery-item_black-border" href=""><img class="gallery-item__image" src="./images/small-rooms/room3.jpg"></a></div>
-                  <div class="st-grid__item" data-src="./images/small-rooms/room4.jpg"><a class="gallery-item gallery-item_black-border" href=""><img class="gallery-item__image" src="./images/small-rooms/room4.jpg"></a></div>
-                  <div class="st-grid__item" data-src="./images/small-rooms/room5.jpg"><a class="gallery-item gallery-item_black-border" href=""><img class="gallery-item__image" src="./images/small-rooms/room5.jpg"></a></div>
-                  <div class="st-grid__item" data-src="./images/small-rooms/room6.jpg"><a class="gallery-item gallery-item_black-border" href=""><img class="gallery-item__image" src="./images/small-rooms/room6.jpg"></a></div>
+                <div class="st-grid">
+                  <div class="st-grid__item">
+                    <div class="gallery-item gallery-item_black-border js-room-item"><img class="gallery-item__image" src="./images/small-rooms/room1.jpg"></div>
+                  </div>
+                  <div class="st-grid__item">
+                    <div class="gallery-item gallery-item_black-border js-room-item"><img class="gallery-item__image" src="./images/small-rooms/room2.jpg"></div>
+                  </div>
+                  <div class="st-grid__item">
+                    <div class="gallery-item gallery-item_black-border js-room-item"><img class="gallery-item__image" src="./images/small-rooms/room3.jpg"></div>
+                  </div>
+                  <div class="st-grid__item">
+                    <div class="gallery-item gallery-item_black-border js-room-item"><img class="gallery-item__image" src="./images/small-rooms/room4.jpg"></div>
+                  </div>
+                  <div class="st-grid__item">
+                    <div class="gallery-item gallery-item_black-border js-room-item"><img class="gallery-item__image" src="./images/small-rooms/room5.jpg"></div>
+                  </div>
+                  <div class="st-grid__item">
+                    <div class="gallery-item gallery-item_black-border js-room-item"><img class="gallery-item__image" src="./images/small-rooms/room6.jpg"></div>
+                  </div>
                 </div>
               </div>
               <div class="number-rooms__buttons"><a class="st-btn-link" href="#">Смотреть все номера</a></div>
@@ -305,7 +317,7 @@
         </section>
       </main>
       <footer class="footer">
-        <section class="contacts">
+        <section class="contacts" id="contacts">
           <div class="contacts__header">
             <div class="container">
               <div class="contacts-header">
@@ -423,6 +435,52 @@
             <p class="header-mail__text">info@fiescherhof.ch</p></a></div>
       </div>
       <div class="page__overlay js-mob-menu-close"></div>
+      <div class="page__room-popup js-room-popup">
+        <div class="page__room-popup-wrapper">
+          <div class="room-popup">
+            <div class="room-popup__close js-room-popup-close">
+              <div class="close-btn"></div>
+            </div>
+            <div class="room-popup__title">Улучшенный Двухместный Номер</div>
+            <div class="room-popup__content">
+              <div class="room-popup__images slider js-slider">
+                <div class="slider__main"><img class="slider__main-image js-slider-main" src="./images/small-gallery/gallery-img1.jpg"></div>
+                <div class="slider__nav">
+                  <div class="slider__nav-item">
+                    <div class="gallery-item js-slider-nav" data-full-img="./images/small-gallery/gallery-img1.jpg"><img class="gallery-item__image" src="./images/small-gallery/gallery-img1.jpg"></div>
+                  </div>
+                  <div class="slider__nav-item">
+                    <div class="gallery-item js-slider-nav" data-full-img="./images/small-gallery/gallery-img2.jpg"><img class="gallery-item__image" src="./images/small-gallery/gallery-img2.jpg"></div>
+                  </div>
+                  <div class="slider__nav-item">
+                    <div class="gallery-item js-slider-nav" data-full-img="./images/small-gallery/gallery-img3.jpg"><img class="gallery-item__image" src="./images/small-gallery/gallery-img3.jpg"></div>
+                  </div>
+                  <div class="slider__nav-item">
+                    <div class="gallery-item js-slider-nav" data-full-img="./images/small-gallery/gallery-img1.jpg"><img class="gallery-item__image" src="./images/small-gallery/gallery-img1.jpg"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="room-popup__descr room-popup-descr">
+                <div class="room-popup-descr__section">
+                  <div class="st-description">
+                    <p class="strong"> На Ваш выбор просторные</p>
+                    <p class="strong"> На Ваш выбор просторные</p>
+                    <p>  c 1 двухспальной кроватью или 2 отдельными кроватями 2 халата. Мини Бар, Набор для приготовления чая</p>
+                  </div>
+                </div>
+                <div class="room-popup-descr__section">
+                  <div class="room-popup-descr__price">Цена: 59-90 CHF*</div>
+                  <div class="st-description">
+                    <p class="strong"> На Ваш выбор просторные</p>
+                    <p class="strong"> На Ваш выбор просторные</p>
+                    <p>  c 1 двухспальной кроватью или 2 отдельными кроватями 2 халата. Мини Бар, Набор для приготовления чая</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="js/map.js"></script>
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALtBZ1rYSgg4RhYBED2irnrMw8ksviHI4&amp;callback=initMap"></script>

@@ -6,6 +6,15 @@ $(document).ready(function() {
         share: false
     });
 
+    $(".js-scroll-contacts").click(function(){
+       targetOffsetTop =  $("#contacts").offset().top;
+        $('html, body').animate({
+            scrollTop: targetOffsetTop
+        }, 700);
+
+
+    });
+
 
     $(".js-room-popup-close").click(function(){
         var thisPopup = $(this).closest('.js-room-popup');
