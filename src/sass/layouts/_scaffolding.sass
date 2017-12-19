@@ -1031,17 +1031,22 @@ body
         color: $st-brown
         text-align: center
         border-bottom: 4px solid #e4cb87
-    &__preview
-        padding-top: 66%
-        overflow: hidden
-        position: relative
-        cursor: pointer
-        background-color: #000
-        &:hover
-            .room-item__image
-                opacity: 0.5
-            .room-item__loupe
-                opacity: 1
+    &__main
+        padding: 15px
+    &__descr
+        margin-bottom: 20px
+    &__price
+        font-size: 20px
+        font-weight: 700
+        text-transform: uppercase
+        text-align: center
+
+.room-preview
+    padding-top: 66%
+    overflow: hidden
+    position: relative
+    cursor: pointer
+    background-color: #000
     &__image
         object-fit: cover
         width: 100%
@@ -1071,15 +1076,14 @@ body
         bottom: 0
         left: 0
         z-index: 50
-    &__main
-        padding: 15px
-    &__descr
-        margin-bottom: 20px
-    &__price
-        font-size: 20px
-        font-weight: 700
-        text-transform: uppercase
-        text-align: center
+    &_black-border
+        border: 1px solid #000
+    &:hover
+        .room-preview__image
+            opacity: 0.5
+        .room-preview__loupe
+            opacity: 1
+
 
 .room-seats
     display: flex
