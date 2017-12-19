@@ -28,13 +28,16 @@
                 .header-main__phone
                     a(href="tel:+41279712171").header-phone
                         +svg('handset').header-phone__icon
-                        .header-phone__text + 41 279 71 21 71
+                        .header-phone__text +41 27 971 21 71
                 .header-main__hamburger
                     button.hamburger-button.js-mob-menu-open
                         i.hamburger-button__line
                         i.hamburger-button__line
                         i.hamburger-button__line
-
+                .header-main__mail
+                    a(href='mailto:info@fiescherhof.ch').header-mail
+                        +svg('mail').header-mail__icon
+                        p.header-mail__text info@fiescherhof.ch
 
     .header__nav-section
         .container
