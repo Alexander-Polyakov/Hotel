@@ -420,7 +420,7 @@ body
         border: 3px solid $st-yellow
         padding: 10px 23px
         background-color: #fff
-    &:hover
+    &.opened
         .language__dropdown
             opacity: 1
             pointer-events: auto
@@ -590,6 +590,8 @@ body
     &__icon
         width: 70px
         height: 70px
+        &.icon_sauna
+            margin-left: 7px
     &__download
         padding-top: 20px
         display: flex
@@ -673,6 +675,7 @@ body
         font-weight: normal
         text-transform: uppercase
         line-height: 1em
+        letter-spacing: -0.5px
         color: $st-brown
         font-family: $ff-fsc
 
@@ -756,7 +759,16 @@ body
         background-color: $st-yellow
         border: 3px solid $st-yellow
 
-
+.services-section
+    &__title
+        font-size: 25px
+        margin-bottom: 25px
+        color: $st-brown
+        text-transform: uppercase
+        text-align: center
+        font-weight: normal
+        letter-spacing: -1px
+        
 
 .number-rooms
     &__title
@@ -771,13 +783,14 @@ body
     &__buttons
         text-align: center
     &__list-rooms
-        margin-bottom: 20px
+        margin-bottom: 40px
     &__subtitle
         font-size: 22px
         margin-bottom: 20px
         text-align: center
         text-transform: uppercase
         font-family: $ff-fsc
+
 
 .previews-grid
     display: flex
@@ -837,8 +850,11 @@ body
         text-align: center
 
 .contacts
+    &__map-container
+        display: flex
+        justify-content: flex-end
     &__header
-        padding: 15px 0 30px
+        padding: 30px 0
         background-color: $st-gray
         border-bottom: 1px solid $st-brown
     &__main
@@ -1401,6 +1417,12 @@ body
     display: none
 
 @media screen and (max-width: 960px)
+    .index-restaurant
+        &__bg-item
+            width: 50%
+            &:last-child
+                display: none
+
     .header-nav-section
         justify-content: center
 
@@ -1559,7 +1581,7 @@ body
 
     .contacts__map
         position: relative
-        height: 300px
+        height: 400px
         width: 100%
 
     .contacts__form
@@ -1610,6 +1632,14 @@ body
         width: 50%
 
 @media screen and (max-width: 640px)
+    .index-restaurant
+        &__bg-item
+            width: 100%
+            display: none
+            &:first-child
+                display: block
+
+
     .header-main__mail
         display: none
 

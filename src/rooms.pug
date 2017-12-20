@@ -15,7 +15,7 @@ html
                 include pug/components/header.pug
 
             main.main.page__main
-                section.main__rooms.section
+                div.main__rooms.section
                     .container
                         .section__breadcrumbs
                             include  pug/components/breadcrumbs.pug
@@ -49,7 +49,7 @@ html
                                                     .room-item__header Улучшенный <br/> Двухместный Номер
                                                     .room-item__preview.room-preview.js-room-item
                                                         +svg('loupe').room-preview__loupe
-                                                        img(src='./images/small-rooms/room5.jpg').room-preview__image
+                                                        img(alt='' src='./images/small-rooms/room5.jpg').room-preview__image
                                                         .room-preview__seats.room-seats
                                                             +svg('human').room-seats__item
                                                             +svg('human').room-seats__item
@@ -87,8 +87,9 @@ html
                                                     p За ребенка - 1.25  CHF
                                                     p За ребёнка до 6 лет - бесплатно
 
-                section.main__services
+                div.main__services.services-section
                     .container
+                        h2.services-section__title Во всех номерах:
                         .services-list
 
                             -
@@ -110,7 +111,9 @@ html
                                             +svg(item.icon).services-item__icon
                                         .services-item__text= item.name
 
-                section.main__index-gallery
+                include pug/components/reservation.pug
+
+                div.main__index-gallery
                     .container
                         .index-gallery
                             .index-gallery__header
@@ -123,17 +126,17 @@ html
                                 .st-grid.js-gallery
                                     .st-grid__item(data-src='./images/small-gallery/gallery-img1.jpg')
                                         a(href='').gallery-item.gallery-item_shadow-border
-                                            img(src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
+                                            img(alt='' src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
                                     .st-grid__item(data-src='./images/small-gallery/gallery-img2.jpg')
                                         a(href='').gallery-item.gallery-item_shadow-border
-                                            img(src='./images/small-gallery/gallery-img2.jpg').gallery-item__image
+                                            img(alt='' src='./images/small-gallery/gallery-img2.jpg').gallery-item__image
                                     .st-grid__item(data-src='./images/small-gallery/gallery-img3.jpg').mobile-dn
                                         a(href='').gallery-item.gallery-item_shadow-border
-                                            img(src='./images/small-gallery/gallery-img3.jpg').gallery-item__image
+                                            img(alt='' src='./images/small-gallery/gallery-img3.jpg').gallery-item__image
                             .index-gallery__buttons
                                 a(href="#").st-btn-link Фотогалерея
 
-                include pug/components/reservation.pug
+
 
             include pug/components/footer.pug
             .page__room-popup.js-room-popup
@@ -145,20 +148,20 @@ html
                         .room-popup__content
                             .room-popup__images.slider.js-slider
                                 .slider__main
-                                    img(src='./images/small-gallery/gallery-img1.jpg').slider__main-image.js-slider-main
+                                    img(alt='' src='./images/small-gallery/gallery-img1.jpg').slider__main-image.js-slider-main
                                 .slider__nav
                                     .slider__nav-item
                                         .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img1.jpg')
-                                            img(src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
+                                            img(alt='' src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
                                     .slider__nav-item
                                         .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img2.jpg')
-                                            img(src='./images/small-gallery/gallery-img2.jpg').gallery-item__image
+                                            img(alt='' src='./images/small-gallery/gallery-img2.jpg').gallery-item__image
                                     .slider__nav-item
                                         .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img3.jpg')
-                                            img(src='./images/small-gallery/gallery-img3.jpg').gallery-item__image
+                                            img(alt='' src='./images/small-gallery/gallery-img3.jpg').gallery-item__image
                                     .slider__nav-item
                                         .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img1.jpg')
-                                            img(src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
+                                            img(alt='' src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
 
                             .room-popup__descr.room-popup-descr
                                 .room-popup-descr__section

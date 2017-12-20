@@ -15,7 +15,7 @@ html
                 include pug/components/header.pug
 
             main.main.page__main
-                section.main__contacts.section
+                div.main__contacts.section
                     .container
                         .section__breadcrumbs
                             include  pug/components/breadcrumbs.pug
@@ -39,14 +39,10 @@ html
                                         .contacts-item__text info@fiescherhof.ch
 
             footer.footer
-                section.contacts
+                div.contacts
                     .contacts__header
                         .container
                             .contacts-header
-                                .contacts-header__title
-                                    .st-title
-                                        +svg('mountains').st-title__icon
-                                        h2.st-title__text Контакты Hotel Fiescherhof
                                 .contacts-header__info
                                     .contacts-header__info-left
                                         .d-flex
@@ -102,7 +98,7 @@ html
                                         //a(href="#").soc__link
                                         //    +svg('soc3').soc__icon
 
-                section.footer__more-info
+                div.footer__more-info
                     .container
                         .footer-more-info
                             .footer-more-info__copy &copy; 2013   Hotel Fiescherhof

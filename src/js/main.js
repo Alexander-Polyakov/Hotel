@@ -1,6 +1,12 @@
 
 
 $(document).ready(function() {
+    $('.language').hover(function(){
+        $(this).addClass('opened');
+    }, function(){
+        $(this).removeClass('opened');
+    });
+
     $(".js-gallery").lightGallery({
         download: false,
         share: false
@@ -11,10 +17,7 @@ $(document).ready(function() {
         $('html, body').animate({
             scrollTop: targetOffsetTop
         }, 700);
-
-
     });
-
 
     $(".js-room-popup-close").click(function(){
         var thisPopup = $(this).closest('.js-room-popup');
@@ -47,6 +50,8 @@ $(document).ready(function() {
         $(".page__mobile-menu").removeClass('opened');
         $(".page__overlay").fadeOut(400);
     });
+
+
 
     $( function() {
         var dateFormat = "DD, d MM, yy",
@@ -99,7 +104,6 @@ $(document).ready(function() {
             } catch (error) {
                 date = null;
             }
-
             return date;
         }
 

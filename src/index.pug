@@ -3,7 +3,7 @@ include pug/mixins/mixins.pug
 
 doctype html
 html
-    head(lang="en")
+    head(lang="ru")
         include pug/metatags.pug
         +title('Главная')
         include pug/styles.pug
@@ -15,7 +15,7 @@ html
                 include pug/components/header.pug
 
             main.main.page__main
-                section.page-preview
+                div.page-preview
                     .page-preview__image(style="background-image:url(./images/index-preview.jpg)")
                     .page-preview__content
                         .bl-frame
@@ -26,7 +26,7 @@ html
 
                 include pug/components/reservation.pug
 
-                section.main__services
+                div.main__services
                     .container
                         .services-list
 
@@ -46,10 +46,13 @@ html
                                 .services-list__item
                                     .services-item
                                         .services-item__preview
-                                            +svg(item.icon).services-item__icon
+                                            if item.icon == 'sauna'
+                                                +svg(item.icon).services-item__icon.icon_sauna
+                                            else
+                                                +svg(item.icon).services-item__icon
                                         .services-item__text= item.name
 
-                section.main__index-rooms
+                div.main__index-rooms
                     .container
                         .number-rooms
                             .number-rooms__title
@@ -78,42 +81,42 @@ html
                                     .st-grid__item
                                         .room-preview.room-preview_black-border.js-room-item
                                             +svg('loupe').room-preview__loupe
-                                            img(src='./images/small-rooms/room1.jpg').room-preview__image
+                                            img(alt='' src='./images/small-rooms/room1.jpg').room-preview__image
                                             .room-preview__seats.room-seats
                                                 +svg('human').room-seats__item
                                                 +svg('human').room-seats__item
                                     .st-grid__item
                                         .room-preview.room-preview_black-border.js-room-item
                                             +svg('loupe').room-preview__loupe
-                                            img(src='./images/small-rooms/room2.jpg').room-preview__image
+                                            img(alt='' src='./images/small-rooms/room2.jpg').room-preview__image
                                             .room-preview__seats.room-seats
                                                 +svg('human').room-seats__item
                                                 +svg('human').room-seats__item
                                     .st-grid__item
                                         .room-preview.room-preview_black-border.js-room-item
                                             +svg('loupe').room-preview__loupe
-                                            img(src='./images/small-rooms/room3.jpg').room-preview__image
+                                            img(alt='' src='./images/small-rooms/room3.jpg').room-preview__image
                                             .room-preview__seats.room-seats
                                                 +svg('human').room-seats__item
                                                 +svg('human').room-seats__item
                                     .st-grid__item
                                         .room-preview.room-preview_black-border.js-room-item
                                             +svg('loupe').room-preview__loupe
-                                            img(src='./images/small-rooms/room4.jpg').room-preview__image
+                                            img(alt='' src='./images/small-rooms/room4.jpg').room-preview__image
                                             .room-preview__seats.room-seats
                                                 +svg('human').room-seats__item
                                                 +svg('human').room-seats__item
                                     .st-grid__item
                                         .room-preview.room-preview_black-border.js-room-item
                                             +svg('loupe').room-preview__loupe
-                                            img(src='./images/small-rooms/room5.jpg').room-preview__image
+                                            img(alt='' src='./images/small-rooms/room5.jpg').room-preview__image
                                             .room-preview__seats.room-seats
                                                 +svg('human').room-seats__item
                                                 +svg('human').room-seats__item
                                     .st-grid__item
                                         .room-preview.room-preview_black-border.js-room-item
                                             +svg('loupe').room-preview__loupe
-                                            img(src='./images/small-rooms/room6.jpg').room-preview__image
+                                            img(alt='' src='./images/small-rooms/room6.jpg').room-preview__image
                                             .room-preview__seats.room-seats
                                                 +svg('human').room-seats__item
                                                 +svg('human').room-seats__item
@@ -121,7 +124,7 @@ html
                                 a(href="#").st-btn-link Смотреть все номера
 
 
-                section.index-restaurant
+                div.index-restaurant
                     .index-restaurant__bg-grid
                         .index-restaurant__bg-item(style="background-image:url(./images/small-restaurant/restaurant-img1.jpg)")
                         .index-restaurant__bg-item(style="background-image:url(./images/small-restaurant/restaurant-img2.jpg)")
@@ -136,7 +139,7 @@ html
                                 .bl-frame__buttons
                                     a(href="#").st-btn-link Подробнее
 
-                section.main__index-gallery
+                div.main__index-gallery
                     .container
                         .index-gallery
                             .index-gallery__header
@@ -149,17 +152,18 @@ html
                                 .st-grid.js-gallery
                                     .st-grid__item(data-src='./images/small-gallery/gallery-img1.jpg')
                                         a(href='').gallery-item.gallery-item_shadow-border
-                                            img(src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
+                                            img(alt='' src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
                                     .st-grid__item(data-src='./images/small-gallery/gallery-img2.jpg')
                                         a(href='').gallery-item.gallery-item_shadow-border
-                                            img(src='./images/small-gallery/gallery-img2.jpg').gallery-item__image
+                                            img(alt='' src='./images/small-gallery/gallery-img2.jpg').gallery-item__image
                                     .st-grid__item(data-src='./images/small-gallery/gallery-img3.jpg').mobile-dn
                                         a(href='').gallery-item.gallery-item_shadow-border
-                                            img(src='./images/small-gallery/gallery-img3.jpg').gallery-item__image
+                                            img(alt='' src='./images/small-gallery/gallery-img3.jpg').gallery-item__image
                             .index-gallery__buttons
                                 a(href="#").st-btn-link Фотогалерея
 
             include pug/components/footer.pug
+
             .page__room-popup.js-room-popup
                 .page__room-popup-wrapper
                     .room-popup
@@ -169,20 +173,20 @@ html
                         .room-popup__content
                             .room-popup__images.slider.js-slider
                                 .slider__main
-                                    img(src='./images/small-gallery/gallery-img1.jpg').slider__main-image.js-slider-main
+                                    img(alt='' src='./images/small-gallery/gallery-img1.jpg').slider__main-image.js-slider-main
                                 .slider__nav
                                     .slider__nav-item
                                         .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img1.jpg')
-                                            img(src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
+                                            img(alt='' src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
                                     .slider__nav-item
                                         .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img2.jpg')
-                                            img(src='./images/small-gallery/gallery-img2.jpg').gallery-item__image
+                                            img(alt='' src='./images/small-gallery/gallery-img2.jpg').gallery-item__image
                                     .slider__nav-item
                                         .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img3.jpg')
-                                            img(src='./images/small-gallery/gallery-img3.jpg').gallery-item__image
+                                            img(alt='' src='./images/small-gallery/gallery-img3.jpg').gallery-item__image
                                     .slider__nav-item
                                         .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img1.jpg')
-                                            img(src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
+                                            img(alt='' src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
 
                             .room-popup__descr.room-popup-descr
                                 .room-popup-descr__section
