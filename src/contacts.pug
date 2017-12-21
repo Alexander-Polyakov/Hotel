@@ -39,7 +39,7 @@ html
                                         | Тел:
                                         a(href='tel:+41279712171').contacts-section__phone +41 27 971 2171
                                    p
-                                        | Факс:
+                                        | Факс: 
                                         a(href='fax:+41279711985').contacts-section__phone +41 27 971 1985
                                    p www.fiescherhof.ch
                                    p
@@ -57,7 +57,7 @@ html
                                    p BIC: UBSWCHZH80A
                                    p BCN: 263
 
-
+                include pug/components/reservation.pug
             footer.footer
                 div.contacts
                     .contacts__header
@@ -92,9 +92,6 @@ html
                                         textarea(placeholder='Сообщение').st-textarea
                                     .st-form__line.tac
                                         button.st-btn-link Отправить
-
-                    include pug/components/reservation.pug
-
                     .contacts__footer
                         .container
                             .contacts-footer
