@@ -9,7 +9,8 @@ function initMap() {
     var center = {lat: 46.4032, lng: 8.137};
     var map = new google.maps.Map(document.getElementById('map'), {
         zoom: mapZoom,
-        center: center
+        center: center,
+        mapTypeId: 'hybrid'
     });
 
     var marker = new google.maps.Marker({
@@ -20,6 +21,4 @@ function initMap() {
     google.maps.event.addDomListener(window, 'resize', function() {
         map.setCenter(center);
     });
-
-
 }
