@@ -2,7 +2,13 @@
 
 $(document).ready(function() {
     $('.language').hover(function(){
+        var _this = $(this);
         $(this).addClass('opened');
+        if (window.outerWidth < 960) {
+            setTimeout(function(){
+                _this.removeClass('opened');
+            },3000);
+        }
     }, function(){
         $(this).removeClass('opened');
     });
