@@ -985,6 +985,37 @@ body
         border-radius: 50%
         overflow: hidden
 
+
+.contacts-section
+    display: flex
+    justify-content: space-between
+    font-size: 17px
+    color: $st-brown
+    line-height: 2em
+    &__section
+        width: 240px
+    &__title
+        font-weight: 700
+    &__link
+        display: inline-block
+        vertical-align: middle
+        margin-left: 10px
+        color: $st-brown
+        text-decoration: underline
+        &:hover
+            text-decoration: none
+        &.ml0
+            margin-left: 0
+    &__phone
+        display: inline-block
+        vertical-align: middle
+        margin-left: 10px
+        color: $st-brown
+        text-decoration: none
+        font-size: 20px
+        pointer-events: none
+
+
 .hours-item
     padding: 10px 20px 25px
     background-color: #fff
@@ -1419,6 +1450,12 @@ body
     display: none
 
 @media screen and (max-width: 960px)
+    .contacts-section
+        font-size: 16px
+        flex-wrap: wrap
+        &__phone
+            pointer-events: auto
+
     .index-restaurant
         &__bg-item
             width: 50%
@@ -1533,6 +1570,9 @@ body
         padding: 10px
 
 @media screen and (max-width: 767px)
+    .contacts-section__section
+        width: 50%
+
     .price-item
         padding: 10px
 
@@ -1634,6 +1674,9 @@ body
         width: 50%
 
 @media screen and (max-width: 640px)
+    .contacts-section__section
+        width: 100%
+
     .index-restaurant
         &__bg-item
             width: 100%

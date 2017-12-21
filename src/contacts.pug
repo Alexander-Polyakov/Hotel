@@ -24,19 +24,40 @@ html
                                 +svg('mountains').st-title__icon
                                 h2.st-title__text Hotel Fiescherhof
                         .section__content
-                            .contacts-items
-                                .contacts-items__elem
-                                    a(href='tel:+41279712171').contacts-item.contacts-item_phone
-                                        +svg('contacts-phone').contacts-item__icon
-                                        .contacts-item__text +41 27 971 21 71
-                                .contacts-items__elem
-                                    a(href='tel:+41279711985').contacts-item.contacts-item_phone
-                                        +svg('contacts-phone2').contacts-item__icon
-                                        .contacts-item__text +41 27 971 19 85
-                                .contacts-items__elem
-                                    a(href='mailto:info@fiescherhof.ch').contacts-item.contacts-item_mail
-                                        +svg('contacts-mail').contacts-item__icon
-                                        .contacts-item__text info@fiescherhof.ch
+                           .contacts-section
+                               .contacts-section__section
+                                   .contacts-section-item__section
+                                       p.contacts-section__title Адрес:
+                                       p Hotel Fiescherhof
+                                       p Furkastrasse 75
+                                       p 3984 Fiesch
+                                       p Switzerland
+                                       p.contacts-section__title Часы работы:
+                                       p Ежедневно с 7.00 до 22.00
+                               .contacts-section__section
+                                   p.contacts-section__title Контакты:
+                                   p
+                                        | Тел:
+                                        a(href='tel:+41279712171').contacts-section__phone +41 27 971 2171
+                                   p
+                                        | Факс:
+                                        a(href='fax:+41279711985').contacts-section__phone +41 27 971 1985
+                                   p www.fiescherhof.ch
+                                   p
+                                        | E-mail:
+                                        a(href="mailto:info@fiescherhof.ch").contacts-section__link info@fiescherhof.ch
+                                   p
+                                       a(href="#").contacts-section__link.ml0 Facebook
+                                       a(href="#").contacts-section__link Вконтакте
+                               .contacts-section__section
+                                   p.contacts-section__title Банковские реквизиты:
+                                   p Название компании:
+                                   p Hotel Fiescherhof GmbH
+                                   p Банк: UBS AG
+                                   p IBAN: CH500026326368909601A
+                                   p BIC: UBSWCHZH80A
+                                   p BCN: 263
+
 
             footer.footer
                 div.contacts
@@ -61,7 +82,7 @@ html
                                                 a(href="#").st-btn-link Подробнее
                     .contacts__main
                         #map.contacts__map
-                        .container
+                        .contacts__map-container.container
                             .contacts__form
                                 form.st-form
                                     .st-form__line
