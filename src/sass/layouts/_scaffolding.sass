@@ -78,13 +78,14 @@ body
         z-index: 300
         background-color: rgba(0,0,0,.4)
         display: none
-    &__room-popup
+    &__rooms-popups
         position: fixed
         z-index: 1000
         top: 0
         height: 100%
         left: 0
         width: 100%
+        pointer-events: none
         display: none
     &__room-popup-wrapper
         position: absolute
@@ -94,6 +95,9 @@ body
         height: 100%
         overflow: auto
         padding: 0 10px
+        display: none
+        &.opened
+            display: block
 
 .room-popup
     padding: 20px
@@ -102,6 +106,7 @@ body
     max-width: 920px
     margin: 50px auto
     position: relative
+    pointer-events: auto
     &__close
         right: 10px
         top: 10px
@@ -1606,7 +1611,7 @@ body
         width: 32px
         line-height: 32px
 
-    .room-popup
+    .rooms-popups
         &__content
             flex-wrap: wrap
         &__images

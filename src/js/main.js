@@ -26,9 +26,8 @@ $(document).ready(function() {
     });
 
     $(".js-room-popup-close").click(function(){
-        var thisPopup = $(this).closest('.js-room-popup');
-
-        thisPopup.fadeOut(400);
+        $(".page__room-popup-wrapper").removeClass('opened');
+        $(".js-rooms-popup").fadeIn(400);
         $(".page__overlay").fadeOut(400);
         $('body').removeClass('ovh');
     });
@@ -41,9 +40,11 @@ $(document).ready(function() {
         fullImageContainer.attr('src', fullImgSrc);
     });
 
-    $(".js-room-item").click(function(){
-        $(".js-room-popup").fadeIn(400);
+    $(".js-room-open").click(function(){
+        var target = $(this).data('popup-target');
+        $(".js-rooms-popup").fadeIn(400);
         $(".page__overlay").fadeIn(400);
+        $("[data-popup-block="+target+"]").addClass('opened');
         $('body').addClass('ovh');
     });
 

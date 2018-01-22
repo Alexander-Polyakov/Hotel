@@ -79,42 +79,42 @@ html
                             .number-rooms__images
                                 .st-grid
                                     .st-grid__item
-                                        .room-preview.room-preview_black-border.js-room-item
+                                        .room-preview.room-preview_black-border.js-room-open(data-popup-target='first')
                                             +svg('loupe').room-preview__loupe
                                             img(alt='' src='./images/small-rooms/room1.jpg').room-preview__image
                                             .room-preview__seats.room-seats
                                                 +svg('human').room-seats__item
                                                 +svg('human').room-seats__item
                                     .st-grid__item
-                                        .room-preview.room-preview_black-border.js-room-item
+                                        .room-preview.room-preview_black-border.js-room-open(data-popup-target='second')
                                             +svg('loupe').room-preview__loupe
                                             img(alt='' src='./images/small-rooms/room2.jpg').room-preview__image
                                             .room-preview__seats.room-seats
                                                 +svg('human').room-seats__item
                                                 +svg('human').room-seats__item
                                     .st-grid__item
-                                        .room-preview.room-preview_black-border.js-room-item
+                                        .room-preview.room-preview_black-border.js-room-open(data-popup-target='first')
                                             +svg('loupe').room-preview__loupe
                                             img(alt='' src='./images/small-rooms/room3.jpg').room-preview__image
                                             .room-preview__seats.room-seats
                                                 +svg('human').room-seats__item
                                                 +svg('human').room-seats__item
                                     .st-grid__item
-                                        .room-preview.room-preview_black-border.js-room-item
+                                        .room-preview.room-preview_black-border.js-room-open(data-popup-target='second')
                                             +svg('loupe').room-preview__loupe
                                             img(alt='' src='./images/small-rooms/room4.jpg').room-preview__image
                                             .room-preview__seats.room-seats
                                                 +svg('human').room-seats__item
                                                 +svg('human').room-seats__item
                                     .st-grid__item
-                                        .room-preview.room-preview_black-border.js-room-item
+                                        .room-preview.room-preview_black-border.js-room-open(data-popup-target='first')
                                             +svg('loupe').room-preview__loupe
                                             img(alt='' src='./images/small-rooms/room5.jpg').room-preview__image
                                             .room-preview__seats.room-seats
                                                 +svg('human').room-seats__item
                                                 +svg('human').room-seats__item
                                     .st-grid__item
-                                        .room-preview.room-preview_black-border.js-room-item
+                                        .room-preview.room-preview_black-border.js-room-open(data-popup-target='second')
                                             +svg('loupe').room-preview__loupe
                                             img(alt='' src='./images/small-rooms/room6.jpg').room-preview__image
                                             .room-preview__seats.room-seats
@@ -164,12 +164,12 @@ html
 
             include pug/components/footer.pug
 
-            .page__room-popup.js-room-popup
-                .page__room-popup-wrapper
+            .page__rooms-popups.js-rooms-popup
+                .page__room-popup-wrapper(data-popup-block="first")
                     .room-popup
                         .room-popup__close.js-room-popup-close
                             .close-btn
-                        .room-popup__title Улучшенный Двухместный Номер
+                        .room-popup__title Улучшенный Двухместный Номер1
                         .room-popup__content
                             .room-popup__images.slider.js-slider
                                 .slider__main
@@ -187,7 +187,40 @@ html
                                     .slider__nav-item
                                         .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img1.jpg')
                                             img(alt='' src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
-
+                            .room-popup__descr.room-popup-descr
+                                .room-popup-descr__section
+                                    .st-description
+                                        p.strong  На Ваш выбор просторные
+                                        p.strong  На Ваш выбор просторные
+                                        p   c 1 двухспальной кроватью или 2 отдельными кроватями 2 халата. Мини Бар, Набор для приготовления чая
+                                .room-popup-descr__section
+                                    .room-popup-descr__price Цена: 59-90 CHF*
+                                    .st-description
+                                        p.strong  На Ваш выбор просторные
+                                        p.strong  На Ваш выбор просторные
+                                        p   c 1 двухспальной кроватью или 2 отдельными кроватями 2 халата. Мини Бар, Набор для приготовления чая
+                .page__room-popup-wrapper(data-popup-block="second")
+                    .room-popup
+                        .room-popup__close.js-room-popup-close
+                            .close-btn
+                        .room-popup__title Улучшенный Двухместный Номер2
+                        .room-popup__content
+                            .room-popup__images.slider.js-slider
+                                .slider__main
+                                    img(alt='' src='./images/small-gallery/gallery-img1.jpg').slider__main-image.js-slider-main
+                                .slider__nav
+                                    .slider__nav-item
+                                        .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img1.jpg')
+                                            img(alt='' src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
+                                    .slider__nav-item
+                                        .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img2.jpg')
+                                            img(alt='' src='./images/small-gallery/gallery-img2.jpg').gallery-item__image
+                                    .slider__nav-item
+                                        .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img3.jpg')
+                                            img(alt='' src='./images/small-gallery/gallery-img3.jpg').gallery-item__image
+                                    .slider__nav-item
+                                        .gallery-item.js-slider-nav(data-full-img='./images/small-gallery/gallery-img1.jpg')
+                                            img(alt='' src='./images/small-gallery/gallery-img1.jpg').gallery-item__image
                             .room-popup__descr.room-popup-descr
                                 .room-popup-descr__section
                                     .st-description

@@ -252,7 +252,7 @@
               <div class="number-rooms__images">
                 <div class="st-grid">
                   <div class="st-grid__item">
-                    <div class="room-preview room-preview_black-border js-room-item">
+                    <div class="room-preview room-preview_black-border js-room-open" data-popup-target="first">
                       <svg class="icon room-preview__loupe">
                         <use xlink:href="#svg-icon-loupe"></use>
                       </svg><img class="room-preview__image" alt="" src="./images/small-rooms/room1.jpg">
@@ -267,7 +267,7 @@
                     </div>
                   </div>
                   <div class="st-grid__item">
-                    <div class="room-preview room-preview_black-border js-room-item">
+                    <div class="room-preview room-preview_black-border js-room-open" data-popup-target="second">
                       <svg class="icon room-preview__loupe">
                         <use xlink:href="#svg-icon-loupe"></use>
                       </svg><img class="room-preview__image" alt="" src="./images/small-rooms/room2.jpg">
@@ -282,7 +282,7 @@
                     </div>
                   </div>
                   <div class="st-grid__item">
-                    <div class="room-preview room-preview_black-border js-room-item">
+                    <div class="room-preview room-preview_black-border js-room-open" data-popup-target="first">
                       <svg class="icon room-preview__loupe">
                         <use xlink:href="#svg-icon-loupe"></use>
                       </svg><img class="room-preview__image" alt="" src="./images/small-rooms/room3.jpg">
@@ -297,7 +297,7 @@
                     </div>
                   </div>
                   <div class="st-grid__item">
-                    <div class="room-preview room-preview_black-border js-room-item">
+                    <div class="room-preview room-preview_black-border js-room-open" data-popup-target="second">
                       <svg class="icon room-preview__loupe">
                         <use xlink:href="#svg-icon-loupe"></use>
                       </svg><img class="room-preview__image" alt="" src="./images/small-rooms/room4.jpg">
@@ -312,7 +312,7 @@
                     </div>
                   </div>
                   <div class="st-grid__item">
-                    <div class="room-preview room-preview_black-border js-room-item">
+                    <div class="room-preview room-preview_black-border js-room-open" data-popup-target="first">
                       <svg class="icon room-preview__loupe">
                         <use xlink:href="#svg-icon-loupe"></use>
                       </svg><img class="room-preview__image" alt="" src="./images/small-rooms/room5.jpg">
@@ -327,7 +327,7 @@
                     </div>
                   </div>
                   <div class="st-grid__item">
-                    <div class="room-preview room-preview_black-border js-room-item">
+                    <div class="room-preview room-preview_black-border js-room-open" data-popup-target="second">
                       <svg class="icon room-preview__loupe">
                         <use xlink:href="#svg-icon-loupe"></use>
                       </svg><img class="room-preview__image" alt="" src="./images/small-rooms/room6.jpg">
@@ -511,14 +511,58 @@
             </svg>
             <p class="header-mail__text">info@fiescherhof.ch</p></a></div>
       </div>
-      <div class="page__overlay js-mob-menu-close"></div>
-      <div class="page__room-popup js-room-popup">
-        <div class="page__room-popup-wrapper">
+      <div class="page__overlay js-mob-menu-close js-room-popup-close"></div>
+      <div class="page__rooms-popups js-rooms-popup">
+        <div class="page__room-popup-wrapper" data-popup-block="first">
           <div class="room-popup">
             <div class="room-popup__close js-room-popup-close">
               <div class="close-btn"></div>
             </div>
-            <div class="room-popup__title">Улучшенный Двухместный Номер</div>
+            <div class="room-popup__title">Улучшенный Двухместный Номер1</div>
+            <div class="room-popup__content">
+              <div class="room-popup__images slider js-slider">
+                <div class="slider__main"><img class="slider__main-image js-slider-main" alt="" src="./images/small-gallery/gallery-img1.jpg"></div>
+                <div class="slider__nav">
+                  <div class="slider__nav-item">
+                    <div class="gallery-item js-slider-nav" data-full-img="./images/small-gallery/gallery-img1.jpg"><img class="gallery-item__image" alt="" src="./images/small-gallery/gallery-img1.jpg"></div>
+                  </div>
+                  <div class="slider__nav-item">
+                    <div class="gallery-item js-slider-nav" data-full-img="./images/small-gallery/gallery-img2.jpg"><img class="gallery-item__image" alt="" src="./images/small-gallery/gallery-img2.jpg"></div>
+                  </div>
+                  <div class="slider__nav-item">
+                    <div class="gallery-item js-slider-nav" data-full-img="./images/small-gallery/gallery-img3.jpg"><img class="gallery-item__image" alt="" src="./images/small-gallery/gallery-img3.jpg"></div>
+                  </div>
+                  <div class="slider__nav-item">
+                    <div class="gallery-item js-slider-nav" data-full-img="./images/small-gallery/gallery-img1.jpg"><img class="gallery-item__image" alt="" src="./images/small-gallery/gallery-img1.jpg"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="room-popup__descr room-popup-descr">
+                <div class="room-popup-descr__section">
+                  <div class="st-description">
+                    <p class="strong"> На Ваш выбор просторные</p>
+                    <p class="strong"> На Ваш выбор просторные</p>
+                    <p>  c 1 двухспальной кроватью или 2 отдельными кроватями 2 халата. Мини Бар, Набор для приготовления чая</p>
+                  </div>
+                </div>
+                <div class="room-popup-descr__section">
+                  <div class="room-popup-descr__price">Цена: 59-90 CHF*</div>
+                  <div class="st-description">
+                    <p class="strong"> На Ваш выбор просторные</p>
+                    <p class="strong"> На Ваш выбор просторные</p>
+                    <p>  c 1 двухспальной кроватью или 2 отдельными кроватями 2 халата. Мини Бар, Набор для приготовления чая</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page__room-popup-wrapper" data-popup-block="second">
+          <div class="room-popup">
+            <div class="room-popup__close js-room-popup-close">
+              <div class="close-btn"></div>
+            </div>
+            <div class="room-popup__title">Улучшенный Двухместный Номер2</div>
             <div class="room-popup__content">
               <div class="room-popup__images slider js-slider">
                 <div class="slider__main"><img class="slider__main-image js-slider-main" alt="" src="./images/small-gallery/gallery-img1.jpg"></div>
